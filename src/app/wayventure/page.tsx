@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    url: "https://christian-dechant.de/wayventure",
+    url: "https://christiandechant.de/wayventure",
     siteName: "Christian Dechant Portfolio",
     type: "website",
     locale: "en_US",
@@ -55,7 +55,7 @@ export default function WayVenturePage() {
     alternateName: "WayVenture Travel Planner",
     description,
     url: "https://wayventure.de",
-    image: "https://christian-dechant.de/wayventure-insight.png",
+    image: "https://christiandechant.de/wayventure-insight.png",
     applicationCategory: "TravelApplication",
     operatingSystem: "Web",
     inLanguage: [ "en", "de" ],
@@ -63,12 +63,12 @@ export default function WayVenturePage() {
     author: {
       "@type": "Person",
       name: "Christian Dechant",
-      url: "https://christian-dechant.de",
+      url: "https://christiandechant.de",
     },
     creator: {
       "@type": "Person",
       name: "Christian Dechant",
-      url: "https://christian-dechant.de",
+      url: "https://christiandechant.de",
     },
     offers: {
       "@type": "Offer",
@@ -118,6 +118,15 @@ export default function WayVenturePage() {
             </nav>
 
             <div className="mx-auto max-w-3xl text-center">
+              <div className="mx-auto mb-6 h-24 w-24 overflow-hidden rounded-2xl shadow-lg shadow-wv-primary/20">
+                <Image
+                  src="/wayventure.png"
+                  alt="WayVenture app icon"
+                  width={ 192 }
+                  height={ 192 }
+                  className="h-full w-full object-cover"
+                />
+              </div>
               <span
                 className="inline-flex items-center gap-2 rounded-full border border-wv-primary/20 bg-white px-4 py-2 text-sm font-semibold text-wv-primary shadow-sm"
               >

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://christian-dechant.de/sitemap.xml
+Sitemap: https://christiandechant.de/sitemap.xml

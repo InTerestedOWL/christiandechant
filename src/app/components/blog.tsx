@@ -1,6 +1,4 @@
-'use client'
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import Title from "./shared/title";
 
 interface IVideo {
@@ -22,53 +20,30 @@ interface IThumbnailResolution {
   height: number
 }
 
-const requestVideos = async () => {
+async function getVideos(): Promise<IVideo[]> {
+  const cid = process.env.YOUTUBE_CHANNELID;
+  const apiKey = process.env.YOUTUBE_API_KEY;
+  const reqURL = `https://www.googleapis.com/youtube/v3/search?key=${ apiKey }&part=snippet&channelId=${ cid }&type=video&maxResults=3&order=date`;
+
   try {
-    const response = await fetch('/api/request-videos', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    // Cached and revalidated hourly so we don't burn YouTube API quota on every request.
+    const response = await fetch(reqURL, { next: { revalidate: 3600 } });
 
     if ( !response.ok ) {
-      throw new Error(`Error fetching videos: ${ response.statusText }`);
+      console.error(`Error fetching YouTube data: ${ response.statusText }`);
+      return [];
     }
 
-    const data = await response.json(); // Assuming the API responds with a JSON payload
-    return data; // Return the data to be used in the component
+    const data = await response.json();
+    return data.items ?? [];
   } catch ( error ) {
-    console.error('Error in requestVideos:', error);
-    throw error; // Rethrow the error to be caught in `useEffect`
+    console.error('Error fetching YouTube data:', error);
+    return [];
   }
-};
+}
 
-export default function Blog() {
-  const [ videos, setVideos ] = useState<IVideo[]>([]);
-
-  useEffect(() => {
-    const loadVideo = async () => {
-      console.log('session-storage: ', window.sessionStorage.getItem('videos'))
-      if ( window.sessionStorage.getItem('videos') === 'undefined' || window.sessionStorage.getItem('videos') === null ) {
-        try {
-          console.log('firing request');
-          const data = await requestVideos(); // Fetch videos from the server function
-          setVideos(data.items); // Assuming `data.items` contains the video list
-          window.sessionStorage.setItem('videos', JSON.stringify(data.items));
-        } catch ( err ) {
-          console.log(err);
-        }
-      } else {
-        console.log('taking session storage');
-        if ( window.sessionStorage.getItem('videos') !== null ) {
-          const sessionStorageVideos: IVideo[] = JSON.parse(window.sessionStorage.getItem('videos')!);
-          setVideos(sessionStorageVideos);
-        }
-      }
-    };
-
-    loadVideo(); // Videos laden, wenn die Komponente gerendert wird
-  }, []); // Effekt wird nur einmal beim Mount ausgeführt
+export default async function Blog() {
+  const videos = await getVideos();
 
   return (
     <div className="bg-grey-50" id="blog">
@@ -79,7 +54,7 @@ export default function Blog() {
         <div
           className="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10"
         >
-          { videos ? videos.map((item, index) => (
+          { videos.map((item, index) => (
             <Link key={ index } href={ `https://youtube.com/watch?v=${ item.id.videoId }` } className="shadow">
               <div
                 style={ { backgroundImage: `url(${ item.snippet.thumbnails.high.url })` } }
@@ -97,7 +72,7 @@ export default function Blog() {
                 <span className="block pt-2 font-body text-grey-20">{ item.snippet.description }</span>
               </div>
             </Link>
-          )) : '' }
+          )) }
         </div>
       </div>
     </div>

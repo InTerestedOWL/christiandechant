@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Title from "@/app/components/shared/title";
 import { IVoluntaryWork } from "../interfaces";
 import { useState } from "react";
@@ -33,11 +34,13 @@ export default function VoluntaryWork({ voluntaryWorks }: { voluntaryWorks: IVol
                 {/* Front Side */ }
                 <div
                   className="backface-hidden absolute flex h-full w-full flex-col items-center justify-center rounded bg-white px-8 py-12 shadow hover:bg-primary group-hover:bg-primary">
-                  <div className="mx-auto h-24 w-24 text-center">
-                    <img
+                  <div className="relative mx-auto h-24 w-24 text-center">
+                    <Image
                       src={ item.imageSrc }
                       alt={ item.title }
-                      className="mx-auto h-full w-auto object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                      fill
+                      sizes="96px"
+                      className="object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                     />
                   </div>
                   <div className="pt-6 text-center">
@@ -62,12 +65,15 @@ export default function VoluntaryWork({ voluntaryWorks }: { voluntaryWorks: IVol
                   { item.backImages && item.backImages.length > 0 && (
                     <div className="mt-4 flex flex-wrap gap-2">
                       { item.backImages.map((img, i) => (
-                        <img
-                          key={ i }
-                          src={ img }
-                          alt={ `${ item.title } — photo ${ i + 1 }` }
-                          className=" w-auto rounded object-cover"
-                        />
+                        <div key={ i } className="relative h-24 w-32 shrink-0">
+                          <Image
+                            src={ img }
+                            alt={ `${ item.title } — photo ${ i + 1 }` }
+                            fill
+                            sizes="128px"
+                            className="rounded object-cover"
+                          />
+                        </div>
                       )) }
                     </div>
                   ) }

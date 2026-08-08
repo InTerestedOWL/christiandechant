@@ -16,6 +16,15 @@ export default function WayVenture() {
 
       <div className="container">
         <div className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto mb-6 h-20 w-20 overflow-hidden rounded-2xl shadow-lg shadow-wv-primary/20">
+            <Image
+              src="/wayventure.png"
+              alt="WayVenture app icon"
+              width={ 160 }
+              height={ 160 }
+              className="h-full w-full object-cover"
+            />
+          </div>
           <span
             className="inline-flex items-center gap-2 rounded-full border border-wv-primary/20 bg-white px-4 py-2 text-sm font-semibold text-wv-primary shadow-sm"
           >

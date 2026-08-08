@@ -66,6 +66,14 @@ export interface IPortfolioItem {
   isExternal?: boolean,
 }
 
+export interface IAiConsultingTrack {
+  audience: string,
+  icon: string,
+  title: string,
+  description: string,
+  features: string[],
+}
+
 export interface IWayVentureFeature {
   icon: string,
   title: string,

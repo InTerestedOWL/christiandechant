@@ -8,8 +8,17 @@ import Contact from "@/app/components/contact";
 import SoftwareTechnologies from "./components/softwaretechnologies";
 import Map from "./components/map";
 import SubFooter from "./components/subfooter";
-import { contactBoxes, experiences, skills, socials, technologies, voluntaryWorks } from "./data";
+import {
+  aiConsultingTracks,
+  contactBoxes,
+  experiences,
+  skills,
+  socials,
+  technologies,
+  voluntaryWorks
+} from "./data";
 import Offers from "./components/offers";
+import AiConsulting from "@/app/components/aiConsulting";
 import CustomerTestimonials from "@/app/components/testimonials";
 import VoluntaryWork from "@/app/components/voluntaryWork";
 
@@ -18,10 +27,16 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Christian Dechant",
-    url: "https://christian-dechant.de",
-    image: "https://christian-dechant.de/Interestedowl.png",
+    url: "https://christiandechant.de",
+    image: "https://christiandechant.de/Interestedowl.png",
     jobTitle: "Freelance App, Web and Mobile Developer",
-    description: "Freelance App, Web and Mobile Developer with 6+ years of experience building scalable software with C#, Next.js, TypeScript and more.",
+    description: "Freelance App, Web and Mobile Developer with 6+ years of experience building scalable software with C#, Next.js, TypeScript and more. Also consults businesses and developers on AI strategy and the migration to AI-agent-driven development.",
+    knowsAbout: [
+      "AI strategy",
+      "AI-agent-driven development",
+      "Web development",
+      "Mobile development",
+    ],
     sameAs: socials.map((social) => social.url),
   };
 
@@ -39,6 +54,8 @@ export default function Home() {
       <VoluntaryWork
         voluntaryWorks={ voluntaryWorks }></VoluntaryWork>
       <Offers></Offers>
+      <AiConsulting
+        tracks={ aiConsultingTracks }></AiConsulting>
 
       <Portfolio></Portfolio>
       <SoftwareTechnologies

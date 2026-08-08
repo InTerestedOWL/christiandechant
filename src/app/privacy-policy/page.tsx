@@ -3,7 +3,7 @@ import Title from "../components/shared/title";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Christian Dechant",
-  description: "Learn how Christian Dechant collects, uses and protects personal data on christian-dechant.de, in accordance with the GDPR.",
+  description: "Learn how Christian Dechant collects, uses and protects personal data on christiandechant.de, in accordance with the GDPR.",
   alternates: {
     canonical: "/privacy-policy",
   },

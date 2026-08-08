@@ -1,4 +1,5 @@
 import {
+  IAiConsultingTrack,
   IContactBox,
   IExperience,
   IHeaderLink,
@@ -16,6 +17,7 @@ export const headerLinks: IHeaderLink[] = [
   { href: '/#about', title: 'About' },
   { href: '/#wayventure', title: 'WayVenture' },
   { href: '/#pricing', title: 'Offers' },
+  { href: '/#ai-consulting', title: 'Consulting' },
   { href: '/#portfolio', title: 'Portfolio' },
   { href: '/#tools', title: 'tools' },
   { href: '/#work', title: 'Work' },
@@ -78,6 +80,33 @@ export const technologies: ITechnology[] = [
 
 export const experiences: IExperience[] = [
   {
+    imageSrc: '/mct-net.png',
+    dateFrom: 'Jun. 2026',
+    dateTill: 'now',
+    title: 'Freelancing: Developer & AI-Ambassador',
+    description: 'Bringing principles of traditional Software development to an agency with a focus on AI development.',
+    classAttribute: 'w-3/4',
+    margin: 0
+  },
+  {
+    imageSrc: '/wayventure.png',
+    dateFrom: 'Apr. 2026',
+    dateTill: 'now',
+    title: 'Entrepreneurship',
+    description: 'Developing & running \'WayVenture\' - Your smart travel companion',
+    classAttribute: 'w-20 rounded-xl',
+    margin: -50
+  },
+  {
+    imageSrc: '/jagdtausch.png',
+    dateFrom: 'Jul. 2024',
+    dateTill: 'Sept. 2025',
+    title: 'Freelancing: Customer project',
+    description: 'Developing the MVP for \'JagdTausch\', a marketplace for used and new hunting equipment',
+    classAttribute: 'w-7/8',
+    margin: -20
+  },
+  {
     imageSrc: '/es-logo.svg',
     dateFrom: 'Oct. 2024',
     dateTill: 'now',
@@ -92,17 +121,17 @@ export const experiences: IExperience[] = [
     dateTill: 'Sep. 2024',
     title: 'Working Student - Full Stack Developer',
     description: 'Building a reporting Tool for theatres and event clients to make Reporting more easy for them. Working with PHP, TypeScript, MongoDB, Terraform, Mercure',
-    classAttribute: 'w-32',
-    margin: 0
+    classAttribute: 'w-28',
+    margin: -10
   },
   {
     imageSrc: '/abstractvoid_big_void.png',
     dateFrom: 'Mar. 2020',
     dateTill: 'Dec. 2024',
-    title: 'Co-Founder and Developer',
+    title: 'Entrepreneurship',
     description: 'Building an innovative inhouse navigation system for large building complex using Bluetooth Low Energy. Working with Laravel, Alpine JS, Tailwind css (TALL-Stack) and NodeJS (erxpressJS) for webservices. ',
     classAttribute: 'w-24',
-    margin: -25
+    margin: -20
   },
   {
     imageSrc: '/ecoplan.png',
@@ -111,7 +140,7 @@ export const experiences: IExperience[] = [
     title: 'Working Student / Bachelorand',
     description: 'Building and customizing a crm system for multiple clients. Integrating swiss QR-Code for bills. Working with Tomcat EE and Java for webservices using Java EE',
     classAttribute: 'w-3/4',
-    margin: -5
+    margin: 5
   },
 ];
 
@@ -320,6 +349,34 @@ export const portfolioItems: IPortfolioItem[] = [
     `
   }*/
 ]
+
+export const aiConsultingTracks: IAiConsultingTrack[] = [
+  {
+    audience: 'For Businesses',
+    icon: 'bx-buildings',
+    title: 'AI Strategy & Agent-Driven Development Migration',
+    description: 'A structured path from traditional development to AI-agent-driven workflows, based on what actually creates leverage in your organisation, not on hype.',
+    features: [
+      'Assessment of your current development processes and where AI agents create real leverage',
+      'A migration roadmap from traditional development to AI-agent-driven workflows',
+      'Tooling & governance: agent frameworks, CI/CD integration, review and security guardrails for AI-generated code',
+      'A pilot project or proof of concept before any full rollout',
+      'Team enablement, so your organisation does not depend on a single AI-fluent person',
+    ],
+  },
+  {
+    audience: 'For Developers',
+    icon: 'bx-code-alt',
+    title: 'Working With AI Agents: Coaching for Developers',
+    description: 'Developer-to-developer coaching on getting real work done with AI agents while keeping the code quality and ownership you would expect from your own hands.',
+    features: [
+      '1:1 or team coaching on agentic workflows: prompting, task decomposition, review habits',
+      'Setting up and customizing agent tooling such as Claude Code, MCP servers and custom agents',
+      'Reviewing AI-written code without losing code quality and ownership',
+      'Workshops or ongoing mentoring, tailored to your team and your stack',
+    ],
+  },
+];
 
 export const wayVentureFeatures: IWayVentureFeature[] = [
   {

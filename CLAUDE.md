@@ -12,34 +12,43 @@ A single-page personal portfolio/homepage for Christian Dechant (christiandechan
 npm run dev      # start dev server with Turbopack
 npm run build    # production build
 npm run start    # run the production build
-npm run lint     # next lint
+npm run lint     # next lint (currently broken: eslintrc config incompatible with ESLint 10)
 ```
 
 There is no test suite configured in this repo.
 
 ## Architecture
 
+### Bilingual routing (de / en)
+
+All pages live under `src/app/[locale]/` (`/de`, `/en`); `src/proxy.ts` redirects any path without a locale prefix (e.g.
+`/`, `/imprint`) to the best match from `Accept-Language` (default `de`). Locale helpers are in `src/app/i18n/` (
+`config.ts` for negotiation/path switching, `metadata.ts` for canonical + hreflang alternates). `[locale]/layout.tsx` is
+the root layout (sets `<html lang>`, metadata) — there is no `src/app/layout.tsx`.
+
 ### Content-driven single page
 
-`src/app/page.tsx` composes the homepage as a fixed sequence of section components (About, WayVenture teaser, Testimonials, VoluntaryWork, Offers, Portfolio, SoftwareTechnologies, Experience, FinishedProjects, Blog, Contact, Map, SubFooter), each living in `src/app/components/`. Most of these sections take their content as props sourced from `src/app/data.ts`.
+`src/app/[locale]/page.tsx` composes the homepage from section components in `src/app/components/` (Hero, Competencies,
+WayVentureSpotlight, Motto, Offers, AiConsulting, Experience, VoluntaryWork, Contact). The design follows
+`mock/new mock.html` 1:1.
 
-**`src/app/data.ts`** is the single source of truth for site copy/content: nav links, socials, technologies, experience entries, skills, portfolio items, voluntary work, WayVenture feature/FAQ copy, etc. When asked to change site text, update this file rather than hardcoding strings in components.
+**`src/app/content/de.ts` and `en.ts`** are the single source of truth for all copy (homepage, WayVenture page, imprint,
+privacy policy, 404), both typed as `SiteContent` from `src/app/interfaces.ts`; `getContent(locale)` in
+`content/index.ts` picks one. Language-independent values (URLs, e-mail, socials) live in `content/shared.ts`. When
+changing site text, update **both** locale files. Add new fields to `SiteContent` first.
 
-**`src/app/interfaces.ts`** defines the TypeScript shape (`I`-prefixed interfaces) for every content type in `data.ts`. Add new fields here first when extending a content type.
+Shared pieces live under `src/app/components/shared/` (`materialIcon`, `sectionHeading`, `accent` class maps, `richText`
+for `**bold**`/`*italic*` in content strings, `languageSwitch`). Legal pages render through `components/legalPage.tsx`.
 
-Shared, low-level presentational pieces (title blocks, timeline items, link-with-icon, contact box) live under `src/app/components/shared/` and are reused across the bigger section components.
+`src/app/context.tsx` provides `useStatus`, used to lock body scroll while the mobile drawer is open (
+`ClientLayout.tsx`).
 
-### Layout & global state
+### Routes
 
-`src/app/layout.tsx` is the root layout: it sets metadata/OpenGraph/viewport, loads Geist fonts, and injects third-party scripts (Cookiebot consent, Google AdSense) plus the Boxicons stylesheet directly in `<head>`. It wraps everything in `StatusProvider` (`src/app/context.tsx`), a small client-side context (`useStatus`) that other components use to signal state such as "a modal/menu is open" — `ClientLayout.tsx` reads `status` to toggle `overflow-hidden` on `<body>` (e.g. when the mobile nav is open).
-
-`ClientLayout.tsx` (client component) renders the persistent `Header`/`Footer` chrome around the routed page content and the scroll-to-top button.
-
-### Routes beyond the homepage
-
-- `src/app/wayventure/page.tsx` — standalone marketing page for WayVenture with its own metadata, OpenGraph/Twitter cards, and JSON-LD (`SoftwareApplication` + `FAQPage`) structured data. Content comes from the `wayVenture*` exports in `data.ts`.
-- `src/app/imprint/page.tsx`, `src/app/privacy-policy/page.tsx` — legal pages.
-- `src/app/sitemap.ts` — generates `sitemap.xml`; add new routes here when creating pages.
+- `[locale]/wayventure` — marketing page for WayVenture with JSON-LD (`SoftwareApplication` + `FAQPage`).
+- `[locale]/imprint`, `[locale]/privacy-policy` — legal pages. Keep them in sync with any new third-party service or
+  data processing.
+- `src/app/sitemap.ts` — generates `sitemap.xml` for all locales; add new routes to its `pages` list.
 
 ### API routes (`src/app/api/`)
 
@@ -50,7 +59,12 @@ Both are `'use server'` route handlers reading secrets from `process.env`; there
 
 ### Styling
 
-Tailwind v4 with a custom, non-default color palette and font families (`header`/`body`) defined in `tailwind.config.ts` — use these tokens (`primary`, `secondary`, `grey-10`…`grey-70`, `yellow`, `lila`, etc.) rather than arbitrary hex values. The WayVenture page additionally uses `wv-*` color tokens (e.g. `wv-primary`, `wv-surface`, `wv-dark`, `wv-light`) — check `globals.css`/tailwind config if extending that section. Boxicons (`bx bx-*` classes) is the icon set used throughout, loaded via CDN `<link>` in the root layout.
+Tailwind v4, configured CSS-first in `src/app/globals.css` (no `tailwind.config.ts`). Palette: Tailwind `slate`/
+`indigo`/`amber`/`emerald`/`rose` plus the custom `brand-*` scale. Fonts: Geist + JetBrains Mono via
+`next/font/google` (self-hosted at build time). Icons: Material Symbols, self-hosted from the `material-symbols` package
+via `next/font/local` — do not load fonts or icons from external CDNs (GDPR). The mock was written for Tailwind v3, so
+`--shadow-sm` is overridden to v3's value and responsive `text-*` sizes that reset line height in v3 need an explicit
+`sm:leading-*` to match.
 
 ### Deployment
 

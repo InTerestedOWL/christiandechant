@@ -1,171 +1,74 @@
 @import "tailwindcss";
 
-@theme {
-  --font-header: "Raleway", sans-serif;
-  --font-body: "Open Sans", sans-serif;
+@plugin "@tailwindcss/forms";
 
-  --breakpoint-xs: 375px;
-
-  --color-primary: #5540af;
-  --color-secondary: #252426;
-  --color-yellow: #f9e71c;
-  --color-lila: #e6e5ec;
-  --color-grey-10: #6c6b6d;
-  --color-grey-20: #7c7c7c;
-  --color-grey-30: #919091;
-  --color-grey-40: #929293;
-  --color-grey-50: #f4f3f8;
-  --color-grey-60: #edebf6;
-  --color-grey-70: #d8d8d8;
-  --color-hero-gradient-from: rgba(85, 64, 174, 0.95);
-  --color-hero-gradient-to: rgba(65, 47, 144, 0.93);
-  --color-blog-gradient-from: #8f9098;
-  --color-blog-gradient-to: #222222;
-
-  --color-wv-primary: #f08235;
-  --color-wv-light: #ffaf7b;
-  --color-wv-dark: #1a1005;
-  --color-wv-surface: #fcfbf8;
-
-  --shadow-default: 0 2px 18px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 -3px 36px rgba(0, 0, 0, 0.12);
-
-  --spacing-13: 3.25rem;
-  --spacing-15: 3.75rem;
-  --spacing-17: 4.25rem;
-  --spacing-18: 4.5rem;
-  --spacing-19: 4.75rem;
-  --spacing-42: 10.5rem;
-  --spacing-76: 19rem;
-  --spacing-84: 21rem;
-  --spacing-88: 22rem;
-  --spacing-92: 23rem;
-  --spacing-100: 25rem;
-  --spacing-104: 26rem;
-  --spacing-108: 27rem;
-  --spacing-112: 28rem;
-  --spacing-116: 29rem;
-  --spacing-120: 30rem;
-  --spacing-124: 31rem;
-  --spacing-128: 32rem;
-  --spacing-132: 33rem;
-  --spacing-136: 34rem;
-  --spacing-140: 35rem;
-  --spacing-144: 36rem;
-  --spacing-148: 37rem;
-  --spacing-152: 38rem;
-  --spacing-156: 39rem;
-  --spacing-160: 40rem;
-  --spacing-164: 41rem;
-  --spacing-168: 42rem;
-  --spacing-172: 43rem;
-  --spacing-176: 44rem;
-  --spacing-180: 45rem;
-  --spacing-184: 46rem;
-  --spacing-188: 47rem;
-  --spacing-190: 48rem;
-  --spacing-194: 49rem;
-  --spacing-200: 50rem;
-  --spacing-204: 51rem;
-
-  --z-index--1: -1;
-  --z-index-60: 60;
-  --z-index-70: 70;
-
-  --inset-2-5: 40%;
-
-  --container-center: true;
-  --container-padding: 1rem;
-
-  --max-width-sm: 640px;
-  --max-width-md: 768px;
-  --max-width-lg: 1024px;
-  --max-width-xl: 1280px;
-  --max-width-2xl: 1536px;
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
 
-@utility container {
-  margin-inline: auto;
-  padding-inline: 1rem;
-  width: 100%;
+@theme {
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --color-brand-800: #3730a3;
+  --color-brand-900: #312e81;
 
-  @media (width >= 640px) {
-    max-width: var(--max-width-sm);
-  }
-  @media (width >= 768px) {
-    max-width: var(--max-width-md);
-  }
-  @media (width >= 1024px) {
-    max-width: var(--max-width-lg);
-  }
-  @media (width >= 1280px) {
-    max-width: var(--max-width-xl);
-  }
-  @media (width >= 1536px) {
-    max-width: var(--max-width-2xl);
-  }
+  /* The design mock was built with Tailwind v3, whose `shadow-sm` is lighter than v4's. */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
 
 @layer base {
   html {
-    @apply font-body antialiased;
     scroll-behavior: smooth;
   }
-}
 
-.scrollToTopButton {
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.scrollToTopButton.visible {
-  opacity: 1;
-}
-
-/* Fade-In und Fade-Out-Animationen */
-.fade-in {
-  animation: fadeIn 0.5s ease-in-out forwards;
-}
-
-.fade-out {
-  animation: fadeOut 0.5s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
+  body {
+    overscroll-behavior: none;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
+  /* Tailwind v4 no longer sets a pointer cursor on buttons (v3 did). */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
-  100% {
-    opacity: 0;
-    transform: translateY(-10px);
+
+  /* Offset in-page anchors for the fixed header */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  /* Self-hosted Material Symbols (font loaded via next/font/local in the root layout).
+     Kept in the base layer so text-* utilities can size the icons. */
+  .material-symbols-outlined {
+    font-family: var(--font-material-symbols);
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga";
   }
 }
 
-.perspective-1000 {
-  perspective: 1000px;
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+  linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
 }
 
-.preserve-3d {
-  transform-style: preserve-3d;
-}
-
-.backface-hidden {
-  backface-visibility: hidden;
-}
-
-.rotate-y-180 {
-  transform: rotateY(180deg);
+.bg-dots-pattern {
+  background-image: radial-gradient(rgba(79, 70, 229, 0.08) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
 }

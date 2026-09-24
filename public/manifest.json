@@ -2,10 +2,10 @@
   "name": "Christian Dechant Portfolio",
   "short_name": "C. Dechant",
   "description": "Portfolio of Christian Dechant",
-  "start_url": "/",
+  "start_url": "/de",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#5540af",
+  "theme_color": "#4f46e5",
   "icons": [
     {
       "src": "/Interestedowl.png",

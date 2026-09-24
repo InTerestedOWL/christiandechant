@@ -1,6 +1,7 @@
 # syntax=docker.io/docker/dockerfile:1
 
-FROM node:20-alpine AS base
+# Node 24 = current LTS (Node 20 reached end-of-life in April 2026). Keep @types/node on the same major.
+FROM node:24-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps

@@ -21,11 +21,11 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: [ "latin" ],
 });
 
-// Self-hosted icon font, so no request goes to Google Fonts (GDPR).
+// Self-hosted icon subset (regenerate with `npm run icons`), so no request goes to Google Fonts (GDPR).
 const materialSymbols = localFont({
-  src: "../../../node_modules/material-symbols/material-symbols-outlined.woff2",
+  src: "../fonts/material-symbols-subset.woff2",
   variable: "--font-material-symbols",
-  weight: "100 700",
+  weight: "400",
   display: "block",
   adjustFontFallback: false,
 });
@@ -65,20 +65,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: meta.siteName,
       locale: meta.ogLocale,
       type: "website",
-      images: [
-        {
-          url: "/Interestedowl.png",
-          width: 800,
-          height: 800,
-          alt: "Christian Dechant Logo",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: meta.title,
       description: meta.description,
-      images: [ "/Interestedowl.png" ],
     },
     manifest: "/manifest.json",
   };

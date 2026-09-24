@@ -167,6 +167,11 @@ export interface SiteContent {
     siteName: string,
     keywords: string[],
     jobTitle: string,
+    /** Plain, factual self-description for search engines and AI assistants (JSON-LD, llms.txt). */
+    summary: string,
+    /** Second line on the generated social preview image. */
+    ogTagline: string,
+    areaServed: string[],
   },
   header: {
     tagline: string,
@@ -245,6 +250,9 @@ export interface SiteContent {
     quoteLabel: string,
     quote: string,
     signature: string,
+  },
+  faq: ISectionHeading & {
+    items: IWayVentureFaq[],
   },
   contact: {
     testimonials: ITestimonial[],

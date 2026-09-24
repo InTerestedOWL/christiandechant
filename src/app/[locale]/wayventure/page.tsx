@@ -38,20 +38,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: meta.siteName,
       type: "website",
       locale: meta.ogLocale,
-      images: [
-        {
-          url: "/wayventure-insight.png",
-          width: 2569,
-          height: 817,
-          alt: page.screenshotAlt,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: page.metaTitle,
       description: page.metaDescription,
-      images: [ "/wayventure-insight.png" ],
     },
   };
 }

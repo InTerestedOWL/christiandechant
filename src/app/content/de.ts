@@ -5,25 +5,32 @@ const legalUpdated = 'Stand: September 2026';
 
 export const de: SiteContent = {
   meta: {
-    title: 'Christian Dechant | Senior Full-Stack & Applied AI Engineer',
-    description: 'Christian Dechant, M.Sc. Angewandte Informatik – Senior Full-Stack Developer mit 9+ Jahren Erfahrung in C#, Next.js & TypeScript. Web- & Softwareentwicklung, AI Consulting, Entwickler-Coaching und Gründer von WayVenture.',
+    title: 'Christian Dechant | Freelance Entwickler & KI-Beratung, Fulda',
+    description: 'Freelance Full-Stack-Entwickler (M.Sc., 9+ Jahre) aus Fulda: Websites, Web-Apps & Software mit Next.js, C# .NET & Laravel sowie KI-Beratung. Remote im DACH-Raum.',
     ogLocale: 'de_DE',
     siteName: 'Christian Dechant',
     keywords: [
       'Christian Dechant',
-      'Freelance Entwickler',
+      'Freelance Entwickler Fulda',
       'Full-Stack Entwickler',
-      'Webentwickler',
+      'Webentwickler Fulda',
+      'Webdesign Fulda',
+      'Website erstellen lassen',
       'App Entwickler',
-      'C# Entwickler',
       'Next.js Entwickler',
-      'Software Freelancer Fulda',
-      'AI Consulting',
+      'Nuxt Entwickler',
+      'Laravel Entwickler',
+      'C# .NET Entwickler',
+      'Software Freelancer Hessen',
       'KI Beratung',
       'KI-Agenten Entwicklung',
       'Entwickler Coaching KI',
+      'Interim CTO',
     ],
     jobTitle: 'Senior Full-Stack & Applied AI Engineer',
+    summary: 'Christian Dechant ist freiberuflicher Senior Full-Stack-Entwickler und KI-Berater aus Hofbieber bei Fulda (Hessen). Er hat einen M.Sc. in Angewandter Informatik der Hochschule Fulda und über 9 Jahre Erfahrung in der Softwareentwicklung. Er entwickelt Websites, Web-Apps und individuelle Software mit Next.js, Nuxt, Angular, C# .NET und PHP/Laravel, berät Unternehmen bei der Einführung von KI-Agenten in die Softwareentwicklung, coacht Entwickler im Umgang mit Claude Code und MCP und ist Gründer der Reise-App WayVenture. Er arbeitet remote für Kunden im DACH-Raum und international, auf Deutsch und Englisch.',
+    ogTagline: 'Freelance Full-Stack-Entwickler & KI-Berater · Fulda',
+    areaServed: [ 'Fulda', 'Hessen', 'Deutschland', 'Österreich', 'Schweiz' ],
   },
   header: {
     tagline: 'Full-Stack & Applied AI',
@@ -309,6 +316,38 @@ export const de: SiteContent = {
     quoteLabel: '// Transfer ins Engineering',
     quote: 'Im Einsatz wie bei kritischen Produktionsausfällen: Klare Prioritäten, blindes Vertrauen ins Team und entschlossenes Handeln ohne Panik führen zum Erfolg.',
     signature: 'Christian Dechant, Truppführer',
+  },
+  faq: {
+    eyebrow: 'Häufige Fragen',
+    icon: 'help',
+    title: 'Fragen & Antworten',
+    text: 'Das Wichtigste in Kürze – und falls Ihre Frage fehlt, schreiben Sie mir einfach.',
+    items: [
+      {
+        question: 'Wer ist Christian Dechant?',
+        answer: 'Christian Dechant ist freiberuflicher Senior Full-Stack-Entwickler und KI-Berater aus Hofbieber bei Fulda (Hessen). Er hat einen M.Sc. in Angewandter Informatik der Hochschule Fulda, über 9 Jahre Erfahrung in der Softwareentwicklung, entwickelt bei der Strauss GmbH & Co. KG Microservices mit C# .NET und ist Gründer der Reise-App WayVenture.',
+      },
+      {
+        question: 'Welche Leistungen bieten Sie an?',
+        answer: 'Websites vom One-Pager bis zum Enterprise-System, individuelle Web- und Softwareentwicklung, KI-Beratung für die Einführung von KI-Agenten in Entwicklungsteams, 1:1-Coaching für Entwickler sowie Gründerberatung von MVP-Scoping bis Interim CTO.',
+      },
+      {
+        question: 'Mit welchen Technologien arbeiten Sie?',
+        answer: 'Im Frontend mit Next.js, React, Nuxt, Vue.js und Angular, im Backend mit C# .NET, PHP (Laravel, Symfony), Node.js, Python und Java. Dazu PostgreSQL, MySQL und MongoDB, Docker, Kubernetes, AWS und Azure sowie KI-Werkzeuge wie Claude Code und MCP.',
+      },
+      {
+        question: 'Arbeiten Sie auch remote oder nur in Fulda?',
+        answer: 'Remote-first für Kunden in Deutschland, Österreich, der Schweiz und international, auf Deutsch und Englisch. Termine vor Ort in Fulda und Umgebung sind nach Absprache möglich.',
+      },
+      {
+        question: 'Was kostet ein Projekt?',
+        answer: 'Jedes Projekt wird individuell kalkuliert. Nach einem kurzen Erstgespräch zu Zielen und Umfang erhalten Sie ein transparentes Angebot mit klaren Meilensteinen statt unübersichtlicher Stundensätze.',
+      },
+      {
+        question: 'Wie schnell erhalte ich eine Rückmeldung?',
+        answer: 'Auf Anfragen über das Kontaktformular oder per E-Mail antworte ich innerhalb von 24 Stunden persönlich. Den möglichen Starttermin stimmen wir im Erstgespräch nach Umfang und Verfügbarkeit ab.',
+      },
+    ],
   },
   contact: {
     testimonials: [

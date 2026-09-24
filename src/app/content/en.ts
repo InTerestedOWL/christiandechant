@@ -5,25 +5,31 @@ const legalUpdated = 'Last updated: September 2026';
 
 export const en: SiteContent = {
   meta: {
-    title: 'Christian Dechant | Senior Full-Stack & Applied AI Engineer',
-    description: 'Christian Dechant, M.Sc. Applied Computer Science – Senior Full-Stack Developer with 9+ years of experience in C#, Next.js & TypeScript. Web & software development, AI consulting, developer coaching and founder of WayVenture.',
+    title: 'Christian Dechant | Freelance Full-Stack Developer & AI Consultant',
+    description: 'Freelance full-stack developer (M.Sc., 9+ years) from Germany: websites, web apps & software with Next.js, C# .NET & Laravel, plus AI consulting. Remote across Europe.',
     ogLocale: 'en_US',
     siteName: 'Christian Dechant',
     keywords: [
       'Christian Dechant',
-      'freelance developer',
-      'full-stack developer',
+      'freelance developer Germany',
+      'freelance full-stack developer',
       'web developer',
       'app developer',
-      'C# developer',
       'Next.js developer',
+      'Nuxt developer',
+      'Laravel developer',
+      'C# .NET developer',
       'software freelancer Germany',
       'AI consulting',
       'AI strategy consultant',
       'AI agent development',
       'AI coaching for developers',
+      'interim CTO',
     ],
     jobTitle: 'Senior Full-Stack & Applied AI Engineer',
+    summary: 'Christian Dechant is a freelance senior full-stack developer and AI consultant based in Hofbieber near Fulda, Germany. He holds an M.Sc. in Applied Computer Science from Fulda University of Applied Sciences and has more than 9 years of software development experience. He builds websites, web apps and custom software with Next.js, Nuxt, Angular, C# .NET and PHP/Laravel, advises companies on introducing AI agents into software development, coaches developers in working with Claude Code and MCP, and is the founder of the travel app WayVenture. He works remotely for clients across Germany, Austria, Switzerland and internationally, in German and English.',
+    ogTagline: 'Freelance Full-Stack Developer & AI Consultant · Germany',
+    areaServed: [ 'Germany', 'Austria', 'Switzerland', 'Europe' ],
   },
   header: {
     tagline: 'Full-Stack & Applied AI',
@@ -309,6 +315,38 @@ export const en: SiteContent = {
     quoteLabel: '// Transfer to engineering',
     quote: 'On a call, just like during a critical production outage: clear priorities, complete trust in the team and decisive action without panic lead to success.',
     signature: 'Christian Dechant, squad leader',
+  },
+  faq: {
+    eyebrow: 'Frequently asked questions',
+    icon: 'help',
+    title: 'Questions & Answers',
+    text: 'The essentials at a glance – and if your question is missing, just write to me.',
+    items: [
+      {
+        question: 'Who is Christian Dechant?',
+        answer: 'Christian Dechant is a freelance senior full-stack developer and AI consultant based in Hofbieber near Fulda, Germany. He holds an M.Sc. in Applied Computer Science from Fulda University of Applied Sciences, has more than 9 years of software development experience, develops microservices with C# .NET at Strauss GmbH & Co. KG and is the founder of the travel app WayVenture.',
+      },
+      {
+        question: 'Which services do you offer?',
+        answer: 'Websites from one-pagers to enterprise systems, custom web and software development, AI consulting for introducing AI agents into development teams, 1:1 coaching for developers, and founder consulting from MVP scoping to interim CTO.',
+      },
+      {
+        question: 'Which technologies do you work with?',
+        answer: 'Frontend: Next.js, React, Nuxt, Vue.js and Angular. Backend: C# .NET, PHP (Laravel, Symfony), Node.js, Python and Java. Plus PostgreSQL, MySQL and MongoDB, Docker, Kubernetes, AWS and Azure, and AI tools such as Claude Code and MCP.',
+      },
+      {
+        question: 'Do you work remotely or only in Fulda?',
+        answer: 'Remote-first for clients in Germany, Austria, Switzerland and internationally, in German and English. On-site meetings in and around Fulda are possible by arrangement.',
+      },
+      {
+        question: 'How much does a project cost?',
+        answer: 'Every project is quoted individually. After a short initial call about goals and scope, you receive a transparent proposal with clear milestones instead of opaque hourly rates.',
+      },
+      {
+        question: 'How quickly will I get a reply?',
+        answer: 'I personally reply to requests via the contact form or e-mail within 24 hours. We agree on a possible start date in the initial call, based on scope and availability.',
+      },
+    ],
   },
   contact: {
     testimonials: [

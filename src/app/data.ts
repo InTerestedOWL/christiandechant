@@ -378,6 +378,35 @@ export const aiConsultingTracks: IAiConsultingTrack[] = [
   },
 ];
 
+export const startupConsultingTracks: IAiConsultingTrack[] = [
+  {
+    audience: 'For Founders',
+    icon: 'bx-rocket',
+    title: 'Startup Consulting',
+    description: 'From idea to a product customers love. I help founders make the right technical and product decisions early on, without over-engineering and without costly dead ends.',
+    features: [
+      'How to approach a new project: scope, priorities and the first milestones',
+      'MVP scoping: what has to be in the first release, and what can wait',
+      'Tech stack selection & architecture review',
+      'Build vs. buy decisions & vendor evaluation',
+      'Technical sparring partner or interim CTO',
+    ],
+  },
+  {
+    audience: 'For Growing Teams',
+    icon: 'bx-group',
+    title: 'Software Team Setup',
+    description: 'A great product needs a great team. I support you in building, structuring and scaling your development team, whether in-house, remote or hybrid.',
+    features: [
+      'Team structure, roles & responsibilities',
+      'Hiring strategy & technical interviews',
+      'Agile processes (Scrum, Kanban) that actually fit your team',
+      'Code review, CI/CD & quality standards',
+      'Onboarding & knowledge transfer',
+    ],
+  },
+];
+
 export const wayVentureFeatures: IWayVentureFeature[] = [
   {
     icon: 'bx-shield-quarter',

@@ -14,11 +14,13 @@ import {
   experiences,
   skills,
   socials,
+  startupConsultingTracks,
   technologies,
   voluntaryWorks
 } from "./data";
 import Offers from "./components/offers";
 import AiConsulting from "@/app/components/aiConsulting";
+import Consulting from "@/app/components/consulting";
 import CustomerTestimonials from "@/app/components/testimonials";
 import VoluntaryWork from "@/app/components/voluntaryWork";
 
@@ -56,6 +58,8 @@ export default function Home() {
       <Offers></Offers>
       <AiConsulting
         tracks={ aiConsultingTracks }></AiConsulting>
+      <Consulting
+        tracks={ startupConsultingTracks }></Consulting>
 
       <Portfolio></Portfolio>
       <SoftwareTechnologies

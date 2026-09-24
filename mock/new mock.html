@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_standard" name="shell-type">
+  <title>Christian Dechant | Senior Full-Stack &amp; Applied AI Engineer</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+    }
+
+    .bg-grid-pattern {
+      background-size: 32px 32px;
+      background-image: linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+    }
+
+    .bg-dots-pattern {
+      background-image: radial-gradient(rgba(79, 70, 229, 0.08) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+            },
+            accent: {
+              amber: '#f59e0b',
+              orange: '#ea580c',
+              emerald: '#10b981',
+              slate: '#f8fafc',
+            }
+          },
+          fontFamily: {
+            sans: ['Geist', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-slate-800 font-sans antialiased selection:bg-brand-100 selection:text-brand-700">
+<!-- HEADER / NAVIGATION -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/80 transition-all">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- Brand Logo & Name -->
+    <a class="flex items-center gap-3 group" href="#">
+      <div
+        class="w-10 h-10 rounded-xl overflow-hidden shadow-sm group-hover:scale-105 transition-transform border border-brand-100 bg-white">
+        <img alt="Christian Dechant Owl Logo" class="w-full h-full object-cover"
+             src="https://lh3.googleusercontent.com/aida/AEtjO1WKUvClwXBlAx3bSzWuHCKa-qCPhiFBF33hDaG-v0j18LP4KhCsCrf93mJ9yuyVSAmzkLTIeqv1wRLkOsV8t76E9E_zklIvdCKeTvzc_EaNBWSTjSQ_C4QrI2uGKTrFUf1lLHxJN_xwYpGmktxk2vN4Snqdq25_rVAllhmgPFaWAMIpr_3FRl_o1XCkrBiFDQQ11boUlwUaiJDbBTGlDrml3OKSPsC5SCIySie2F_bnQ0tClJXI9OumYg">
+      </div>
+      <div class="flex flex-col">
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-slate-900 tracking-tight text-base group-hover:text-brand-600 transition-colors">Christian Dechant</span>
+          <span
+            class="font-mono text-[10px] px-2 py-0.5 rounded-full bg-brand-50 text-brand-700 border border-brand-200/60 font-medium">Senior Dev</span>
+        </div>
+        <span class="text-xs text-slate-500 font-normal">Full-Stack &amp; Applied AI</span>
+      </div>
+    </a>
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-1 text-sm font-medium text-slate-600">
+      <a class="px-3.5 py-2 rounded-lg hover:text-brand-600 hover:bg-slate-50 transition-colors" href="#about">Über
+        mich</a>
+      <a
+        class="px-3.5 py-2 rounded-lg hover:text-brand-600 hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+        href="#wayventure">
+        <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+        WayVenture
+      </a>
+      <a class="px-3.5 py-2 rounded-lg hover:text-brand-600 hover:bg-slate-50 transition-colors" href="#services">Angebote</a>
+      <a class="px-3.5 py-2 rounded-lg hover:text-brand-600 hover:bg-slate-50 transition-colors" href="#ai-consulting">AI
+        Consulting</a>
+      <a class="px-3.5 py-2 rounded-lg hover:text-brand-600 hover:bg-slate-50 transition-colors" href="#experience">Erfahrung</a>
+      <a class="px-3.5 py-2 rounded-lg hover:text-brand-600 hover:bg-slate-50 transition-colors" href="#feuerwehr">Ehrenamt</a>
+      <a class="px-3.5 py-2 rounded-lg hover:text-brand-600 hover:bg-slate-50 transition-colors"
+         href="#contact">Kontakt</a>
+    </nav>
+    <!-- CTA Action -->
+    <div class="flex items-center gap-3">
+      <a
+        class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm shadow-sm hover:shadow-brand-500/20 hover:shadow-lg transition-all"
+        href="#contact">
+        <span class="">Projekt anfragen</span>
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </a>
+      <button aria-label="Toggle Navigation"
+              class="lg:hidden p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors border border-slate-200"
+              id="mobile-nav-toggle">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+<!-- Mobile Drawer -->
+<div
+  class="fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden flex justify-end"
+  id="mobile-drawer">
+  <div class="fixed inset-0 bg-slate-900/30 backdrop-blur-sm" id="mobile-backdrop"></div>
+  <aside
+    class="relative w-4/5 max-w-sm h-full bg-white shadow-2xl flex flex-col justify-between p-6 overflow-y-auto z-10 border-l border-slate-200">
+    <div class="flex flex-col gap-6">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+        <div class="flex items-center gap-2.5">
+          <img alt="Logo" class="w-8 h-8 rounded-lg border border-slate-100"
+               src="https://lh3.googleusercontent.com/aida/AEtjO1WKUvClwXBlAx3bSzWuHCKa-qCPhiFBF33hDaG-v0j18LP4KhCsCrf93mJ9yuyVSAmzkLTIeqv1wRLkOsV8t76E9E_zklIvdCKeTvzc_EaNBWSTjSQ_C4QrI2uGKTrFUf1lLHxJN_xwYpGmktxk2vN4Snqdq25_rVAllhmgPFaWAMIpr_3FRl_o1XCkrBiFDQQ11boUlwUaiJDbBTGlDrml3OKSPsC5SCIySie2F_bnQ0tClJXI9OumYg">
+          <span class="font-bold text-slate-900">Navigation</span>
+        </div>
+        <button class="p-2 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100" id="mobile-close-btn">
+          <span class="material-symbols-outlined text-xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-1.5 font-medium text-slate-700">
+        <a class="px-3.5 py-2.5 rounded-xl hover:bg-brand-50 hover:text-brand-700 transition-colors" href="#about">Über
+          mich</a>
+        <a
+          class="px-3.5 py-2.5 rounded-xl hover:bg-amber-50 hover:text-amber-700 transition-colors flex items-center justify-between"
+          href="#wayventure">
+          <span class="">WayVenture (App)</span>
+          <span
+            class="text-[10px] font-mono bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-semibold">Live</span>
+        </a>
+        <a class="px-3.5 py-2.5 rounded-xl hover:bg-brand-50 hover:text-brand-700 transition-colors" href="#services">Angebote
+          &amp; Webpakete</a>
+        <a class="px-3.5 py-2.5 rounded-xl hover:bg-brand-50 hover:text-brand-700 transition-colors"
+           href="#ai-consulting">AI Consulting &amp; Coaching</a>
+        <a class="px-3.5 py-2.5 rounded-xl hover:bg-brand-50 hover:text-brand-700 transition-colors" href="#experience">Erfahrung
+          &amp; Werdegang</a>
+        <a class="px-3.5 py-2.5 rounded-xl hover:bg-rose-50 hover:text-rose-700 transition-colors" href="#feuerwehr">Ehrenamt
+          Feuerwehr</a>
+        <a class="px-3.5 py-2.5 rounded-xl hover:bg-brand-50 hover:text-brand-700 transition-colors" href="#contact">Kontakt</a>
+      </nav>
+    </div>
+    <div class="pt-6 border-t border-slate-100">
+      <a
+        class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-brand-600 text-white font-medium text-sm text-center shadow-md"
+        href="#contact">
+        <span class="">Projekt starten</span>
+        <span class="material-symbols-outlined text-[16px]">chat</span>
+      </a>
+    </div>
+  </aside>
+</div>
+<main class="pt-20">
+  <!-- HERO SECTION -->
+  <section
+    class="relative overflow-hidden bg-gradient-to-b from-brand-50/40 via-white to-white py-16 lg:py-24 border-b border-slate-100">
+    <!-- Ambient light background glow -->
+    <div class="absolute inset-0 bg-grid-pattern pointer-events-none opacity-60"></div>
+    <div class="absolute -top-32 right-1/4 w-96 h-96 bg-brand-200/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -left-20 w-80 h-80 bg-amber-200/25 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <!-- Left Column: Value Prop & Pitch -->
+        <div class="lg:col-span-7 flex flex-col gap-6">
+          <!-- Pulsing Status Pill -->
+          <div
+            class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-medium w-fit shadow-xs">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+            <span class="">Verfügbar für ausgewählte Projekte &amp; AI-Engineering</span>
+          </div>
+          <!-- Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-slate-900 tracking-tight leading-[1.12]">
+            Senior Engineering &amp; Pragmatische KI — <br class="hidden sm:inline">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-700 via-brand-600 to-indigo-500">gebaut für echte Wirkung.</span>
+          </h1>
+          <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
+            Hi, ich bin <strong>Christian Dechant</strong>. Als Senior Full-Stack Developer bei <em>Strauss GmbH &amp;
+            Co. KG</em> und Gründer von <em>WayVenture</em> verbinde ich 6+ Jahre industrielle Softwarearchitektur (C#,
+            Next.js, Cloud) mit deterministischer, agentischer KI-Entwicklung.
+          </p>
+          <!-- CTA Actions -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <a
+              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-md hover:shadow-brand-500/25 transition-all hover:scale-[1.01]"
+              href="#contact">
+              <span class="">Projekt anfragen</span>
+              <span class="material-symbols-outlined text-[18px]">send</span>
+            </a>
+            <a
+              class="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-xl bg-white hover:bg-amber-50 text-slate-800 border border-slate-200 hover:border-amber-300 font-semibold text-sm transition-all shadow-xs"
+              href="#wayventure">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+              <span class="">WayVenture entdecken</span>
+              <span class="material-symbols-outlined text-[18px] text-amber-600">arrow_forward</span>
+            </a>
+          </div>
+          <!-- Quick Proof Bar -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-200/80">
+            <div class="bg-white/80 p-3 rounded-xl border border-slate-200/70 shadow-xs">
+              <span class="font-bold text-slate-900 text-xl font-mono block">6+ Jahre</span>
+              <span class="text-xs text-slate-500 font-medium">Software Engineering</span>
+            </div>
+            <div class="bg-white/80 p-3 rounded-xl border border-slate-200/70 shadow-xs">
+              <span class="font-bold text-brand-700 text-xl font-mono block">Senior Dev</span>
+              <span class="text-xs text-slate-500 font-medium">Strauss GmbH &amp; Co. KG</span>
+            </div>
+            <div class="bg-white/80 p-3 rounded-xl border border-slate-200/70 shadow-xs">
+              <span class="font-bold text-slate-900 text-xl font-mono block">M.Sc. K8s</span>
+              <span class="text-xs text-slate-500 font-medium">Zero-Trust Architektur</span>
+            </div>
+            <div class="bg-white/80 p-3 rounded-xl border border-slate-200/70 shadow-xs">
+              <span class="font-bold text-amber-600 text-xl font-mono block">WayVenture</span>
+              <span class="text-xs text-slate-500 font-medium">Live Founder Product</span>
+            </div>
+          </div>
+        </div>
+        <!-- Right Column: Tactile Light-Themed Code/Profile Card -->
+        <div class="lg:col-span-5">
+          <div
+            class="rounded-2xl bg-white border border-slate-200 shadow-xl shadow-slate-200/50 p-6 relative overflow-hidden">
+            <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-400"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+                <span class="ml-2 font-mono text-xs text-slate-400 font-medium">christian-dechant.ts</span>
+              </div>
+              <span
+                class="font-mono text-[11px] text-brand-600 bg-brand-50 px-2 py-0.5 rounded font-medium border border-brand-100">Clean Code Mode</span>
+            </div>
+            <!-- Friendly Code Snippet -->
+            <pre class="font-mono text-xs text-slate-700 leading-relaxed overflow-x-auto"><span
+              class="text-brand-600 font-semibold">export const</span> <span class="text-indigo-900 font-semibold">engineer</span> = {
+  name: <span class="text-emerald-600">"Christian Dechant"</span>,
+  role: <span class="text-emerald-600">"Senior Full-Stack &amp; AI-Pragmatiker"</span>,
+  credentials: [
+    <span class="text-emerald-600">"M.Sc. Zero-Trust Kubernetes"</span>,
+    <span class="text-emerald-600">"Strauss Core Microservices"</span>
+  ],
+  stack: {
+    frontend: [<span class="text-indigo-600">"Next.js 15"</span>, <span
+                class="text-indigo-600">"TypeScript"</span>, <span class="text-indigo-600">"Tailwind"</span>],
+    backend: [<span class="text-indigo-600">"C# .NET 8"</span>, <span class="text-indigo-600">"PostgreSQL"</span>, <span
+                class="text-indigo-600">"Docker"</span>],
+    aiPillars: [<span class="text-amber-600">"MCP Protocol"</span>, <span
+                class="text-amber-600">"Claude Code"</span>, <span class="text-amber-600">"Agent TDD"</span>]
+  },
+  mantra: <span class="text-amber-600 font-medium">"Publish early, but publish complete."</span>,
+  availability: <span class="text-emerald-600 font-semibold">true</span>
+};</pre>
+            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span class="font-mono text-slate-600">k8s-cluster :: healthy</span>
+              </div>
+              <span class="font-mono text-slate-400">node v22.x LTS</span>
+            </div>
+            <!-- Mini WayVenture Teaser inside Hero Card -->
+            <div class="mt-4 p-3.5 rounded-xl bg-amber-50/70 border border-amber-200/80 flex items-center gap-3">
+              <div
+                class="w-9 h-9 rounded-lg bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-xs">
+                <span class="material-symbols-outlined text-lg">explore</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-amber-900">Gründerprojekt: WayVenture</span>
+                <span class="text-[11px] text-amber-700">Smarte All-in-One Reisebegleiter App (Offline-First)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CORE COMPETENCIES / HANDWERK & DISZIPLINEN -->
+  <section class="py-20 bg-slate-50 border-b border-slate-200/80" id="about">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+        <div>
+          <div
+            class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">
+            <span class="material-symbols-outlined text-[16px]">verified</span>
+            Technologische Exzellenz
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Handwerk &amp;
+            Kernkompetenzen</h2>
+          <p class="text-slate-600 text-base max-w-2xl mt-2">
+            Kein leeres Berater-Geschwätz, sondern erprobte Ingenieursdisziplin. Nachhaltiger Code, zero-overhead
+            Architekturen und produktionssichere Integrationen.
+          </p>
+        </div>
+        <div class="font-mono text-xs text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shrink-0">
+          DISZIPLINEN // 04 SÄULEN
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1: Modernes Frontend -->
+        <div
+          class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-brand-300 transition-all flex flex-col justify-between group">
+          <div>
+            <div
+              class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform border border-brand-100">
+              <span class="material-symbols-outlined text-2xl">devices</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Moderne Web-Frontends</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Schnelle, barrierefreie und SEO-optimierte Benutzeroberflächen mit Next.js (App Router), React, TypeScript
+              und Tailwind CSS. Maximale Core Web Vitals.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-600">
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Next.js 15</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">React</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">TypeScript</span>
+          </div>
+        </div>
+        <!-- Card 2: Enterprise Backend & Cloud -->
+        <div
+          class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all flex flex-col justify-between group">
+          <div>
+            <div
+              class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform border border-indigo-100">
+              <span class="material-symbols-outlined text-2xl">dns</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Backend &amp; Cloud Microservices</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Robuste APIs mit C# .NET Core, Domain-Driven Design (DDD) sowie Kubernetes Zero-Trust Workload-Isolation
+              aus fundierter Master-Forschung.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-600">
+            <span class="bg-slate-100 px-2 py-0.5 rounded">C# .NET 8</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">PostgreSQL</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">K8s</span>
+          </div>
+        </div>
+        <!-- Card 3: Pragmatische KI & MCP -->
+        <div
+          class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all flex flex-col justify-between group">
+          <div>
+            <div
+              class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform border border-emerald-100">
+              <span class="material-symbols-outlined text-2xl">smart_toy</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Agentic AI &amp; MCP Workflows</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Moderne KI-Werkzeuge nicht als Spielerei, sondern als strukturierte Entwicklungspartner: Claude Code,
+              Model Context Protocol (MCP) und deterministische Pipelines.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-600">
+            <span class="bg-slate-100 px-2 py-0.5 rounded">MCP Protocol</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Claude Code</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Local LLM</span>
+          </div>
+        </div>
+        <!-- Card 4: Clean Architecture -->
+        <div
+          class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-amber-300 transition-all flex flex-col justify-between group">
+          <div>
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform border border-amber-100">
+              <span class="material-symbols-outlined text-2xl">architecture</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Clean Code &amp; Qualität</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Wartbare Software statt technischer Schulden. Automatisierte Testabdeckung (Unit, Integration, E2E), klare
+              Schichtenarchitektur und dokumentierte Schnittstellen.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-600">
+            <span class="bg-slate-100 px-2 py-0.5 rounded">TDD</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">CI/CD</span>
+            <span class="bg-slate-100 px-2 py-0.5 rounded">Refactoring</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOUNDER SPOTLIGHT: WAYVENTURE -->
+  <section class="py-20 bg-white relative overflow-hidden" id="wayventure">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Warm glowing spotlight container -->
+      <div
+        class="rounded-3xl bg-gradient-to-br from-amber-50/60 via-white to-orange-50/40 p-8 sm:p-12 border-2 border-amber-200/90 shadow-xl shadow-amber-500/5 relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7 flex flex-col gap-5">
+            <div
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider w-fit border border-amber-200">
+              <span class="material-symbols-outlined text-[16px] text-amber-600">verified</span>
+              Eigenes Live-Produkt · Gründerperspektive
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              WayVenture — <br class="hidden sm:inline">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">Der smarte Begleiter für Entdecker</span>
+            </h2>
+            <p class="text-base sm:text-lg text-slate-700 leading-relaxed">
+              Als leidenschaftlicher Reisender und Softwarearchitekt baue ich mit <strong>WayVenture</strong> das
+              All-in-One Betriebssystem für Abenteurer, Camper und Roadtrips. Schluss mit 5 verschiedenen Apps:
+              Offline-Pass, kollaboratives Reisebudget und KI-Routenplanung an einem sicheren Ort.
+            </p>
+            <!-- App Highlights -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+              <div class="flex items-start gap-2.5">
+                <span class="material-symbols-outlined text-amber-600 text-xl mt-0.5">badge</span>
+                <div>
+                  <span class="font-bold text-slate-900 text-sm block">Digitaler Travel Pass</span>
+                  <span class="text-xs text-slate-600">Verschlüsselt, offline-verfügbar, visatauglich.</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <span class="material-symbols-outlined text-amber-600 text-xl mt-0.5">payments</span>
+                <div>
+                  <span class="font-bold text-slate-900 text-sm block">Reise-Budget Planer</span>
+                  <span class="text-xs text-slate-600">Multi-Währung, Gruppensplit &amp; Quittungs-Scan.</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <span class="material-symbols-outlined text-amber-600 text-xl mt-0.5">psychology</span>
+                <div>
+                  <span class="font-bold text-slate-900 text-sm block">KI-Reiselinie &amp; Zwischenstopps</span>
+                  <span class="text-xs text-slate-600">Wetter- und Pausen-optimierte Etappenführung.</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <span class="material-symbols-outlined text-amber-600 text-xl mt-0.5">directions_car</span>
+                <div>
+                  <span class="font-bold text-slate-900 text-sm block">Fahrzeug-Management</span>
+                  <span class="text-xs text-slate-600">Wohnmobil-Maße, Achslasten &amp; Checklisten.</span>
+                </div>
+              </div>
+            </div>
+            <!-- Action Links -->
+            <div class="flex flex-wrap items-center gap-3.5 pt-3">
+              <a
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm shadow-md transition-all"
+                href="https://wayventure.de" rel="noreferrer" target="_blank">
+                <span class="">wayventure.de besuchen</span>
+                <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+              </a>
+              <a
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-semibold text-sm transition-all"
+                href="#contact">
+                <span class="">Architektur-Case anfragen</span>
+                <span class="material-symbols-outlined text-[18px]">article</span>
+              </a>
+            </div>
+          </div>
+          <!-- Right App Showcase Mockup -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div
+              class="relative w-full max-w-sm rounded-2xl bg-white p-3.5 border border-amber-200/90 shadow-2xl rotate-1 hover:rotate-0 transition-transform">
+              <img class="w-full h-80 object-cover rounded-xl border border-slate-100"
+                   data-alt="WayVenture smart travel companion interface showcase"
+                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHbgIAlYVXVielUORStF6fL0mepiu4rXegeCbb7qL11_QjtiDKcxrNIsEQiv9vwTPC90uKYRpD_ZTGjEYVvtlpMptOqr-ZE73yyNjwh0vi8Rmsg_aAp0N_ECMN5duc1qAnjvNyO8wAUr5gP_-HnGbMzO-BKHp6DAaFtfQ9QikyhYUGXArEEGFpqPcbWreb-7CoPHe0xoL-15mkLjd-sH-votqBr00zPfSzUF4d06jKO6vJUEmeJ_w">
+              <div class="mt-3 px-2 flex items-center justify-between text-xs text-slate-500">
+<span class="flex items-center gap-1.5 font-medium text-emerald-700">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> Offline-First Active
+                  </span>
+                <span
+                  class="font-mono text-[11px] bg-slate-100 px-2 py-0.5 rounded text-slate-600">v2.4.1 Production</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- EDITORIAL LEITSATZ BANNER -->
+  <section class="bg-gradient-to-r from-brand-700 via-brand-800 to-indigo-900 text-white py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-4">
+<span
+  class="font-mono text-xs font-semibold text-brand-200 uppercase tracking-widest bg-brand-900/50 px-3 py-1 rounded-full border border-brand-500/30">
+          // Mein persönlicher Leitsatz
+        </span>
+      <blockquote class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+        „Publish early, but publish complete.“
+      </blockquote>
+      <p class="text-brand-100 text-base sm:text-lg max-w-2xl leading-relaxed">
+        Geschwindigkeit ist wertlos, wenn das MVP beim ersten echten Kundenkontakt zerbricht. Wir kombinieren schnelle
+        Time-to-Market mit verlässlicher Schärfe im Detail.
+      </p>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-slate-900">
+        <div
+          class="bg-white rounded-2xl p-6 border border-indigo-100 shadow-md flex flex-col justify-between hover:shadow-lg transition-all group">
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center justify-between"><span
+              class="font-mono text-[11px] font-bold text-brand-600 bg-brand-50 px-2 py-0.5 rounded border border-brand-100">PILLAR 01</span><span
+              class="material-symbols-outlined text-brand-600 text-2xl group-hover:scale-105 transition-transform">rocket_launch</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Publish Early</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Nicht 9 Monate im luftleeren Raum entwickeln: Hypothesen
+              schnell mit echten Nutzern testen, wertvolles Feedback sichern und Feature-Entscheidungen absichern.</p>
+            <ul class="flex flex-col gap-2 pt-2 text-xs text-slate-700 font-medium">
+              <li class="flex items-start gap-2"><span
+                class="material-symbols-outlined text-emerald-600 text-base shrink-0">check_circle</span><span class="">Schnelle Prototypen-Releases</span>
+              </li>
+              <li class="flex items-start gap-2"><span
+                class="material-symbols-outlined text-emerald-600 text-base shrink-0">check_circle</span><span class="">Echte Feedback-Schleifen von Tag 1</span>
+              </li>
+              <li class="flex items-start gap-2"><span
+                class="material-symbols-outlined text-emerald-600 text-base shrink-0">check_circle</span><span class="">Klare MVP-Priorisierung</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-2xl p-6 border border-indigo-100 shadow-md flex flex-col justify-between hover:shadow-lg transition-all group">
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center justify-between"><span
+              class="font-mono text-[11px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">PILLAR 02</span><span
+              class="material-symbols-outlined text-amber-600 text-2xl group-hover:scale-105 transition-transform">verified</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Publish Complete</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Minimal bedeutet niemals fehlerhaft. Jedes Release besitzt
+              funktionierende Auth, saubere Error-States, stimmiges UI und durchdachte Sicherheitsstandards.</p>
+            <ul class="flex flex-col gap-2 pt-2 text-xs text-slate-700 font-medium">
+              <li class="flex items-start gap-2"><span
+                class="material-symbols-outlined text-emerald-600 text-base shrink-0">check_circle</span><span class="">Durchdachte Edge-Case-Behandlung</span>
+              </li>
+              <li class="flex items-start gap-2"><span
+                class="material-symbols-outlined text-emerald-600 text-base shrink-0">check_circle</span><span class="">Robuste Fehlerbehandlung &amp; Fallbacks</span>
+              </li>
+              <li class="flex items-start gap-2"><span
+                class="material-symbols-outlined text-emerald-600 text-base shrink-0">check_circle</span><span class="">Ausgereifte Ergonomie (Mobile &amp; Web)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-2xl p-6 border border-indigo-100 shadow-md flex flex-col justify-between hover:shadow-lg transition-all group">
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center justify-between"><span
+              class="font-mono text-[11px] font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-100">FOUNDER ADVISORY</span><span
+              class="material-symbols-outlined text-indigo-600 text-2xl group-hover:scale-105 transition-transform">lightbulb</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Interim CTO &amp; MVP Scoping</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Unterstützung nicht-technischer Gründer:
+              Make-or-Buy-Entscheidungen, Tech-Stack-Auswahl und Sicherstellung, dass der Source-Code in euren Händen
+              liegt.</p></div>
+          <div class="pt-4 mt-2 border-t border-slate-100"><a
+            class="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 hover:text-brand-700 transition-colors"
+            href="#contact"><span class="">Gründer-Beratung anfragen</span><span
+            class="material-symbols-outlined text-sm">arrow_forward</span></a></div>
+        </div>
+        <div
+          class="bg-white rounded-2xl p-6 border border-indigo-100 shadow-md flex flex-col justify-between hover:shadow-lg transition-all group">
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center justify-between"><span
+              class="font-mono text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">ORGANIZATION SCALING</span><span
+              class="material-symbols-outlined text-emerald-600 text-2xl group-hover:scale-105 transition-transform">groups</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Entwicklerteam &amp; Prozess-Setup</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Aufbau schlagkräftiger Teams: Etablierung sauberer
+              Branching-Strategien, CI/CD-Pipelines, Agile Rituale und technische Interviews bei Neueinstellungen.</p>
+          </div>
+          <div class="pt-4 mt-2 border-t border-slate-100"><a
+            class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 hover:text-emerald-800 transition-colors"
+            href="#contact"><span class="">Team-Enablement anfragen</span><span
+            class="material-symbols-outlined text-sm">arrow_forward</span></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- TAILORED OFFERS / WEB- & SOFTWARE-PAKETE -->
+  <section class="py-20 bg-slate-50 border-b border-slate-200/80" id="services">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-3 max-w-2xl mb-12">
+        <div
+          class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-brand-600 uppercase tracking-wider">
+          <span class="material-symbols-outlined text-[16px]">inventory_2</span>
+          Klare Pakete &amp; Konditionen
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Transparente Web- &amp;
+          Software-Lösungen</h2>
+        <p class="text-slate-600 text-base">
+          Für Gründer, Mittelstand und Dienstleister: Keine unübersichtlichen Agentur-Stundensätze, sondern klare
+          Meilensteine und messbare Ergebnisse.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <!-- Package 1: Static One-Pager -->
+        <div
+          class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
+          <div>
+            <div class="font-mono text-xs text-slate-500 font-semibold uppercase mb-1">Starter</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Static One-Pager</h3>
+            <p class="text-xs text-slate-500 leading-relaxed mb-6">Perfekt für Kampagnen, Freelancer-Portfolios oder
+              Produkttests mit messerscharfem Fokus.</p>
+            <ul class="flex flex-col gap-2.5 text-xs text-slate-700 mb-6">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">Extrem schnelle Ladezeiten (&lt;1s)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">100% DSGVO-konform ohne Cookies</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">Mobile-First Ergonomie</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">Lead- / Kontaktformular</span>
+              </li>
+            </ul>
+          </div>
+          <a
+            class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-center text-xs font-semibold transition-colors"
+            href="#contact">
+            Paket anfragen
+          </a>
+        </div>
+        <!-- Package 2: Interactive CMS (Featured) -->
+        <div
+          class="bg-white rounded-2xl p-6 border-2 border-brand-500 shadow-lg shadow-brand-500/10 flex flex-col justify-between relative">
+          <div
+            class="absolute -top-3 right-4 bg-brand-600 text-white font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+            Empfehlung
+          </div>
+          <div>
+            <div class="font-mono text-xs text-brand-600 font-semibold uppercase mb-1">Dynamisch</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Interactive CMS Page</h3>
+            <p class="text-xs text-slate-500 leading-relaxed mb-6">Für wachsende Betriebe, die Inhalte, Referenzen und
+              News selbstständig pflegen möchten.</p>
+            <ul class="flex flex-col gap-2.5 text-xs text-slate-700 mb-6">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">Schlankes Headless CMS</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">Texte &amp; Bilder ohne Code anpassen</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">Interaktive Filter &amp; Animationen</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">Domain-, SSL- &amp; Mail-Einrichtung</span>
+              </li>
+            </ul>
+          </div>
+          <a
+            class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-center text-xs font-semibold shadow-xs transition-colors"
+            href="#contact">
+            Paket auswählen
+          </a>
+        </div>
+        <!-- Package 3: Business Website -->
+        <div
+          class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
+          <div>
+            <div class="font-mono text-xs text-slate-500 font-semibold uppercase mb-1">Wachstum</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Business Website</h3>
+            <p class="text-xs text-slate-500 leading-relaxed mb-6">Umfassender digitaler Auftritt mit mehreren
+              Leistungsseiten und Suchmaschinen-Strategie.</p>
+            <ul class="flex flex-col gap-2.5 text-xs text-slate-700 mb-6">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">Bis zu 5 individuelle Unterseiten</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">SEO Schema Markup &amp; Metadaten</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">Individuelles UI/UX Konzept</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">Redaktions-Workflow &amp; Rollen</span>
+              </li>
+            </ul>
+          </div>
+          <a
+            class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-center text-xs font-semibold transition-colors"
+            href="#contact">
+            Paket anfragen
+          </a>
+        </div>
+        <!-- Package 4: Enterprise System -->
+        <div
+          class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
+          <div>
+            <div class="font-mono text-xs text-slate-500 font-semibold uppercase mb-1">Full-Scale</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Enterprise System</h3>
+            <p class="text-xs text-slate-500 leading-relaxed mb-6">Individuelle Portale, Kundenbereiche oder
+              Schnittstellenanbindungen mit höchster Sicherheit.</p>
+            <ul class="flex flex-col gap-2.5 text-xs text-slate-700 mb-6">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">Komplexe Rollen &amp; Auth (OAuth)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">API- &amp; Drittsystem-Anbindung</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">99+ Lighthouse Performance Score</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span>
+                <span class="">Dedicated Support &amp; SLA</span>
+              </li>
+            </ul>
+          </div>
+          <a
+            class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-center text-xs font-semibold transition-colors"
+            href="#contact">
+            Paket anfragen
+          </a>
+        </div>
+      </div>
+      <!-- Custom Software & Architecture Callout -->
+      <div
+        class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-5">
+          <div
+            class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0 border border-brand-100">
+            <span class="material-symbols-outlined text-2xl">developer_board</span>
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-slate-900">Individuelle Softwarearchitektur oder MVP-Entwicklung
+              gesucht?</h4>
+            <p class="text-sm text-slate-600 mt-1 max-w-2xl">
+              Benötigen Sie skalierbare C# .NET Microservices, mobile Hybrid-Apps oder eine fundierte Zero-Trust
+              Cloud-Infrastruktur? Lassen Sie uns die Anforderungen besprechen.
+            </p>
+          </div>
+        </div>
+        <a
+          class="shrink-0 px-5 py-3 rounded-xl bg-slate-900 hover:bg-black text-white font-semibold text-xs transition-colors"
+          href="#contact">
+          Architektur-Gespräch buchen
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- AI CONSULTING & DEVELOPER COACHING -->
+  <section class="py-20 bg-white" id="ai-consulting">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-3 max-w-2xl mb-12">
+        <div
+          class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-brand-600 uppercase tracking-wider">
+          <span class="material-symbols-outlined text-[16px]">psychology</span>
+          Kein Hype, sondern Handwerk
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">AI Consulting &amp;
+          Entwickler-Coaching</h2>
+        <p class="text-slate-600 text-base">
+          Die meisten KI-Workshops enden bei oberflächlichen ChatGPT-Prompts. Ich zeige Teams, wie autonome Agenten und
+          deterministische Schnittstellen echten Code erzeugen, ohne Kontrollverlust.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Track A: Für Unternehmen & Teams -->
+        <div class="rounded-2xl border border-slate-200 bg-slate-50/50 p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="font-mono text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-md border border-brand-200">FÜR UNTERNEHMEN &amp; TEAMS</span>
+              <span class="material-symbols-outlined text-brand-600 text-2xl">apartment</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Agenten-Workflow Migration &amp; KI-Audit</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Wir analysieren bestehende Entwicklungszyklen und integrieren KI-Agenten sicher in die Toolchain – unter
+              strenger Beachtung von DSGVO, IP-Schutz und Code-Qualitätsmetriken.
+            </p>
+            <div class="flex flex-col gap-3 mb-8">
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200/80 flex items-start gap-3">
+                <span class="material-symbols-outlined text-brand-600 text-lg mt-0.5">query_stats</span>
+                <div>
+                  <span class="font-semibold text-slate-900 text-xs block">Engineering Bottleneck Audit</span>
+                  <span
+                    class="text-xs text-slate-500">Wo Agenten wirklich Entwicklerzeit sparen (und wo sie schaden).</span>
+                </div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200/80 flex items-start gap-3">
+                <span class="material-symbols-outlined text-brand-600 text-lg mt-0.5">policy</span>
+                <div>
+                  <span
+                    class="font-semibold text-slate-900 text-xs block">Governance &amp; Datenschutz-Compliance</span>
+                  <span class="text-xs text-slate-500">Klare Leitlinien für Ollama, Claude Enterprise und OpenAI.</span>
+                </div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200/80 flex items-start gap-3">
+                <span class="material-symbols-outlined text-brand-600 text-lg mt-0.5">speed</span>
+                <div>
+                  <span class="font-semibold text-slate-900 text-xs block">Hands-on MVP Deployment</span>
+                  <span
+                    class="text-xs text-slate-500">Konkrete Pilot-Integration innerhalb weniger Tage statt Monaten.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs text-center transition-colors shadow-xs"
+            href="#contact">
+            Strategie-Gespräch vereinbaren
+          </a>
+        </div>
+        <!-- Track B: Für Software-Entwickler -->
+        <div class="rounded-2xl border border-slate-200 bg-slate-50/50 p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span
+                class="font-mono text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">ENTWICKLER ZU ENTWICKLER</span>
+              <span class="material-symbols-outlined text-emerald-600 text-2xl">terminal</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Mastering AI Agents: 1:1 Coaching</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Lernen Sie, wie Sie Claude Code, Terminal-Agenten und MCP-Server einsetzen, um 5-mal schneller zu liefern,
+              während Sie 100% der architektonischen Kontrolle behalten.
+            </p>
+            <div class="flex flex-col gap-3 mb-8">
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200/80 flex items-start gap-3">
+                <span class="material-symbols-outlined text-emerald-600 text-lg mt-0.5">code</span>
+                <div>
+                  <span class="font-semibold text-slate-900 text-xs block">Claude Code &amp; CLI Agenten</span>
+                  <span
+                    class="text-xs text-slate-500">Kontextfenster strukturieren, Sub-Tasking und Branch-Hygiene.</span>
+                </div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200/80 flex items-start gap-3">
+                <span class="material-symbols-outlined text-emerald-600 text-lg mt-0.5">hub</span>
+                <div>
+                  <span class="font-semibold text-slate-900 text-xs block">Eigene MCP-Server programmieren</span>
+                  <span
+                    class="text-xs text-slate-500">Eigene Datenbanken &amp; APIs direkt an LLM-Agenten anbinden.</span>
+                </div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-white border border-slate-200/80 flex items-start gap-3">
+                <span class="material-symbols-outlined text-emerald-600 text-lg mt-0.5">check_circle</span>
+                <div>
+                  <span class="font-semibold text-slate-900 text-xs block">TDD als Agenten-Leitplanke</span>
+                  <span class="text-xs text-slate-500">Automatisierte Tests als Qualitätsfilter für KI-generierte Commits.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            class="w-full py-3 rounded-xl bg-slate-900 hover:bg-black text-white font-semibold text-xs text-center transition-colors shadow-xs"
+            href="#contact">
+            1:1 Coaching anfragen
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CAREER & TIMELINE -->
+  <section class="py-20 bg-slate-50 border-b border-slate-200/80" id="experience">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-3 max-w-2xl mb-12">
+        <div
+          class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-brand-600 uppercase tracking-wider">
+          <span class="material-symbols-outlined text-[16px]">history_edu</span>
+          Erfahrung &amp; Stationen
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Beruflicher Werdegang</h2>
+        <p class="text-slate-600 text-base">
+          Solide Industrieerfahrung, wissenschaftliche Tiefe in verteilten Systemen und eigenverantwortliche
+          Produktentwicklung.
+        </p>
+      </div>
+      <div class="relative pl-6 sm:pl-8 border-l-2 border-brand-200 flex flex-col gap-8 max-w-4xl">
+        <!-- Item 1: Freelancing & AI Ambassador -->
+        <div class="relative">
+          <div
+            class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-brand-600 ring-4 ring-white"></div>
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-lg font-bold text-slate-900">Freelance Senior Developer &amp; AI-Ambassador</h3>
+              <span
+                class="font-mono text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-0.5 rounded border border-brand-200">Seit 2026</span>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Entwicklung von skalierbaren Next.js-Websystemen, API-Backends und Beratung von Teams zur produktiven
+              Nutzung von Agentic AI und MCP-Servern.
+            </p>
+          </div>
+        </div>
+        <!-- Item 2: WayVenture Founder -->
+        <div class="relative">
+          <div
+            class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-amber-500 ring-4 ring-white"></div>
+          <div class="bg-white p-6 rounded-2xl border border-amber-200/90 shadow-xs">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <div class="flex items-center gap-2">
+                <h3 class="text-lg font-bold text-slate-900">Gründer &amp; Lead Architect — WayVenture</h3>
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+              </div>
+              <span
+                class="font-mono text-xs font-bold text-amber-800 bg-amber-50 px-2.5 py-0.5 rounded border border-amber-200">Seit 2026</span>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Aufbau der All-in-One Reisebegleiter-App mit Offline-First Architektur, verschlüsseltem Ausweis-Tresor und
+              Gruppen-Budgetierung.
+            </p>
+          </div>
+        </div>
+        <!-- Item 3: Strauss GmbH & Co. KG -->
+        <div class="relative">
+          <div
+            class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-indigo-600 ring-4 ring-white"></div>
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-lg font-bold text-slate-900">Full Stack Developer — Strauss GmbH &amp; Co. KG</h3>
+              <span
+                class="font-mono text-xs font-bold text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded">Seit Okt. 2024</span>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Entwicklung und Betreuung von hochverfügbaren Core Microservices mit C# .NET und modernen
+              Frontend-Architekturen im globalen E-Commerce Umfeld.
+            </p>
+          </div>
+        </div>
+        <!-- Item 4: JagdTausch MVP -->
+        <div class="relative">
+          <div
+            class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-400 ring-4 ring-white"></div>
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-lg font-bold text-slate-900">Freelance Lead Dev: JagdTausch Marktplatz MVP</h3>
+              <span class="font-mono text-xs font-medium text-slate-500">Juli 2024 – Sept. 2025</span>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Konzeption und schlüsselfertige Realisierung der Marktplatz-Plattform inklusive Bezahlintegration,
+              Echtzeit-Kommunikation und Filtersystem.
+            </p>
+          </div>
+        </div>
+        <!-- Item 5: Reservix -->
+        <div class="relative">
+          <div
+            class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-400 ring-4 ring-white"></div>
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-lg font-bold text-slate-900">Working Student Full Stack — Reservix</h3>
+              <span class="font-mono text-xs font-medium text-slate-500">Dez. 2021 – Sept. 2024</span>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Entwicklung von Dashboard-Lösungen, Auswertungssystemen für Ticketverkäufe und APIs mit PHP, TypeScript
+              und MongoDB.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Master Thesis Callout Box -->
+      <div
+        class="mt-10 p-6 sm:p-8 rounded-2xl bg-white border border-brand-200/90 shadow-xs flex flex-col md:flex-row items-center gap-6 max-w-4xl">
+        <div
+          class="w-14 h-14 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0 border border-brand-100">
+          <span class="material-symbols-outlined text-3xl">school</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="font-mono text-xs font-bold text-brand-700 uppercase">M.Sc. Angewandte Informatik</span>
+            <span class="text-xs text-slate-400">• Hochschule Fulda / Frankfurt</span>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900">Masterarbeit: Kubernetes Security &amp; Zero Trust
+            Architecture</h4>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+            Forschung zur Absicherung von Container-Infrastrukturen, Workload-Isolation, Service Meshes (mTLS mit Istio)
+            und automatisierten Runtime-Sicherheitsanalysen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- EHRENAMT & VERANTWORTUNG: FEUERWEHR -->
+  <section class="py-20 bg-white" id="feuerwehr">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-slate-50 border border-slate-200 p-8 sm:p-12 relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8 flex flex-col gap-4">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 text-rose-700 text-xs font-bold uppercase tracking-wider w-fit border border-rose-200">
+              <span class="material-symbols-outlined text-[16px]">local_fire_department</span>
+              Gesellschaftliche Verantwortung &amp; Werte
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Freiwillige Feuerwehr — Einsatz &amp; Verlässlichkeit unter Druck
+            </h2>
+            <p class="text-slate-600 text-base leading-relaxed">
+              Verantwortung endet für mich nicht am Bildschirm. Seit 2018 bin ich aktiver Truppführer in der
+              Freiwilligen Feuerwehr (Feuerwehr Fulda-Mitte 2018–2024, Feuerwehr Hofbieber-Mitte seit 2024).
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+              <div class="p-3 bg-white rounded-xl border border-slate-200/80">
+                <span class="text-[11px] font-mono text-slate-400 uppercase block">Fokus</span>
+                <span class="font-bold text-slate-900 text-sm">Teamgeist</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-slate-200/80">
+                <span class="text-[11px] font-mono text-slate-400 uppercase block">Bereitschaft</span>
+                <span class="font-bold text-slate-900 text-sm">24/7 Verlässlichkeit</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-slate-200/80">
+                <span class="text-[11px] font-mono text-slate-400 uppercase block">Führung</span>
+                <span class="font-bold text-slate-900 text-sm">Klare Kommunikation</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-slate-200/80">
+                <span class="text-[11px] font-mono text-slate-400 uppercase block">Krisenfest</span>
+                <span class="font-bold text-slate-900 text-sm">Ruhe unter Last</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3">
+            <span class="font-mono text-xs text-slate-400 uppercase font-semibold">// Transfer ins Engineering</span>
+            <p class="text-xs text-slate-600 italic leading-relaxed">
+              „Im Einsatz wie bei kritischen Produktionsausfällen: Klare Prioritäten, blindes Vertrauen ins Team und
+              entschlossenes Handeln ohne Panik führen zum Erfolg.“
+            </p>
+            <div class="flex items-center gap-3 pt-2 border-t border-slate-100">
+              <div
+                class="w-8 h-8 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-xs">
+                CD
+              </div>
+              <span class="text-xs font-semibold text-slate-800">Christian Dechant, Truppführer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- TESTIMONIALS & CONTACT SECTION -->
+  <section class="py-20 bg-slate-50 border-t border-slate-200/80" id="contact">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Testimonial Quote -->
+      <div class="max-w-3xl mx-auto mb-16">
+        <div
+          class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm text-center flex flex-col items-center gap-4">
+          <div class="flex items-center gap-1 text-amber-400">
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+          </div>
+          <blockquote class="text-base sm:text-lg text-slate-800 font-medium leading-relaxed italic">
+            „Christian hat unser JagdTausch MVP schneller als geplant und mit exzellenter technischer Reife zur
+            Marktreife geführt. Pragmatisch, lösungsorientiert und absolut verlässlich.“
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-9 h-9 rounded-full bg-slate-100 text-slate-700 font-bold text-xs flex items-center justify-center border border-slate-200">
+              CG
+            </div>
+            <div class="text-left">
+              <span class="font-bold text-slate-900 text-xs block">Caroline Grabowski</span>
+              <span class="text-[11px] text-slate-500">Gründerin &amp; CEO, JagdTausch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Contact Form & Coordinates -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- Contact Details -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          <div>
+            <div
+              class="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">
+              <span class="material-symbols-outlined text-[16px]">mail</span>
+              Direkter Kontakt
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Lassen Sie uns Ihr Projekt besprechen</h2>
+            <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+              Ob Senior Freelance-Kapazität für Ihr Web- &amp; Cloud-Projekt, maßgeschneiderte KI-Workflows oder
+              technisches Sparring: Ich melde mich innerhalb von 24 Stunden persönlich zurück.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3.5">
+            <div class="p-4 rounded-xl bg-white border border-slate-200 flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-xl">send</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[11px] font-mono text-slate-400">E-MAIL</span>
+                <a class="font-semibold text-slate-900 text-sm hover:text-brand-600 transition-colors"
+                   href="mailto:freelancer@christiandechant.de">freelancer@christiandechant.de</a>
+              </div>
+            </div>
+            <div class="p-4 rounded-xl bg-white border border-slate-200 flex items-center gap-3.5">
+              <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-xl">location_on</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[11px] font-mono text-slate-400">STANDORT</span>
+                <span class="font-semibold text-slate-900 text-sm">Hofbieber / Hessen (Remote-First)</span>
+              </div>
+            </div>
+            <div class="p-4 rounded-xl bg-white border border-slate-200 flex items-center gap-3.5">
+              <div
+                class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-xl">schedule</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[11px] font-mono text-slate-400">ANTWORTGARANTIE</span>
+                <span class="font-semibold text-slate-900 text-sm">&lt; 24h Reaktionszeit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Interactive Form -->
+        <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+          <form class="flex flex-col gap-4" id="contact-form"
+                onsubmit="event.preventDefault(); document.getElementById('form-status').classList.remove('hidden'); this.reset();">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex flex-col gap-1.5">
+                <label class="font-mono text-xs font-semibold text-slate-700" for="name">Ihr Name *</label>
+                <input
+                  class="px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
+                  id="name" placeholder="z.B. Anna Schmidt" required="" type="text">
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <label class="font-mono text-xs font-semibold text-slate-700" for="email">E-Mail Adresse *</label>
+                <input
+                  class="px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
+                  id="email" placeholder="anna@unternehmen.de" required="" type="email">
+              </div>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label class="font-mono text-xs font-semibold text-slate-700" for="scope">Projektbereich</label>
+              <select
+                class="px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 bg-white"
+                id="scope">
+                <option value="freelance">Freelance Web / Full-Stack (Next.js, C# .NET)</option>
+                <option value="ai">AI Consulting / Agentic Workflows / MCP</option>
+                <option value="package">Webseiten-Paket (One-Pager, CMS, Business)</option>
+                <option value="coaching">1:1 Entwickler-Coaching</option>
+                <option value="wayventure">WayVenture Kooperation</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label class="font-mono text-xs font-semibold text-slate-700" for="message">Kurzbeschreibung &amp; Ziele
+                *</label>
+              <textarea
+                class="px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
+                id="message" placeholder="Worum geht es in Ihrem Projekt? Welcher Zeitrahmen ist angedacht?" required=""
+                rows="4"></textarea>
+            </div>
+            <div class="flex items-start gap-2.5 pt-1">
+              <input class="mt-1 rounded text-brand-600 focus:ring-brand-500 border-slate-300" id="dsgvo" required=""
+                     type="checkbox">
+              <label class="text-xs text-slate-500 leading-normal" for="dsgvo">
+                Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden
+                (DSGVO-konform).
+              </label>
+            </div>
+            <button
+              class="mt-2 w-full py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm transition-all shadow-md hover:shadow-brand-500/25 flex items-center justify-center gap-2"
+              type="submit">
+              <span class="">Anfrage absenden</span>
+              <span class="material-symbols-outlined text-lg">send</span>
+            </button>
+            <div
+              class="hidden p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-medium flex items-center gap-2"
+              id="form-status">
+              <span class="material-symbols-outlined text-lg text-emerald-600">task_alt</span>
+              <span class="">Vielen Dank! Ihre Nachricht wurde übermittelt. Christian Dechant meldet sich zeitnah bei Ihnen.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-white border-t border-slate-200 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-100">
+      <div class="flex items-center gap-3">
+        <img alt="Logo" class="w-8 h-8 rounded-lg border border-slate-100"
+             src="https://lh3.googleusercontent.com/aida/AEtjO1WKUvClwXBlAx3bSzWuHCKa-qCPhiFBF33hDaG-v0j18LP4KhCsCrf93mJ9yuyVSAmzkLTIeqv1wRLkOsV8t76E9E_zklIvdCKeTvzc_EaNBWSTjSQ_C4QrI2uGKTrFUf1lLHxJN_xwYpGmktxk2vN4Snqdq25_rVAllhmgPFaWAMIpr_3FRl_o1XCkrBiFDQQ11boUlwUaiJDbBTGlDrml3OKSPsC5SCIySie2F_bnQ0tClJXI9OumYg">
+        <div>
+          <span class="font-bold text-slate-900 text-sm block">Christian Dechant</span>
+          <span class="text-xs text-slate-500">InterestedOWL · Senior Full-Stack &amp; Applied AI</span>
+        </div>
+      </div>
+      <!-- Socials -->
+      <div class="flex items-center gap-4 text-slate-500 text-sm font-medium">
+        <a class="hover:text-brand-600 transition-colors flex items-center gap-1" href="https://linkedin.com"
+           rel="noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-lg">share</span> LinkedIn
+        </a>
+        <a class="hover:text-brand-600 transition-colors flex items-center gap-1" href="https://github.com"
+           rel="noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-lg">terminal</span> GitHub
+        </a>
+        <a class="hover:text-brand-600 transition-colors flex items-center gap-1" href="https://xing.com"
+           rel="noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-lg">hub</span> XING
+        </a>
+        <a class="hover:text-amber-600 transition-colors flex items-center gap-1" href="https://wayventure.de"
+           rel="noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-lg">explore</span> WayVenture
+        </a>
+      </div>
+      <div class="flex items-center gap-4 text-xs text-slate-500 font-mono">
+        <a class="hover:text-slate-900 transition-colors" href="#">Impressum</a>
+        <span class="">•</span>
+        <a class="hover:text-slate-900 transition-colors" href="#">Datenschutz</a>
+      </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+      <span class="">© 2026 Christian Dechant. Alle Rechte vorbehalten.</span>
+      <span class="flex items-center gap-1.5 font-medium text-emerald-700">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Bereit für ausgewählte Neuprojekte
+        </span>
+    </div>
+  </div>
+</footer>
+<!-- Simple mobile drawer script -->
+<script>
+  const toggleBtn = document.getElementById('mobile-nav-toggle');
+  const drawer = document.getElementById('mobile-drawer');
+  const closeBtn = document.getElementById('mobile-close-btn');
+  const backdrop = document.getElementById('mobile-backdrop');
+
+  function openDrawer() {
+    drawer.classList.remove('translate-x-full');
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function closeDrawer() {
+    drawer.classList.add('translate-x-full');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  if (toggleBtn) toggleBtn.addEventListener('click', openDrawer);
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+  // Close on nav link click in drawer
+  drawer.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', closeDrawer);
+  });
+</script>
+
+
+</body>
+</html>

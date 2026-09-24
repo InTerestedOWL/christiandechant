@@ -1,88 +1,46 @@
-"use client";
-import Image from "next/image";
-import Title from "@/app/components/shared/title";
-import { IVoluntaryWork } from "../interfaces";
-import { useState } from "react";
+import { SiteContent } from "../interfaces";
+import Icon from "./shared/materialIcon";
 
-export default function VoluntaryWork({ voluntaryWorks }: { voluntaryWorks: IVoluntaryWork[] }) {
-  const [ flippedIndex, setFlippedIndex ] = useState<number | null>(null);
-
-  const handleFlip = (index: number) => {
-    setFlippedIndex(flippedIndex === index ? null : index);
-  };
-
+export default function VoluntaryWork({ content }: { content: SiteContent['volunteering'] }) {
   return (
-    <div className="bg-white" id="voluntary">
-      <div className="container py-16 md:py-20">
-        <Title
-          title="Voluntary Commitment"
-          subtitle="Volunteering with Responsibility and Team Spirit"
-          text=""
-        ></Title>
-        <div className="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 lg:grid-cols-3">
-          { voluntaryWorks.map((item, index) => (
-            <div
-              key={ index }
-              className="perspective-1000 group h-80 w-full cursor-pointer"
-              onClick={ () => handleFlip(index) }
-            >
+    <section className="bg-white py-20" id="feuerwehr">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-8 sm:p-12">
+          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
+            <div className="flex flex-col gap-4 lg:col-span-8">
               <div
-                className={ `relative h-full w-full transition-all duration-500 preserve-3d ${
-                  flippedIndex === index ? "rotate-y-180" : ""
-                }` }
-              >
-                {/* Front Side */ }
-                <div
-                  className="backface-hidden absolute flex h-full w-full flex-col items-center justify-center rounded bg-white px-8 py-12 shadow hover:bg-primary group-hover:bg-primary">
-                  <div className="relative mx-auto h-24 w-24 text-center">
-                    <Image
-                      src={ item.imageSrc }
-                      alt={ item.title }
-                      fill
-                      sizes="96px"
-                      className="object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
-                    />
-                  </div>
-                  <div className="pt-6 text-center">
-                    <h3 className="font-header text-xl font-medium uppercase text-primary group-hover:text-white">
-                      { item.title }
-                    </h3>
-                    <p className="pt-2 font-body text-grey-20 group-hover:text-white">
-                      { item.dateFrom } - { item.dateTill }
-                    </p>
-                  </div>
-                </div>
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-rose-700">
+                <Icon name="local_fire_department" className="text-[16px]"/>
+                { content.badge }
+              </div>
+              <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{ content.title }</h2>
+              <p className="text-base leading-relaxed text-slate-600">{ content.text }</p>
 
-                {/* Back Side */ }
-                <div
-                  className="rotate-y-180 backface-hidden absolute flex h-full w-full flex-col overflow-y-auto rounded bg-primary px-8 py-8 shadow text-white">
-                  <h3 className="font-header text-xl font-medium uppercase">
-                    { item.backTitle || item.title }
-                  </h3>
-                  <p className="pt-4 font-body text-sm">
-                    { item.backDescription || item.description }
-                  </p>
-                  { item.backImages && item.backImages.length > 0 && (
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      { item.backImages.map((img, i) => (
-                        <div key={ i } className="relative h-24 w-32 shrink-0">
-                          <Image
-                            src={ img }
-                            alt={ `${ item.title } — photo ${ i + 1 }` }
-                            fill
-                            sizes="128px"
-                            className="rounded object-cover"
-                          />
-                        </div>
-                      )) }
-                    </div>
-                  ) }
-                </div>
+              <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-4">
+                { content.values.map((value) => (
+                  <div key={ value.label } className="rounded-xl border border-slate-200/80 bg-white p-3">
+                    <span className="block font-mono text-[11px] uppercase text-slate-400">{ value.label }</span>
+                    <span className="text-sm font-bold text-slate-900">{ value.value }</span>
+                  </div>
+                )) }
               </div>
             </div>
-          )) }
+
+            <div
+              className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-4">
+              <span className="font-mono text-xs font-semibold uppercase text-slate-400">{ content.quoteLabel }</span>
+              <p className="text-xs leading-relaxed text-slate-600 italic">„{ content.quote }“</p>
+              <div className="flex items-center gap-3 border-t border-slate-100 pt-2">
+                <div
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100 text-xs font-bold text-rose-700">
+                  CD
+                </div>
+                <span className="text-xs font-semibold text-slate-800">{ content.signature }</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

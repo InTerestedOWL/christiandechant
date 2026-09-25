@@ -58,6 +58,7 @@ export const de: SiteContent = {
     intro: 'Hi, ich bin **Christian Dechant**, M.Sc. Angewandte Informatik. Als Senior Full-Stack Developer bei *Strauss GmbH & Co. KG* und Gründer von *WayVenture* verbinde ich 9+ Jahre industrielle Softwarearchitektur (C#, Next.js, Cloud) mit deterministischer, agentischer KI-Entwicklung.',
     primaryCta: 'Projekt anfragen',
     secondaryCta: 'WayVenture entdecken',
+    imageAlt: 'Aufgeräumter Entwickler-Arbeitsplatz mit drei Monitoren: Code, Architekturdiagramm und Terminal',
     stats: [
       { value: '9+ Jahre', label: 'Software Engineering' },
       { value: 'Senior Dev', label: 'Strauss GmbH & Co. KG', accent: 'brand' },

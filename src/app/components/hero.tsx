@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SiteContent } from "../interfaces";
 import { Locale } from "../i18n/config";
 import Icon from "./shared/materialIcon";
@@ -17,6 +18,12 @@ export default function Hero({ locale, content }: { locale: Locale, content: Her
         className="pointer-events-none absolute -top-32 right-1/4 h-96 w-96 rounded-full bg-brand-200/30 blur-3xl"></div>
       <div
         className="pointer-events-none absolute top-1/2 -left-20 h-80 w-80 rounded-full bg-amber-200/25 blur-3xl"></div>
+      {/* Desktop: full-bleed photo on the right half, fading into the hero background */ }
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[55%] mask-l-from-45% mask-l-to-100% mask-b-from-80% lg:block">
+        <Image src="/developer-workspace.png" alt={ content.imageAlt } fill sizes="55vw"
+               className="object-cover object-[35%_center] opacity-90"/>
+      </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
@@ -67,7 +74,14 @@ export default function Hero({ locale, content }: { locale: Locale, content: Her
           </div>
 
           <div className="lg:col-span-5">
-            <CodeCard locale={ locale } content={ content }/>
+            {/* Mobile/tablet: photo strip that the code card overlaps */ }
+            <div className="relative mb-[-3rem] aspect-video overflow-hidden rounded-2xl shadow-lg lg:hidden">
+              <Image src="/developer-workspace.png" alt={ content.imageAlt } fill sizes="(min-width: 640px) 90vw, 100vw"
+                     className="object-cover"/>
+            </div>
+            <div className="relative mx-3 sm:mx-8 lg:mx-0">
+              <CodeCard locale={ locale } content={ content }/>
+            </div>
           </div>
         </div>
       </div>

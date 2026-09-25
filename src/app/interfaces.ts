@@ -191,6 +191,7 @@ export interface SiteContent {
     intro: string,
     primaryCta: string,
     secondaryCta: string,
+    imageAlt: string,
     stats: IStat[],
     code: {
       role: string,

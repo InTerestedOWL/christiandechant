@@ -286,6 +286,12 @@ export const en: SiteContent = {
         accent: 'slate',
       },
       {
+        title: 'Founder — Abstract Void UG',
+        period: 'Mar. 2020 – Dec. 2024',
+        text: 'Building an innovative indoor navigation system for large building complexes based on Bluetooth Low Energy. Laravel, Alpine.js and Tailwind CSS (TALL stack) plus Node.js (Express) for web services.',
+        accent: 'slate',
+      },
+      {
         title: 'Working Student & Bachelor Thesis — ECOPLAN GmbH',
         period: 'Sept. 2017 – Sept. 2021',
         text: 'Building and customizing a CRM system for multiple clients, including integration of the Swiss QR bill. Web services with Java EE on Tomcat.',

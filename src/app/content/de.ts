@@ -287,6 +287,12 @@ export const de: SiteContent = {
         accent: 'slate',
       },
       {
+        title: 'Gründer — Abstract Void UG',
+        period: 'März 2020 – Dez. 2024',
+        text: 'Entwicklung eines innovativen Indoor-Navigationssystems für große Gebäudekomplexe auf Basis von Bluetooth Low Energy. Laravel, Alpine.js und Tailwind CSS (TALL-Stack) sowie Node.js (Express) für Webservices.',
+        accent: 'slate',
+      },
+      {
         title: 'Werkstudent & Bachelorand — ECOPLAN GmbH',
         period: 'Sept. 2017 – Sept. 2021',
         text: 'Aufbau und kundenspezifische Anpassung eines CRM-Systems für mehrere Kunden, inklusive Integration der Schweizer QR-Rechnung. Webservices mit Java EE auf Tomcat.',

@@ -155,6 +155,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         points: [ 'Thoughtful edge-case handling', 'Robust error handling & fallbacks', 'Polished ergonomics (mobile & web)' ],
       },
       {
+        topic: 'founder',
         badge: 'FOUNDER ADVISORY',
         icon: 'lightbulb',
         accent: 'indigo',
@@ -163,6 +164,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         cta: 'Request founder consulting',
       },
       {
+        topic: 'freelance',
         badge: 'ORGANIZATION SCALING',
         icon: 'groups',
         accent: 'emerald',
@@ -171,6 +173,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         cta: 'Request team enablement',
       },
     ],
+    detailsCta: 'More about my approach',
   },
   offers: {
     eyebrow: 'Clear packages & terms',

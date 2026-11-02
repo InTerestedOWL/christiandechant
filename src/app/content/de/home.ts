@@ -155,6 +155,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         points: [ 'Durchdachte Edge-Case-Behandlung', 'Robuste Fehlerbehandlung & Fallbacks', 'Ausgereifte Ergonomie (Mobile & Web)' ],
       },
       {
+        topic: 'founder',
         badge: 'FOUNDER ADVISORY',
         icon: 'lightbulb',
         accent: 'indigo',
@@ -163,6 +164,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         cta: 'Gründer-Beratung anfragen',
       },
       {
+        topic: 'freelance',
         badge: 'ORGANIZATION SCALING',
         icon: 'groups',
         accent: 'emerald',
@@ -171,6 +173,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         cta: 'Team-Enablement anfragen',
       },
     ],
+    detailsCta: 'Mehr zur Arbeitsweise',
   },
   offers: {
     eyebrow: 'Klare Pakete & Konditionen',

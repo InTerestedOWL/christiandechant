@@ -18,7 +18,7 @@ export default function FeatureCard({ item, number, className = '' }: { item: IR
           </span>
         ) }
       </div>
-      <h3 className="mb-2 text-lg font-bold text-slate-900">{ item.title }</h3>
+      <h3 lang={ item.lang } className="mb-2 text-lg font-bold text-slate-900">{ item.title }</h3>
       <p className="mb-4 text-sm leading-relaxed text-slate-600">{ item.text }</p>
       <ul className="mt-auto flex flex-col gap-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-700">
         { item.points.map((point) => (

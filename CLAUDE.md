@@ -80,6 +80,9 @@ text needs `amber-700`+ backgrounds). `ClientLayout` provides the skip link to `
 - `[locale]/support` — support packages (Basic/Standard/Premium, `components/supportPackageGrid.tsx`) with profile,
   services and response time — never prices, hours or fixed response times; services, process, FAQ; `Service` JSON-LD
   with an `OfferCatalog`.
+- `[locale]/ai-development` — AI services (features in products, agents & MCP, audit & governance, coaching),
+  principles, process, WayVenture as AI reference, FAQ; `Service` JSON-LD with an `OfferCatalog`. The homepage
+  `aiConsulting` tracks stay as a teaser and link here.
 - `[locale]/wayventure` — marketing page for WayVenture with JSON-LD (`SoftwareApplication` + `FAQPage`).
 - `[locale]/imprint`, `[locale]/privacy-policy` — legal pages. Keep them in sync with any new third-party service or
   data processing.

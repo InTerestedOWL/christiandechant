@@ -6,6 +6,7 @@ export const routes = {
   freelancing: '/freelancing',
   packages: '/packages',
   support: '/support',
+  aiDevelopment: '/ai-development',
   wayventure: '/wayventure',
   imprint: '/imprint',
   privacy: '/privacy-policy',

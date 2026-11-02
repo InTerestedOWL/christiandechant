@@ -5,12 +5,13 @@ import SectionHeading from "./shared/sectionHeading";
 import Icon from "./shared/materialIcon";
 import { accentBadge, accentButton, accentText } from "./shared/accent";
 import { pagePath } from "@/app/i18n/routes";
+import { contactPath } from "@/app/contactPrefill";
 
 export default function AiConsulting({ locale, content }: { locale: Locale, content: SiteContent['aiConsulting'] }) {
   return (
-    <section className="bg-white py-20" id="ai-consulting">
+    <section aria-labelledby="ai-consulting-title" className="bg-white py-20" id="ai-consulting">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading content={ content }/>
+        <SectionHeading content={ content } id="ai-consulting-title"/>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           { content.tracks.map((track) => (
@@ -39,12 +40,20 @@ export default function AiConsulting({ locale, content }: { locale: Locale, cont
                   )) }
                 </div>
               </div>
-              <Link href={ pagePath(locale, 'home', 'contact') }
+              <Link href={ contactPath(locale, { topic: track.topic }) }
                     className={ `w-full rounded-xl py-3 text-center text-xs font-semibold text-white transition-colors ${ accentButton[track.accent] }` }>
                 { track.cta }
               </Link>
             </div>
           )) }
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <Link href={ pagePath(locale, 'aiDevelopment') }
+                className="inline-flex items-center gap-2 rounded-xl border border-brand-200 bg-white px-5 py-3 text-sm font-semibold text-brand-700 transition-all hover:bg-brand-50">
+            <span>{ content.detailsCta }</span>
+            <Icon name="arrow_forward" className="text-[18px]"/>
+          </Link>
         </div>
       </div>
     </section>

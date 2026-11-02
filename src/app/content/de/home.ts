@@ -230,6 +230,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
     text: 'Die meisten KI-Workshops enden bei oberflächlichen ChatGPT-Prompts. Ich zeige Teams, wie autonome Agenten und deterministische Schnittstellen echten Code erzeugen, ohne Kontrollverlust.',
     tracks: [
       {
+        topic: 'ai',
         badge: 'FÜR UNTERNEHMEN & TEAMS',
         icon: 'apartment',
         accent: 'brand',
@@ -243,11 +244,12 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         cta: 'Strategie-Gespräch vereinbaren',
       },
       {
+        topic: 'coaching',
         badge: 'ENTWICKLER ZU ENTWICKLER',
         icon: 'terminal',
         accent: 'emerald',
         title: 'Mastering AI Agents: 1:1 Coaching',
-        text: 'Lerne, wie du Claude Code, Terminal-Agenten und MCP-Server einsetzt, um 5-mal schneller zu liefern, während du 100% der architektonischen Kontrolle behalten.',
+        text: 'Lerne, wie du Claude Code, Terminal-Agenten und MCP-Server einsetzt, um 5-mal schneller zu liefern, während du 100% der architektonischen Kontrolle behältst.',
         items: [
           { icon: 'code', title: 'Claude Code & CLI Agenten', text: 'Kontextfenster strukturieren, Sub-Tasking und Branch-Hygiene.' },
           { icon: 'hub', title: 'Eigene MCP-Server programmieren', text: 'Eigene Datenbanken & APIs direkt an LLM-Agenten anbinden.' },
@@ -256,6 +258,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         cta: '1:1 Coaching anfragen',
       },
     ],
+    detailsCta: 'Mehr zu AI Development',
   },
   experience: {
     eyebrow: 'Erfahrung & Stationen',

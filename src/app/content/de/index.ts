@@ -7,6 +7,7 @@ import { legalContent } from "./legal";
 import { freelancingPageContent } from "./freelancing";
 import { packagesPageContent } from "./packages";
 import { supportPageContent } from "./support";
+import { aiDevelopmentPageContent } from "./aiDevelopment";
 
 export const de: SiteContent = {
   ...metaContent,
@@ -17,4 +18,5 @@ export const de: SiteContent = {
   ...freelancingPageContent,
   ...packagesPageContent,
   ...supportPageContent,
+  ...aiDevelopmentPageContent,
 };

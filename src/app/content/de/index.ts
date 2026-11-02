@@ -4,6 +4,7 @@ import { commonContent } from "./common";
 import { homeContent } from "./home";
 import { wayventurePageContent } from "./wayventurePage";
 import { legalContent } from "./legal";
+import { freelancingPageContent } from "./freelancing";
 
 export const de: SiteContent = {
   ...metaContent,
@@ -11,4 +12,5 @@ export const de: SiteContent = {
   ...homeContent,
   ...wayventurePageContent,
   ...legalContent,
+  ...freelancingPageContent,
 };

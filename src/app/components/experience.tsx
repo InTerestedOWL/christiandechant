@@ -48,7 +48,7 @@ function HighlightBox({ box }: { box: IHighlightBox }) {
       <div>
         <div className="mb-1 flex items-center gap-2">
           <span className="font-mono text-xs font-bold uppercase text-brand-700">{ box.eyebrow }</span>
-          <span className="text-xs text-slate-400">{ box.meta }</span>
+          <span className="text-xs text-slate-500">{ box.meta }</span>
         </div>
         <h4 className="text-lg font-bold text-slate-900">{ box.title }</h4>
         <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm sm:leading-5">{ box.text }</p>

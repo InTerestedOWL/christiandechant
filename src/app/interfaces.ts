@@ -46,6 +46,54 @@ export interface IPillar {
   cta?: string,
 }
 
+export interface IReason {
+  icon: string,
+  accent: Accent,
+  title: string,
+  text: string,
+  points: string[],
+}
+
+export interface IFact {
+  icon: string,
+  label: string,
+}
+
+export interface IPageHero {
+  eyebrow: string,
+  icon: string,
+  title: string,
+  titleHighlight: string,
+  intro: string,
+  primaryCta: string,
+  secondaryCta?: string,
+  facts: IFact[],
+}
+
+export interface IProcessStep {
+  icon: string,
+  title: string,
+  text: string,
+}
+
+export interface ICaseStudy {
+  eyebrow: string,
+  icon: string,
+  title: string,
+  client: string,
+  period: string,
+  text: string,
+  deliverables: string[],
+  quote: ITestimonial,
+  linkLabel: string,
+}
+
+export interface ICtaBanner {
+  title: string,
+  text: string,
+  cta: string,
+}
+
 export interface IOfferPackage {
   tier: string,
   title: string,
@@ -202,6 +250,12 @@ export interface SiteContent {
     teaserTitle: string,
     teaserText: string,
   },
+  whyMe: ISectionHeading & {
+    reasons: IReason[],
+    mantra: string,
+    cta: string,
+    secondaryCta: string,
+  },
   competencies: ISectionHeading & {
     badge: string,
     items: ICompetency[],
@@ -333,6 +387,28 @@ export interface SiteContent {
     title: string,
     text: string,
     cta: string,
+  },
+  a11y: {
+    skipToContent: string,
+    breadcrumbLabel: string,
+    home: string,
+    /** Screen-reader hint appended to links that open in a new tab. */
+    newTab: string,
+  },
+  freelancingPage: {
+    metaTitle: string,
+    metaDescription: string,
+    keywords: string[],
+    breadcrumb: string,
+    hero: IPageHero,
+    models: ISectionHeading & { items: IReason[] },
+    workingModel: ISectionHeading & { items: IIconItem[] },
+    process: ISectionHeading & { steps: IProcessStep[] },
+    caseStudy: ICaseStudy,
+    stack: ISectionHeading,
+    faq: ISectionHeading & { items: IWayVentureFaq[] },
+    cta: ICtaBanner,
+    service: { name: string, serviceType: string[] },
   },
   imprint: ILegalPage,
   privacy: ILegalPage,

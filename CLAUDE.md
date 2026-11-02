@@ -48,13 +48,27 @@ e-mail, socials) live in `content/shared.ts`. When changing site text, update **
 `SiteContent` first.
 
 Shared pieces live under `src/app/components/shared/` (`materialIcon`, `sectionHeading`, `accent` class maps, `richText`
-for `**bold**`/`*italic*` in content strings, `languageSwitch`). Legal pages render through `components/legalPage.tsx`.
+for `**bold**`/`*italic*` in content strings, `languageSwitch`, plus the sub-page kit: `pageHero` (breadcrumbs + the page's
+only h1), `breadcrumbs`, `featureCard`, `processTimeline`, `techStack`). Sub pages close with `components/ctaBanner.tsx`;
+shared JSON-LD builders (`breadcrumbJsonLd`, `faqJsonLd`, `serviceJsonLd`) live in `seo/pageJsonLd.ts`. Legal pages
+render through `components/legalPage.tsx`. `[locale]/freelancing/page.tsx` is the reference layout for new sub pages.
+
+### Accessibility (WCAG 2.1 AA)
+
+The site sells WCAG 2.1 AA compliance, so it must meet it itself. Every page must score 100 in the Lighthouse
+accessibility audit. Rules: one h1 per page, sections use `aria-labelledby` on their h2 (`SectionHeading` takes an
+`id`), lists of cards/steps are real `ul`/`ol`, icons are `aria-hidden` (`Icon` does this), links opening a new tab carry
+the `a11y.newTab` screen-reader hint, and text never uses `text-slate-400` or lighter on white (use `slate-500`+; white
+text needs `amber-700`+ backgrounds). `ClientLayout` provides the skip link to `#main-content`; `globals.css` sets the
+`:focus-visible` outline and honours `prefers-reduced-motion`. English phrases inside German text get `lang="en"`.
 
 `src/app/context.tsx` provides `useStatus`, used to lock body scroll while the mobile drawer is open (
 `ClientLayout.tsx`).
 
 ### Routes
 
+- `[locale]/freelancing` — freelancing page (engagement models, working model, process, JagdTausch case study, FAQ)
+  with `Service` + `BreadcrumbList` + `FAQPage` JSON-LD.
 - `[locale]/wayventure` — marketing page for WayVenture with JSON-LD (`SoftwareApplication` + `FAQPage`).
 - `[locale]/imprint`, `[locale]/privacy-policy` — legal pages. Keep them in sync with any new third-party service or
   data processing.

@@ -53,7 +53,7 @@ export default function Footer({ locale, content }: { locale: Locale, content: S
             <LanguageSwitch locale={ locale } label={ content.languageLabel } className="flex"/>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-between gap-3 pt-6 text-xs text-slate-400 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 pt-6 text-xs text-slate-500 sm:flex-row">
           <span>© { new Date().getFullYear() } Christian Dechant. { content.rights }</span>
           <span className="flex items-center gap-1.5 font-medium text-emerald-700">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> { content.status }

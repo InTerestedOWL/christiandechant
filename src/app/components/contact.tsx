@@ -115,7 +115,7 @@ export default function Contact({ locale, content }: { locale: Locale, content: 
                     <Icon name={ item.icon } className="text-xl"/>
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-mono text-[11px] text-slate-400">{ item.label }</span>
+                    <span className="font-mono text-[11px] text-slate-500">{ item.label }</span>
                     { item.href ? (
                       <a href={ item.href }
                          className="text-sm font-semibold text-slate-900 transition-colors hover:text-brand-600">

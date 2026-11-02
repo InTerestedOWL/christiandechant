@@ -91,7 +91,7 @@ export default function Header({ locale, content }: { locale: Locale, content: S
                 <span className="font-bold text-slate-900">{ content.drawerTitle }</span>
               </div>
               <button aria-label={ content.closeMenu } onClick={ () => setDrawerOpen(false) }
-                      className="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-700">
+                      className="rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-700">
                 <Icon name="close" className="text-xl"/>
               </button>
             </div>

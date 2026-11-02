@@ -1,17 +1,17 @@
 import { SiteContent } from "../../interfaces";
 
-export const commonContent: Pick<SiteContent, 'header' | 'cookieBanner' | 'footer' | 'notFound'> = {
+export const commonContent: Pick<SiteContent, 'header' | 'cookieBanner' | 'footer' | 'notFound' | 'a11y'> = {
   header: {
     tagline: 'Full-Stack & Applied AI',
     badge: 'Senior Dev',
     nav: [
+      { href: '/freelancing', title: 'Freelancing', mobileTitle: 'Freelancing & Einsatzmodelle' },
+      { href: '#why', title: 'Warum ich', mobileTitle: 'Warum mit mir arbeiten' },
       { href: '#about', title: 'Über mich', mobileTitle: 'Über mich' },
       { href: '#wayventure', title: 'WayVenture', mobileTitle: 'WayVenture (App)', highlight: 'amber', badge: 'Live' },
       { href: '#services', title: 'Angebote', mobileTitle: 'Angebote & Webpakete' },
       { href: '#ai-consulting', title: 'AI Consulting', mobileTitle: 'AI Consulting & Coaching' },
       { href: '#experience', title: 'Erfahrung', mobileTitle: 'Erfahrung & Werdegang' },
-      { href: '#feuerwehr', title: 'Ehrenamt', mobileTitle: 'Ehrenamt Feuerwehr', highlight: 'rose' },
-      { href: '#contact', title: 'Kontakt', mobileTitle: 'Kontakt' },
     ],
     cta: 'Projekt anfragen',
     mobileCta: 'Projekt starten',
@@ -57,5 +57,11 @@ export const commonContent: Pick<SiteContent, 'header' | 'cookieBanner' | 'foote
     title: 'Seite nicht gefunden',
     text: 'Die angeforderte Seite existiert nicht (mehr). Vielleicht hilft ein Blick auf die Startseite.',
     cta: 'Zur Startseite',
+  },
+  a11y: {
+    skipToContent: 'Zum Inhalt springen',
+    breadcrumbLabel: 'Brotkrümelnavigation',
+    home: 'Startseite',
+    newTab: '(öffnet in neuem Tab)',
   },
 };

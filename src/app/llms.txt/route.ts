@@ -36,7 +36,7 @@ ${ list([
     ...en.offers.packages.map((pkg) => `${ pkg.title }: ${ pkg.text }`),
     `${ en.offers.custom.title } ${ en.offers.custom.text }`,
     ...en.aiConsulting.tracks.map((track) => `${ track.title }: ${ track.text }`),
-    ...en.motto.pillars.filter((pillar) => pillar.cta).map((pillar) => `${ pillar.title }: ${ pillar.text }`),
+    ...en.freelancingPage.models.items.map((model) => `Freelance – ${ model.title }: ${ model.text }`),
   ]) }
 
 ## Tech stack
@@ -55,6 +55,7 @@ ${ en.faq.items.map((item) => `### ${ item.question }\n\n${ item.answer }`).join
 
 - [Homepage (English)](${ siteUrl }/en): services, experience, contact
 - [Startseite (Deutsch)](${ siteUrl }/de): Leistungen, Werdegang, Kontakt
+- [Freelancing](${ siteUrl }/en/freelancing): engagement models, working model, process, JagdTausch case study
 - [WayVenture](${ siteUrl }/en/wayventure): founder project, a travel planner app (${ wayVentureUrl })
 - [Master’s thesis (PDF, German)](${ siteUrl }/Masterthesis.pdf): Effectiveness of Zero Trust architectures in Kubernetes clusters
 - [Imprint](${ siteUrl }/de/imprint)

@@ -54,11 +54,10 @@ export default function Hero({ locale, content }: { locale: Locale, content: Her
                 <span>{ content.primaryCta }</span>
                 <Icon name="send" className="text-[18px]"/>
               </Link>
-              <Link href={ pagePath(locale, 'home', 'wayventure') }
-                    className="inline-flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-slate-800 transition-all hover:border-amber-300 hover:bg-amber-50">
-                <span className="h-2.5 w-2.5 rounded-full bg-amber-500"></span>
+              <Link href={ pagePath(locale, 'home', 'why') }
+                    className="inline-flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-slate-800 transition-all hover:border-brand-300 hover:bg-brand-50">
                 <span>{ content.secondaryCta }</span>
-                <Icon name="arrow_forward" className="text-[18px] text-amber-600"/>
+                <Icon name="arrow_downward" className="text-[18px] text-brand-600"/>
               </Link>
             </div>
 
@@ -91,9 +90,9 @@ export default function Hero({ locale, content }: { locale: Locale, content: Her
 }
 
 function CodeCard({ locale, content }: { locale: Locale, content: HeroContent }) {
-  const str = 'text-emerald-600';
+  const str = 'text-emerald-700';
   const tech = 'text-indigo-600';
-  const ai = 'text-amber-600';
+  const ai = 'text-amber-700';
   const { code } = content;
 
   return (
@@ -104,7 +103,7 @@ function CodeCard({ locale, content }: { locale: Locale, content: HeroContent })
           <span className="h-3 w-3 rounded-full bg-rose-400"></span>
           <span className="h-3 w-3 rounded-full bg-amber-400"></span>
           <span className="h-3 w-3 rounded-full bg-emerald-400"></span>
-          <span className="ml-2 font-mono text-xs font-medium text-slate-400">christian-dechant.ts</span>
+          <span className="ml-2 font-mono text-xs font-medium text-slate-500">christian-dechant.ts</span>
         </div>
         <span
           className="rounded border border-brand-100 bg-brand-50 px-2 py-0.5 font-mono text-[11px] font-medium text-brand-600">
@@ -136,8 +135,8 @@ function CodeCard({ locale, content }: { locale: Locale, content: HeroContent })
           </span>
         )) }
         { '  ' }{ '}' },{ '\n' }
-        { '  ' }mantra: <span className="font-medium text-amber-600">&quot;{ code.mantra }&quot;</span>,{ '\n' }
-        { '  ' }availability: <span className="font-semibold text-emerald-600">true</span>{ '\n' }
+        { '  ' }mantra: <span className="font-medium text-amber-700">&quot;{ code.mantra }&quot;</span>,{ '\n' }
+        { '  ' }availability: <span className="font-semibold text-emerald-700">true</span>{ '\n' }
         { '}' };
       </pre>
 
@@ -146,7 +145,7 @@ function CodeCard({ locale, content }: { locale: Locale, content: HeroContent })
           <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
           <span className="font-mono text-slate-600">k8s-cluster :: healthy</span>
         </div>
-        <span className="font-mono text-slate-400">node v22.x LTS</span>
+        <span className="font-mono text-slate-500">node v22.x LTS</span>
       </div>
 
       <Link href={ pagePath(locale, 'wayventure') }

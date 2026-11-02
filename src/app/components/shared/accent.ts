@@ -60,7 +60,7 @@ export const accentButton: Record<Accent, string> = {
   brand: 'bg-brand-600 hover:bg-brand-700',
   indigo: 'bg-indigo-600 hover:bg-indigo-700',
   emerald: 'bg-slate-900 hover:bg-black',
-  amber: 'bg-amber-500 hover:bg-amber-600',
+  amber: 'bg-amber-700 hover:bg-amber-800',
   rose: 'bg-rose-600 hover:bg-rose-700',
   slate: 'bg-slate-900 hover:bg-black',
 };

@@ -1,29 +1,75 @@
 import { SiteContent } from "../../interfaces";
 import { contactEmail } from "../shared";
 
-export const homeContent: Pick<SiteContent, 'hero' | 'competencies' | 'wayventure' | 'motto' | 'offers' | 'aiConsulting' | 'experience' | 'volunteering' | 'faq' | 'contact'> = {
+export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 'wayventure' | 'motto' | 'offers' | 'aiConsulting' | 'experience' | 'volunteering' | 'faq' | 'contact'> = {
   hero: {
-    status: 'Available for selected projects & AI engineering',
-    headline: 'Senior Engineering & Pragmatic AI —',
-    headlineHighlight: 'built for real impact.',
-    intro: 'Hi, I’m **Christian Dechant**, M.Sc. Applied Computer Science. As a Senior Full-Stack Developer at *Strauss GmbH & Co. KG* and founder of *WayVenture*, I combine 9+ years of industrial software architecture (C#, Next.js, Cloud) with deterministic, agent-driven AI development.',
+    status: 'Freelance · Limited capacity for selected projects',
+    headline: 'From idea to production-ready product —',
+    headlineHighlight: 'as individual as you are.',
+    intro: 'I’m **Christian Dechant**, a freelance senior full-stack developer and AI consultant (M.Sc. Applied Computer Science). I guide you personally from the first idea to software running in production – and beyond. Alongside my permanent senior role at *Strauss GmbH & Co. KG*, I deliberately take on only a few projects at a time: you work directly with me, not with an agency.',
     primaryCta: 'Start a project',
-    secondaryCta: 'Discover WayVenture',
+    secondaryCta: 'Why work with me?',
     imageAlt: 'Tidy developer workspace with three monitors showing code, an architecture diagram and a terminal',
     stats: [
       { value: '9+ years', label: 'Software Engineering' },
-      { value: 'Senior Dev', label: 'Strauss GmbH & Co. KG', accent: 'brand' },
+      { value: 'Freelance', label: 'Direct & personal', accent: 'brand' },
       { value: 'M.Sc.', label: 'Applied Computer Science' },
       { value: 'WayVenture', label: 'Live Founder Product', accent: 'amber' },
     ],
     code: {
-      role: 'Senior Full-Stack & AI Pragmatist',
+      role: 'Freelance Senior Full-Stack & AI Engineer',
       badge: 'Clean Code Mode',
       credentials: [ 'M.Sc. Applied Computer Science', 'Zero-Trust Kubernetes Research', 'Strauss Core Microservices' ],
-      mantra: 'Publish early, but publish complete.',
+      mantra: 'Deliver fast, but deliver complete.',
     },
     teaserTitle: 'Founder project: WayVenture',
     teaserText: 'Smart all-in-one travel companion app',
+  },
+  whyMe: {
+    eyebrow: 'Why work with me',
+    icon: 'workspace_premium',
+    title: 'Five reasons that make the difference',
+    text: 'No agency, no website builder, no hand-off to junior developers: you get senior engineering tailored to your project – from the first sketch to stable operation.',
+    reasons: [
+      {
+        icon: 'fingerprint',
+        accent: 'brand',
+        title: 'Individual, not off the shelf',
+        text: 'Every solution is built around your goals, processes and users – not a template. The technology follows your project, not the other way round.',
+        points: [ 'Concept tailored to your requirements', 'Technology chosen by purpose, not habit', 'Individually calculated quote' ],
+      },
+      {
+        icon: 'diamond',
+        accent: 'indigo',
+        title: 'Exclusive & personal',
+        text: 'I deliberately work on only a few projects at a time. You always talk directly to the senior developer who writes your code.',
+        points: [ 'One fixed contact, no subcontractors', 'Few parallel projects, full attention', 'You own the source code' ],
+      },
+      {
+        icon: 'verified_user',
+        accent: 'emerald',
+        title: 'Compliance from day one',
+        text: 'Data protection, accessibility and the responsible use of AI are planned in from the start – not bolted on afterwards.',
+        points: [ 'GDPR-compliant with a data processing agreement (DPA)', 'Hosting in the EU', 'Accessibility according to WCAG 2.1 AA' ],
+      },
+      {
+        icon: 'support_agent',
+        accent: 'amber',
+        title: 'Support that stays',
+        text: 'Responsibility doesn’t end at go-live. Support packages keep your software running, secure and evolving over the long term.',
+        points: [ 'Monitoring, security & dependency updates', 'Regular functional testing', 'Defined response times, guaranteed in the Premium package' ],
+      },
+      {
+        icon: 'rocket_launch',
+        accent: 'rose',
+        title: 'From idea to production',
+        text: 'Scoping, prototype, MVP, go-live and operation from a single source. Fast to market – and complete, secure and maintainable from the very first release.',
+        points: [ 'One contact for the entire journey', 'Early releases with real user feedback', 'Auth, error handling & tests from version 1' ],
+      },
+    ],
+    mantra: 'Deliver fast, but deliver complete.',
+    cta: 'Book an intro call',
+    secondaryCta: 'More about freelancing',
   },
   competencies: {
     eyebrow: 'Technical excellence',
@@ -89,14 +135,14 @@ export const homeContent: Pick<SiteContent, 'hero' | 'competencies' | 'wayventur
   },
   motto: {
     eyebrow: '// My personal motto',
-    quote: 'Publish early, but publish complete.',
+    quote: 'Deliver fast, but deliver complete.',
     text: 'Speed is worthless if the MVP breaks at the first real customer contact. We combine a fast time-to-market with reliable attention to detail.',
     pillars: [
       {
         badge: 'PILLAR 01',
         icon: 'rocket_launch',
         accent: 'brand',
-        title: 'Publish Early',
+        title: 'Deliver Fast',
         text: 'Don’t build in a vacuum for nine months: test hypotheses quickly with real users, secure valuable feedback and back up feature decisions.',
         points: [ 'Fast prototype releases', 'Real feedback loops from day one', 'Clear MVP prioritization' ],
       },
@@ -104,7 +150,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'competencies' | 'wayventur
         badge: 'PILLAR 02',
         icon: 'verified',
         accent: 'amber',
-        title: 'Publish Complete',
+        title: 'Deliver Complete',
         text: 'Minimal never means broken. Every release ships with working auth, clean error states, a consistent UI and well-considered security standards.',
         points: [ 'Thoughtful edge-case handling', 'Robust error handling & fallbacks', 'Polished ergonomics (mobile & web)' ],
       },
@@ -292,6 +338,10 @@ export const homeContent: Pick<SiteContent, 'hero' | 'competencies' | 'wayventur
       {
         question: 'Which technologies do you work with?',
         answer: 'Frontend: Next.js, React, Nuxt, Vue.js and Angular. Backend: C# .NET, PHP (Laravel, Symfony), Node.js, Python and Java. Plus PostgreSQL, MySQL and MongoDB, Docker, Kubernetes, AWS and Azure, and AI tools such as Claude Code and MCP.',
+      },
+      {
+        question: 'Why work with you instead of an agency?',
+        answer: 'You work directly with the senior developer who writes your code – no subcontractors, no hand-offs. Christian Dechant deliberately takes on only a few projects at a time, builds every solution individually, plans in GDPR compliance (including a data processing agreement), EU hosting and accessibility according to WCAG 2.1 AA from the start, and supports projects from the idea to production use, with optional support packages after go-live.',
       },
       {
         question: 'Do you work remotely or only in Fulda?',

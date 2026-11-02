@@ -23,8 +23,11 @@ Leitsatz überall: **„Deliver fast, but deliver complete.“** (ersetzt „Pub
 | Kapazität | 10–15 Std./Woche. **Keine exakte Stundenzahl auf der Website**, stattdessen „begrenzte Kapazität für ausgewählte Projekte“. Details im Erstgespräch. |
 | Preise | Keine öffentlichen Preise (Individualität). Gilt auch für Support-Pakete. |
 | Support | Neues Angebot mit 3 Support-Paketen und eigener Paketanfrage im Kontaktformular. |
-| URLs | Englische Slugs für beide Sprachen (wie `/imprint`). |
-| Design | Neue Seiten direkt im bestehenden Design, kein separater Mock. |
+| URLs | Englische Slugs für beide Sprachen (wie `/imprint`), z. B. `/de/packages` und `/en/packages`. |
+| Design | Neue Seiten direkt im bestehenden Design, kein separater Mock. Bei Bedarf neuer Entwurf via Stitch. |
+| Reaktionszeiten | **Keine fixen Zahlen** auf der Website: „definierte Reaktionszeiten, garantiert im Premium-Paket“. Zahlen nur im Angebot. |
+| Compliance | Zusagbar: AV-Vertrag (AVV), Hosting in der EU, Barrierefreiheit nach WCAG 2.1 AA (BFSG), DSGVO, KI-Governance. |
+| Referenzen | JagdTausch als Fallbeispiel. MCT als weitere Referenz (Details folgen). |
 
 ### Support-Pakete (Inhalt ohne Preise)
 
@@ -33,10 +36,10 @@ Leitsatz überall: **„Deliver fast, but deliver complete.“** (ersetzt „Pub
 | Für | Einsteigerprojekte | mittelgroße Projekte | große / geschäftskritische Projekte |
 | Profil | geringe Nutzerzahl, 1–2 Kernkomponenten, unkritischer Ausfall, seltene Änderungen | moderate Nutzerzahl, 2–4 Kernkomponenten, mittlere Kritikalität, regelmäßige Änderungen | hohe Nutzerzahl, 4+ Kernkomponenten, geschäftskritisch (SLA-relevant), häufige Änderungen |
 | Leistungen | Monitoring, Security-Updates, Paket-Aktualisierungen, Funktionstests | wie Basis, erweitert | wie Standard, erweitert |
-| Reaktionszeit | Ø < 120 h | Ø < 120 h | garantiert < 72 h |
+| Reaktionszeit | definiert | definiert | garantiert |
 | Inklusiv-Kontingent | monatliches Stundenkontingent | größeres Kontingent | größtes Kontingent |
 
-Preise, Stundenzahlen und Stundensätze **nicht** auf der Website, sondern im Angebot. Ob Reaktionszeiten öffentlich genannt werden: offener Punkt.
+Preise, Stundenzahlen, Stundensätze und konkrete Reaktionszeiten **nicht** auf der Website, sondern im Angebot.
 
 ## Seitenstruktur
 
@@ -57,8 +60,10 @@ Navigation: Freelancing · Leistungen ▾ (Webpakete, Support, AI Development) �
 ## Phasen
 
 Jede Phase = eigener Branch + PR. Jede Seite wird **komplett** ausgeliefert: Metadaten, OG-Bild, JSON-LD, Sitemap-Eintrag, beide Sprachen.
+Jeder Merge auf `main` wird automatisch deployed, daher muss jede Phase für sich auslieferbar sein: Navigation verlinkt nur existierende Seiten, Startseiten-Abschnitte verschwinden erst, wenn ihre Seite live ist.
+Gemeinsame Bausteine (`PageHero`, `CtaBanner`, `WhyMe`, `ProcessTimeline`, Leistungen-Dropdown) entstehen in der Phase, die sie zuerst braucht, damit kein ungenutzter Code entsteht.
 
-- [ ] **0 Fundament:** Vitest, Content pro Seite aufteilen, `PageHero`/`CtaBanner`/`WhyMe`/`ProcessTimeline`/Breadcrumbs, Header mit Routen + aktiver Seite + Dropdown, Footer-Sitemap
+- [~] **0 Fundament:** Vitest, Routen-Registry + aktive Navigation (TDD), Content pro Bereich aufteilen, gemeinsamer Metadaten-Helper für Unterseiten, Breadcrumb-JSON-LD (TDD)
 - [ ] **1 Positionierung & Startseite:** Freelancing-Hero, „Warum ich“, neues Motto, Startseite verschlanken (Anker-IDs bleiben)
 - [ ] **2 `/freelancing`**
 - [ ] **3 `/packages`** (OfferCatalog-Markup)
@@ -72,6 +77,4 @@ Texte werden pro Phase in DE + EN entworfen und im PR reviewt.
 
 ## Offene Punkte
 
-- [ ] Compliance: Was kann konkret zugesagt werden (AV-Vertrag, EU-Hosting, WCAG 2.1 AA / BFSG, …)?
-- [ ] Referenzen: JagdTausch o. a. als Fallbeispiel nutzbar? Weitere Testimonials?
-- [ ] Support-Reaktionszeiten öffentlich nennen (Ø < 120 h / < 72 h) oder nur „definierte Reaktionszeiten“?
+- [ ] MCT: Wer/was ist das, was wurde umgesetzt, gibt es ein Zitat und darf der Name genannt werden?

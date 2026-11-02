@@ -1,13 +1,13 @@
-import { SiteContent } from "../interfaces";
+import { ISectionHeading, IWayVentureFaq } from "../interfaces";
 import SectionHeading from "./shared/sectionHeading";
 import Icon from "./shared/materialIcon";
 
 // Answers stay in the HTML even when collapsed, so crawlers and AI assistants can read them.
-export default function Faq({ content }: { content: SiteContent['faq'] }) {
+export default function Faq({ content }: { content: ISectionHeading & { items: IWayVentureFaq[] } }) {
   return (
-    <section className="border-t border-slate-200/80 bg-white py-20" id="faq">
+    <section aria-labelledby="faq-title" className="border-t border-slate-200/80 bg-white py-20" id="faq">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading content={ content }/>
+        <SectionHeading content={ content } id="faq-title"/>
 
         <div className="grid max-w-4xl grid-cols-1 gap-3">
           { content.items.map((item) => (

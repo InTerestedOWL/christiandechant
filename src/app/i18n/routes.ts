@@ -3,6 +3,7 @@ import { Locale } from "./config";
 /** All page routes, relative to the locale root. Slugs are English in every locale. */
 export const routes = {
   home: '',
+  freelancing: '/freelancing',
   wayventure: '/wayventure',
   imprint: '/imprint',
   privacy: '/privacy-policy',

@@ -69,6 +69,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
     ],
     mantra: 'Deliver fast, but deliver complete.',
     cta: 'Erstgespräch vereinbaren',
+    secondaryCta: 'Mehr zum Freelancing',
   },
   competencies: {
     eyebrow: 'Technologische Exzellenz',

@@ -12,11 +12,12 @@ export function Eyebrow({ icon, text, className = '' }: { icon: string, text: st
   );
 }
 
-export default function SectionHeading({ content }: { content: ISectionHeading }) {
+/** Section title block. Pass `id` to reference the h2 from the section's aria-labelledby. */
+export default function SectionHeading({ content, id }: { content: ISectionHeading, id?: string }) {
   return (
     <div className="mb-12 flex max-w-2xl flex-col gap-3">
       <Eyebrow icon={ content.icon } text={ content.eyebrow }/>
-      <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{ content.title }</h2>
+      <h2 id={ id } className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{ content.title }</h2>
       <p className="text-base text-slate-600">{ content.text }</p>
     </div>
   );

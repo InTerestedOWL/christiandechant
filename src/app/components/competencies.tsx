@@ -1,5 +1,5 @@
-import { SiteContent, StackGroup } from "../interfaces";
-import { techStack } from "../content/shared";
+import { SiteContent } from "../interfaces";
+import TechStack from "./shared/techStack";
 import { Eyebrow } from "./shared/sectionHeading";
 import Icon from "./shared/materialIcon";
 import { accentHoverBorder, accentIconBox } from "./shared/accent";
@@ -44,18 +44,7 @@ export default function Competencies({ content }: { content: SiteContent['compet
 
         <div id="stack" className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <Eyebrow icon="stacks" text={ content.stackTitle } className="mb-6"/>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            { ( Object.keys(techStack) as StackGroup[] ).map((group) => (
-              <div key={ group }>
-                <h3 className="mb-2.5 text-sm font-bold text-slate-900">{ content.stackGroups[group] }</h3>
-                <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-600">
-                  { techStack[group].map((tech) => (
-                    <span key={ tech } className="rounded bg-slate-100 px-2 py-0.5">{ tech }</span>
-                  )) }
-                </div>
-              </div>
-            )) }
-          </div>
+          <TechStack groups={ content.stackGroups }/>
         </div>
       </div>
     </section>

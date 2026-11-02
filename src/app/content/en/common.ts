@@ -1,17 +1,17 @@
 import { SiteContent } from "../../interfaces";
 
-export const commonContent: Pick<SiteContent, 'header' | 'cookieBanner' | 'footer' | 'notFound'> = {
+export const commonContent: Pick<SiteContent, 'header' | 'cookieBanner' | 'footer' | 'notFound' | 'a11y'> = {
   header: {
     tagline: 'Full-Stack & Applied AI',
     badge: 'Senior Dev',
     nav: [
+      { href: '/freelancing', title: 'Freelancing', mobileTitle: 'Freelancing & engagement models' },
       { href: '#why', title: 'Why me', mobileTitle: 'Why work with me' },
       { href: '#about', title: 'About', mobileTitle: 'About me' },
       { href: '#wayventure', title: 'WayVenture', mobileTitle: 'WayVenture (App)', highlight: 'amber', badge: 'Live' },
       { href: '#services', title: 'Offers', mobileTitle: 'Offers & Web Packages' },
       { href: '#ai-consulting', title: 'AI Consulting', mobileTitle: 'AI Consulting & Coaching' },
       { href: '#experience', title: 'Experience', mobileTitle: 'Experience & Career' },
-      { href: '#contact', title: 'Contact', mobileTitle: 'Contact' },
     ],
     cta: 'Start a project',
     mobileCta: 'Start a project',
@@ -57,5 +57,11 @@ export const commonContent: Pick<SiteContent, 'header' | 'cookieBanner' | 'foote
     title: 'Page not found',
     text: 'The page you requested does not exist (anymore). Maybe the homepage helps.',
     cta: 'Go to the homepage',
+  },
+  a11y: {
+    skipToContent: 'Skip to content',
+    breadcrumbLabel: 'Breadcrumb',
+    home: 'Home',
+    newTab: '(opens in a new tab)',
   },
 };

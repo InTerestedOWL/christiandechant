@@ -4,6 +4,8 @@ import { en } from "./en";
 
 // Fields that may legitimately differ between the locales.
 const ignoredKeys = new Set([ 'keywords', 'lang' ]);
+// The English legal pages note that the German version is binding.
+const englishOnlyPaths = new Set([ '.imprint.intro', '.privacy.intro' ]);
 
 /** Paths where German and English content differ in shape: missing keys, array lengths, types or empty strings. */
 function shapeDifferences(a: unknown, b: unknown, path = ''): string[] {
@@ -15,7 +17,7 @@ function shapeDifferences(a: unknown, b: unknown, path = ''): string[] {
   }
   if ( a && b && typeof a === 'object' && typeof b === 'object' ) {
     const keys = new Set([ ...Object.keys(a), ...Object.keys(b) ]);
-    return [ ...keys ].filter((key) => !ignoredKeys.has(key)).flatMap((key) => {
+    return [ ...keys ].filter((key) => !ignoredKeys.has(key) && !englishOnlyPaths.has(`${ path }.${ key }`)).flatMap((key) => {
       const left = (a as Record<string, unknown>)[key];
       const right = (b as Record<string, unknown>)[key];
       if ( left === undefined || right === undefined ) {

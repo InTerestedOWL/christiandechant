@@ -103,7 +103,7 @@ export default function Contact({ locale, content, packagesByTopic = {} }: {
   };
 
   return (
-    <section className="border-t border-slate-200/80 bg-slate-50 py-20" id="contact">
+    <section aria-labelledby="contact-title" className="border-t border-slate-200/80 bg-slate-50 py-20" id="contact">
       <Suspense fallback={ null }>
         <PrefillReader scopes={ form.scopes } packagesByTopic={ packagesByTopic } packageIntro={ form.packageIntro }
                        onPrefill={ (prefill) => {
@@ -144,7 +144,7 @@ export default function Contact({ locale, content, packagesByTopic = {} }: {
           <div className="flex flex-col gap-6 lg:col-span-5">
             <div>
               <Eyebrow icon="mail" text={ content.eyebrow } className="mb-2"/>
-              <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">{ content.title }</h2>
+              <h2 id="contact-title" className="text-3xl font-extrabold tracking-tight text-slate-900">{ content.title }</h2>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">{ content.text }</p>
             </div>
 

@@ -21,15 +21,15 @@ const pillarLink: Partial<Record<Accent, string>> = {
 
 export default function Motto({ locale, content }: { locale: Locale, content: SiteContent['motto'] }) {
   return (
-    <section className="bg-linear-to-r from-brand-700 via-brand-800 to-indigo-900 py-20 text-white">
+    <section aria-labelledby="motto-title" className="bg-linear-to-r from-brand-700 via-brand-800 to-indigo-900 py-20 text-white">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-4 text-center sm:px-6 lg:px-8">
         <span
           className="rounded-full border border-brand-500/30 bg-brand-900/50 px-3 py-1 font-mono text-xs font-semibold uppercase tracking-widest text-brand-200">
           { content.eyebrow }
         </span>
-        <blockquote lang="en" className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+        <h2 id="motto-title" lang="en" className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
           „{ content.quote }“
-        </blockquote>
+        </h2>
         <p className="max-w-2xl text-base leading-relaxed text-brand-100 sm:text-lg sm:leading-7">{ content.text }</p>
       </div>
 

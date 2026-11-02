@@ -19,7 +19,7 @@ function Cell({ value, content }: { value: boolean | string, content: Comparison
 export default function ComparisonTable({ content, packages }: { content: Comparison, packages: string[] }) {
   return (
     <div role="region" aria-labelledby="comparison-caption" tabIndex={ 0 }
-         className="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+         className="relative overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
       <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
         <caption id="comparison-caption" className="sr-only">{ content.caption }</caption>
         <thead>

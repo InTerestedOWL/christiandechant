@@ -2,9 +2,9 @@ import { SiteContent } from "../interfaces";
 import { Locale, locales } from "../i18n/config";
 import { contactEmail, profileUrls, siteUrl, techStack } from "../content/shared";
 
-const personId = `${ siteUrl }/#person`;
+export const personId = `${ siteUrl }/#person`;
 export const businessId = `${ siteUrl }/#business`;
-const websiteId = `${ siteUrl }/#website`;
+export const websiteId = `${ siteUrl }/#website`;
 
 const address = {
   "@type": "PostalAddress",

@@ -10,6 +10,8 @@ const pages: { route: Route, changeFrequency: MetadataRoute.Sitemap[number]['cha
   { route: 'support', changeFrequency: 'monthly', priority: 0.8 },
   { route: 'aiDevelopment', changeFrequency: 'monthly', priority: 0.9 },
   { route: 'approach', changeFrequency: 'monthly', priority: 0.8 },
+  { route: 'about', changeFrequency: 'monthly', priority: 0.7 },
+  { route: 'contact', changeFrequency: 'yearly', priority: 0.7 },
   { route: 'wayventure', changeFrequency: 'weekly', priority: 0.9 },
   { route: 'imprint', changeFrequency: 'yearly', priority: 0.3 },
   { route: 'privacy', changeFrequency: 'yearly', priority: 0.3 },

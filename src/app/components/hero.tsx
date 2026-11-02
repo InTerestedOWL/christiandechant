@@ -49,7 +49,7 @@ export default function Hero({ locale, content }: { locale: Locale, content: Her
             <p className="max-w-2xl text-lg leading-relaxed text-slate-600"><RichText text={ content.intro }/></p>
 
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
-              <Link href={ pagePath(locale, 'home', 'contact') }
+              <Link href={ pagePath(locale, 'contact') }
                     className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:scale-[1.01] hover:bg-brand-700 hover:shadow-brand-500/25">
                 <span>{ content.primaryCta }</span>
                 <Icon name="send" className="text-[18px]"/>

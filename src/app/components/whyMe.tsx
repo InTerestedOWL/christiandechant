@@ -32,7 +32,7 @@ export default function WhyMe({ locale, content }: { locale: Locale, content: Si
               <span>{ content.secondaryCta }</span>
               <Icon name="arrow_forward" className="text-[18px]"/>
             </Link>
-            <Link href={ pagePath(locale, 'home', 'contact') }
+            <Link href={ pagePath(locale, 'contact') }
                   className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-brand-700">
               <span>{ content.cta }</span>
               <Icon name="arrow_forward" className="text-[18px]"/>

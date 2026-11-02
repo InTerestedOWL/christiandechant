@@ -7,12 +7,13 @@ import Icon from "./shared/materialIcon";
 import RichText from "./shared/richText";
 import { pagePath } from "@/app/i18n/routes";
 
-export default function WayVentureSpotlight({ locale, content }: {
+export default function WayVentureSpotlight({ locale, content, newTabHint }: {
   locale: Locale,
-  content: SiteContent['wayventure']
+  content: SiteContent['wayventure'],
+  newTabHint: string,
 }) {
   return (
-    <section className="relative overflow-hidden bg-white py-20" id="wayventure">
+    <section aria-labelledby="wayventure-title" className="relative overflow-hidden bg-white py-20" id="wayventure">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
           className="relative overflow-hidden rounded-3xl border-2 border-amber-200/90 bg-linear-to-br from-amber-50/60 via-white to-orange-50/40 p-8 shadow-xl shadow-amber-500/5 sm:p-12">
@@ -23,7 +24,7 @@ export default function WayVentureSpotlight({ locale, content }: {
                 <Icon name="verified" className="text-[16px] text-amber-600"/>
                 { content.badge }
               </div>
-              <h2
+              <h2 id="wayventure-title"
                 className="text-3xl leading-tight font-extrabold tracking-tight text-slate-900 sm:text-4xl sm:leading-10 lg:text-5xl lg:leading-none">
                 { content.title } <br className="hidden sm:inline"/>
                 <span className="bg-linear-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
@@ -50,8 +51,9 @@ export default function WayVentureSpotlight({ locale, content }: {
                    className="inline-flex items-center gap-2 rounded-xl bg-amber-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-md transition-all hover:bg-amber-400">
                   <span>{ content.primaryCta }</span>
                   <Icon name="open_in_new" className="text-[18px]"/>
+                  <span className="sr-only">{ newTabHint }</span>
                 </a>
-                <Link href={ pagePath(locale, 'home', 'contact') }
+                <Link href={ pagePath(locale, 'contact') }
                       className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition-all hover:bg-slate-50">
                   <span>{ content.secondaryCta }</span>
                   <Icon name="article" className="text-[18px]"/>

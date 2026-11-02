@@ -53,13 +53,15 @@ ${ en.faq.items.map((item) => `### ${ item.question }\n\n${ item.answer }`).join
 
 ## Pages
 
-- [Homepage (English)](${ siteUrl }/en): services, experience, contact
-- [Startseite (Deutsch)](${ siteUrl }/de): Leistungen, Werdegang, Kontakt
-- [Approach](${ siteUrl }/en/approach): from idea to production in five phases (scoping, prototype, MVP, go-live, operations), definition of done, compliance (GDPR with DPA, EU hosting, WCAG 2.1 AA, AI governance)
-- [Web packages](${ siteUrl }/en/packages): four website packages, feature comparison, standards included in every package, process, FAQ
-- [AI development](${ siteUrl }/en/ai-development): AI features in software, custom agents and MCP servers, AI audit & governance, 1:1 coaching for developers
-- [Support & maintenance](${ siteUrl }/en/support): support packages (Basic, Standard, Premium) for websites and software: monitoring, security and dependency updates, functional testing, defined response times
+- [Homepage (English)](${ siteUrl }/en): positioning, services overview, FAQ, contact
+- [Startseite (Deutsch)](${ siteUrl }/de): Positionierung, Leistungsüberblick, FAQ, Kontakt
 - [Freelancing](${ siteUrl }/en/freelancing): engagement models, working model, process, JagdTausch case study
+- [Web packages](${ siteUrl }/en/packages): four website packages, feature comparison, standards included in every package, process, FAQ
+- [Support & maintenance](${ siteUrl }/en/support): support packages (Basic, Standard, Premium) for websites and software: monitoring, security and dependency updates, functional testing, defined response times
+- [AI development](${ siteUrl }/en/ai-development): AI features in software, custom agents and MCP servers, AI audit & governance, 1:1 coaching for developers
+- [Approach](${ siteUrl }/en/approach): from idea to production in five phases (scoping, prototype, MVP, go-live, operations), definition of done, compliance (GDPR with DPA, EU hosting, WCAG 2.1 AA, AI governance)
+- [About](${ siteUrl }/en/about): career, master’s thesis, values, volunteer fire brigade
+- [Contact](${ siteUrl }/en/contact): contact form and what happens after a request
 - [WayVenture](${ siteUrl }/en/wayventure): founder project, a travel planner app (${ wayVentureUrl })
 - [Master’s thesis (PDF, German)](${ siteUrl }/Masterthesis.pdf): Effectiveness of Zero Trust architectures in Kubernetes clusters
 - [Imprint](${ siteUrl }/de/imprint)

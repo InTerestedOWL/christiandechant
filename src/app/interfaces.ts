@@ -1,3 +1,5 @@
+import type { Route } from "./i18n/routes";
+
 export type StackGroup = 'frontend' | 'backend' | 'data' | 'cloud' | 'quality' | 'ai';
 
 export type Accent = 'brand' | 'indigo' | 'emerald' | 'amber' | 'rose' | 'slate';
@@ -286,6 +288,7 @@ export interface SiteContent {
   },
   competencies: ISectionHeading & {
     badge: string,
+    detailsCta: string,
     items: ICompetency[],
     stackTitle: string,
     stackGroups: Record<StackGroup, string>,
@@ -390,6 +393,9 @@ export interface SiteContent {
     languageLabel: string,
     rights: string,
     status: string,
+    /** Label of the footer page navigation. */
+    pagesLabel: string,
+    pages: { route: Route, title: string }[],
   },
   wayventurePage: {
     metaTitle: string,
@@ -470,6 +476,25 @@ export interface SiteContent {
     faq: ISectionHeading & { items: IWayVentureFaq[] },
     cta: ICtaBanner,
     service: { name: string, serviceType: string[], catalogName: string },
+  },
+  aboutPage: {
+    metaTitle: string,
+    metaDescription: string,
+    keywords: string[],
+    breadcrumb: string,
+    hero: IPageHero,
+    story: ISectionHeading & { paragraphs: string[] },
+    values: ISectionHeading & { items: IIconItem[] },
+    product: ICtaBanner,
+    cta: ICtaBanner,
+  },
+  contactPage: {
+    metaTitle: string,
+    metaDescription: string,
+    keywords: string[],
+    breadcrumb: string,
+    hero: IPageHero,
+    nextSteps: ISectionHeading & { steps: IProcessStep[] },
   },
   approachPage: {
     metaTitle: string,

@@ -9,6 +9,8 @@ import { packagesPageContent } from "./packages";
 import { supportPageContent } from "./support";
 import { aiDevelopmentPageContent } from "./aiDevelopment";
 import { approachPageContent } from "./approach";
+import { aboutPageContent } from "./aboutPage";
+import { contactPageContent } from "./contactPage";
 
 export const en: SiteContent = {
   ...metaContent,
@@ -21,4 +23,6 @@ export const en: SiteContent = {
   ...supportPageContent,
   ...aiDevelopmentPageContent,
   ...approachPageContent,
+  ...aboutPageContent,
+  ...contactPageContent,
 };

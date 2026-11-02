@@ -27,6 +27,6 @@ export const metaContent: Pick<SiteContent, 'meta'> = {
     jobTitle: 'Senior Full-Stack & Applied AI Engineer',
     summary: 'Christian Dechant ist freiberuflicher Senior Full-Stack-Entwickler und KI-Berater aus Hofbieber bei Fulda (Hessen). Er hat einen M.Sc. in Angewandter Informatik der Hochschule Fulda und über 9 Jahre Erfahrung in der Softwareentwicklung. Er entwickelt Websites, Web-Apps und individuelle Software mit Next.js, Nuxt, Angular, C# .NET und PHP/Laravel, berät Unternehmen bei der Einführung von KI-Agenten in die Softwareentwicklung, coacht Entwickler im Umgang mit Claude Code und MCP und ist Gründer der Reise-App WayVenture. Er arbeitet remote für Kunden im DACH-Raum und international, auf Deutsch und Englisch. Neben seiner festen Position als Senior-Entwickler bei der Strauss GmbH & Co. KG nimmt er nur wenige Freelance-Projekte parallel an und begleitet sie von der Idee bis zum produktiven Betrieb, einschließlich DSGVO-Konformität, Barrierefreiheit und Support nach dem Go-live.',
     ogTagline: 'Freelance Full-Stack-Entwickler & KI-Berater · Fulda',
-    areaServed: [ 'Fulda', 'Hessen', 'Deutschland', 'Österreich', 'Schweiz' ],
+    areaServed: [ 'Fulda', 'Hessen', 'Deutschland', 'Österreich', 'Schweiz', 'Europa' ],
   },
 };

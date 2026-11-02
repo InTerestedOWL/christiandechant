@@ -3,7 +3,7 @@ import Icon from "./shared/materialIcon";
 
 export default function VoluntaryWork({ content }: { content: SiteContent['volunteering'] }) {
   return (
-    <section className="bg-white py-20" id="feuerwehr">
+    <section aria-labelledby="volunteering-title" className="bg-white py-20" id="feuerwehr">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-8 sm:p-12">
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
@@ -13,7 +13,7 @@ export default function VoluntaryWork({ content }: { content: SiteContent['volun
                 <Icon name="local_fire_department" className="text-[16px]"/>
                 { content.badge }
               </div>
-              <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{ content.title }</h2>
+              <h2 id="volunteering-title" className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{ content.title }</h2>
               <p className="text-base leading-relaxed text-slate-600">{ content.text }</p>
 
               <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-4">

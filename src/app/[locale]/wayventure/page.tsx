@@ -43,7 +43,8 @@ export default async function WayVenturePage({ params }: Props) {
   if ( !isLocale(locale) ) {
     notFound();
   }
-  const page = getContent(locale).wayventurePage;
+  const content = getContent(locale);
+  const page = content.wayventurePage;
 
   const softwareAppJsonLd = {
     "@context": "https://schema.org",
@@ -125,6 +126,7 @@ export default async function WayVenturePage({ params }: Props) {
               <a href={ wayVentureUrl } target="_blank" rel="noopener noreferrer" className={ primaryButton }>
                 <span>{ page.tryCta }</span>
                 <Icon name="open_in_new" className="text-[18px]"/>
+                <span className="sr-only">{ content.a11y.newTab }</span>
               </a>
             </div>
           </div>
@@ -235,8 +237,9 @@ export default async function WayVenturePage({ params }: Props) {
             <a href={ wayVentureUrl } target="_blank" rel="noopener noreferrer" className={ primaryButton }>
               <span>{ page.visitCta }</span>
               <Icon name="open_in_new" className="text-[18px]"/>
+              <span className="sr-only">{ content.a11y.newTab }</span>
             </a>
-            <Link href={ pagePath(locale, 'home', 'contact') }
+            <Link href={ pagePath(locale, 'contact') }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-800 transition-all hover:bg-slate-50 sm:w-auto">
               <span>{ page.talkCta }</span>
               <Icon name="chat" className="text-[18px]"/>

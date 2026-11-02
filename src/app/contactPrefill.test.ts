@@ -2,16 +2,16 @@ import { describe, expect, it } from "vitest";
 import { contactPath, resolveContactPrefill } from "./contactPrefill";
 
 describe("contactPath", () => {
-  it("links to the contact section without a prefill", () => {
-    expect(contactPath("de")).toBe("/de#contact");
+  it("links to the contact page without a prefill", () => {
+    expect(contactPath("de")).toBe("/de/contact");
   });
 
   it("adds the topic as query parameter", () => {
-    expect(contactPath("en", { topic: "ai" })).toBe("/en?topic=ai#contact");
+    expect(contactPath("en", { topic: "ai" })).toBe("/en/contact?topic=ai#contact");
   });
 
   it("adds topic and package", () => {
-    expect(contactPath("de", { topic: "support", package: "premium" })).toBe("/de?topic=support&package=premium#contact");
+    expect(contactPath("de", { topic: "support", package: "premium" })).toBe("/de/contact?topic=support&package=premium#contact");
   });
 });
 

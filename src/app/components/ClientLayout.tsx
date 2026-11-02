@@ -30,7 +30,7 @@ export default function ClientLayout({ children, locale, header, footer, cookieB
     </a>
     <Header locale={ locale } content={ header }/>
     <div id="main-content" tabIndex={ -1 } className="pt-20 outline-none">{ children }</div>
-    <Footer locale={ locale } content={ footer }/>
+    <Footer locale={ locale } content={ footer } newTabHint={ a11y.newTab }/>
     <CookieBanner locale={ locale } content={ cookieBanner }/>
     </body>
   );

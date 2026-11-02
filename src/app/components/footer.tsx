@@ -10,7 +10,11 @@ import Icon from "./shared/materialIcon";
 import LanguageSwitch from "./shared/languageSwitch";
 import { pagePath } from "@/app/i18n/routes";
 
-export default function Footer({ locale, content }: { locale: Locale, content: SiteContent['footer'] }) {
+export default function Footer({ locale, content, newTabHint }: {
+  locale: Locale,
+  content: SiteContent['footer'],
+  newTabHint: string,
+}) {
   return (
     <footer className="border-t border-slate-200 bg-white py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -29,11 +33,13 @@ export default function Footer({ locale, content }: { locale: Locale, content: S
               <a key={ social.url } href={ social.url } target="_blank" rel="noreferrer"
                  className="flex items-center gap-1 transition-colors hover:text-brand-600">
                 <Icon name={ social.icon } className="text-lg"/> { social.name }
+                <span className="sr-only"> { newTabHint }</span>
               </a>
             )) }
             <a href={ wayVentureUrl } target="_blank" rel="noreferrer"
                className="flex items-center gap-1 transition-colors hover:text-amber-600">
               <Icon name="explore" className="text-lg"/> WayVenture
+              <span className="sr-only"> { newTabHint }</span>
             </a>
           </div>
 
@@ -53,6 +59,17 @@ export default function Footer({ locale, content }: { locale: Locale, content: S
             <LanguageSwitch locale={ locale } label={ content.languageLabel } className="flex"/>
           </div>
         </div>
+        <nav aria-label={ content.pagesLabel } className="border-b border-slate-100 py-6">
+          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-600">
+            { content.pages.map((page) => (
+              <li key={ page.route }>
+                <Link href={ pagePath(locale, page.route) } className="transition-colors hover:text-brand-600">
+                  { page.title }
+                </Link>
+              </li>
+            )) }
+          </ul>
+        </nav>
         <div className="flex flex-col items-center justify-between gap-3 pt-6 text-xs text-slate-500 sm:flex-row">
           <span>© { new Date().getFullYear() } Christian Dechant. { content.rights }</span>
           <span className="flex items-center gap-1.5 font-medium text-emerald-700">

@@ -5,16 +5,16 @@ import { pagePath } from "./i18n/routes";
 /** What a call to action wants preselected in the contact form. Never personal data. */
 export type ContactPrefill = { topic: string, package?: string };
 
-/** Link to the contact form, e.g. /de?topic=support&package=premium#contact. */
+/** Link to the contact page; with a prefill it jumps to the form, e.g. /de/contact?topic=support&package=premium#contact. */
 export function contactPath(locale: Locale, prefill?: ContactPrefill): string {
   if ( !prefill ) {
-    return pagePath(locale, 'home', 'contact');
+    return pagePath(locale, 'contact');
   }
   const query = new URLSearchParams({ topic: prefill.topic });
   if ( prefill.package ) {
     query.set('package', prefill.package);
   }
-  return `${ pagePath(locale, 'home') }?${ query.toString() }#contact`;
+  return `${ pagePath(locale, 'contact') }?${ query.toString() }#contact`;
 }
 
 /**

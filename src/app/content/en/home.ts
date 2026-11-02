@@ -77,6 +77,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
     title: 'Craft & Core Competencies',
     text: 'No empty consultant talk, but proven engineering discipline. Sustainable code, zero-overhead architectures and production-ready integrations.',
     badge: 'DISCIPLINES // 04 PILLARS',
+    detailsCta: 'More about me & my career',
     stackTitle: 'Tech stack at a glance',
     stackGroups: {
       frontend: 'Frontend & mobile',

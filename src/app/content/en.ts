@@ -257,7 +257,7 @@ export const en: SiteContent = {
     items: [
       {
         title: 'Freelance Senior Developer & AI Ambassador',
-        period: 'Since July 2025',
+        period: 'Since July 2026',
         text: 'Building scalable Next.js web systems and API backends. For an agency focused on AI development, I bring the principles of traditional software engineering into agentic workflows and MCP servers.',
         accent: 'brand',
       },
@@ -275,7 +275,7 @@ export const en: SiteContent = {
       },
       {
         title: 'Freelance Lead Dev: JagdTausch Marketplace MVP',
-        period: 'July 2024 – Sept. 2025',
+        period: 'July 2025 – Oct. 2026',
         text: 'Concept and turnkey delivery of the marketplace platform (PWA) for used hunting equipment, including real-time chat, filtering and an admin dashboard.',
         accent: 'slate',
       },

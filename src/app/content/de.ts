@@ -276,7 +276,7 @@ export const de: SiteContent = {
       },
       {
         title: 'Freelance Lead Dev: JagdTausch Marktplatz MVP',
-        period: 'Juli 2024 – Sept. 2025',
+        period: 'Juli 2025 – Okt. 2026',
         text: 'Konzeption und schlüsselfertige Realisierung der Marktplatz-Plattform (PWA) für gebrauchte Jagdausrüstung inklusive Echtzeit-Chat, Filtersystem und Admin-Dashboard.',
         accent: 'slate',
       },

@@ -7,6 +7,7 @@ import { Locale } from "../i18n/config";
 import { OPEN_SETTINGS_EVENT, readConsent, saveConsent } from "../consent";
 import Icon from "./shared/materialIcon";
 import { Eyebrow } from "./shared/sectionHeading";
+import { pagePath } from "@/app/i18n/routes";
 
 function Toggle({ checked, disabled = false, onChange, label }: {
   checked: boolean,
@@ -76,7 +77,7 @@ export default function CookieBanner({ locale, content }: { locale: Locale, cont
 
         <p className="text-sm leading-relaxed text-slate-600">
           { content.text[0] }
-          <Link href={ `/${ locale }/privacy-policy` } className="font-medium text-brand-600 underline hover:text-brand-700">
+          <Link href={ pagePath(locale, 'privacy') } className="font-medium text-brand-600 underline hover:text-brand-700">
             { content.text[1] }
           </Link>
           { content.text[2] }

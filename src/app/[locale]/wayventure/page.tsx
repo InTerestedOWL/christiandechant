@@ -5,8 +5,9 @@ import { notFound } from "next/navigation";
 import { getContent } from "@/app/content";
 import { siteUrl, wayVentureUrl } from "@/app/content/shared";
 import { isLocale, locales } from "@/app/i18n/config";
-import { alternates } from "@/app/i18n/metadata";
+import { pageMetadata } from "@/app/i18n/metadata";
 import Icon from "@/app/components/shared/materialIcon";
+import { pagePath } from "@/app/i18n/routes";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -15,9 +16,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if ( !isLocale(locale) ) {
     return {};
   }
-  const { meta, wayventurePage: page } = getContent(locale);
+  const page = getContent(locale).wayventurePage;
 
-  return {
+  return pageMetadata(locale, 'wayventure', {
     title: page.metaTitle,
     description: page.metaDescription,
     keywords: [
@@ -30,21 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "AI travel app",
       "Christian Dechant",
     ],
-    alternates: alternates(locale, '/wayventure'),
-    openGraph: {
-      title: page.metaTitle,
-      description: page.metaDescription,
-      url: `${ siteUrl }/${ locale }/wayventure`,
-      siteName: meta.siteName,
-      type: "website",
-      locale: meta.ogLocale,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: page.metaTitle,
-      description: page.metaDescription,
-    },
-  };
+  });
 }
 
 const primaryButton = 'inline-flex w-full items-center justify-center gap-2 rounded-xl bg-amber-500 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-amber-600 sm:w-auto';
@@ -118,7 +105,7 @@ export default async function WayVenturePage({ params }: Props) {
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <nav aria-label="Breadcrumb" className="mb-10 text-center">
-              <Link href={ `/${ locale }` }
+              <Link href={ pagePath(locale, 'home') }
                     className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 transition-colors hover:text-amber-700">
                 <Icon name="arrow_back" className="text-[16px]"/>
                 { page.back }
@@ -260,7 +247,7 @@ export default async function WayVenturePage({ params }: Props) {
               <span>{ page.visitCta }</span>
               <Icon name="open_in_new" className="text-[18px]"/>
             </a>
-            <Link href={ `/${ locale }#contact` }
+            <Link href={ pagePath(locale, 'home', 'contact') }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-800 transition-all hover:bg-slate-50 sm:w-auto">
               <span>{ page.talkCta }</span>
               <Icon name="chat" className="text-[18px]"/>

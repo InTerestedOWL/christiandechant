@@ -6,6 +6,7 @@ import Icon from "./shared/materialIcon";
 import RichText from "./shared/richText";
 import { accentText } from "./shared/accent";
 import { codeCardStack } from "../content/shared";
+import { pagePath } from "@/app/i18n/routes";
 
 type HeroContent = SiteContent['hero'];
 
@@ -48,12 +49,12 @@ export default function Hero({ locale, content }: { locale: Locale, content: Her
             <p className="max-w-2xl text-lg leading-relaxed text-slate-600"><RichText text={ content.intro }/></p>
 
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
-              <Link href={ `/${ locale }#contact` }
+              <Link href={ pagePath(locale, 'home', 'contact') }
                     className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:scale-[1.01] hover:bg-brand-700 hover:shadow-brand-500/25">
                 <span>{ content.primaryCta }</span>
                 <Icon name="send" className="text-[18px]"/>
               </Link>
-              <Link href={ `/${ locale }#wayventure` }
+              <Link href={ pagePath(locale, 'home', 'wayventure') }
                     className="inline-flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-slate-800 transition-all hover:border-amber-300 hover:bg-amber-50">
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-500"></span>
                 <span>{ content.secondaryCta }</span>
@@ -148,7 +149,7 @@ function CodeCard({ locale, content }: { locale: Locale, content: HeroContent })
         <span className="font-mono text-slate-400">node v22.x LTS</span>
       </div>
 
-      <Link href={ `/${ locale }/wayventure` }
+      <Link href={ pagePath(locale, 'wayventure') }
             className="mt-4 flex items-center gap-3 rounded-xl border border-amber-200/80 bg-amber-50/70 p-3.5 transition-colors hover:bg-amber-50">
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-500 text-white">
           <Icon name="explore" className="text-lg"/>

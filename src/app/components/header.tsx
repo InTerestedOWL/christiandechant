@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useStatus } from "../context";
 import { INavLink, SiteContent } from "../interfaces";
 import { Locale } from "../i18n/config";
+import { isActivePath, pagePath } from "../i18n/routes";
 import LanguageSwitch from "./shared/languageSwitch";
 import Icon from "./shared/materialIcon";
 
@@ -16,7 +18,13 @@ const mobileHover: Record<NonNullable<INavLink['highlight']> | 'brand', string> 
 
 export default function Header({ locale, content }: { locale: Locale, content: SiteContent['header'] }) {
   const { status: isDrawerOpen, setStatus: setDrawerOpen } = useStatus();
-  const home = `/${ locale }`;
+  const pathname = usePathname();
+  const home = pagePath(locale, 'home');
+  const contactHref = pagePath(locale, 'home', 'contact');
+  const navLinks = content.nav.map((link) => {
+    const href = `${ home }${ link.href }`;
+    return { ...link, href, active: isActivePath(pathname, href) };
+  });
 
   return (
     <>
@@ -45,9 +53,9 @@ export default function Header({ locale, content }: { locale: Locale, content: S
           </Link>
 
           <nav className="hidden items-center gap-1 text-sm font-medium text-slate-600 lg:flex">
-            { content.nav.map((link) => (
-              <Link key={ link.href } href={ `${ home }${ link.href }` }
-                    className={ `rounded-lg px-3.5 py-2 transition-colors hover:bg-slate-50 hover:text-brand-600 ${ link.highlight === 'amber' ? 'flex items-center gap-1.5' : '' }` }>
+            { navLinks.map((link) => (
+              <Link key={ link.href } href={ link.href } aria-current={ link.active ? 'page' : undefined }
+                    className={ `rounded-lg px-3.5 py-2 transition-colors hover:bg-slate-50 hover:text-brand-600 ${ link.active ? 'bg-slate-50 text-brand-600' : '' } ${ link.highlight === 'amber' ? 'flex items-center gap-1.5' : '' }` }>
                 { link.highlight === 'amber' &&
                   <span className="h-2 w-2 animate-pulse rounded-full bg-amber-500"></span> }
                 { link.title }
@@ -56,7 +64,7 @@ export default function Header({ locale, content }: { locale: Locale, content: S
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link href={ `${ home }#contact` }
+            <Link href={ contactHref }
                   className="hidden items-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm transition-all hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-500/20 sm:inline-flex">
               <span>{ content.cta }</span>
               <Icon name="arrow_forward" className="text-[16px]"/>
@@ -88,9 +96,10 @@ export default function Header({ locale, content }: { locale: Locale, content: S
               </button>
             </div>
             <nav className="flex flex-col gap-1.5 font-medium text-slate-700">
-              { content.nav.map((link) => (
-                <Link key={ link.href } href={ `${ home }${ link.href }` } onClick={ () => setDrawerOpen(false) }
-                      className={ `rounded-xl px-3.5 py-2.5 transition-colors ${ mobileHover[link.highlight ?? 'brand'] } ${ link.badge ? 'flex items-center justify-between' : '' }` }>
+              { navLinks.map((link) => (
+                <Link key={ link.href } href={ link.href } onClick={ () => setDrawerOpen(false) }
+                      aria-current={ link.active ? 'page' : undefined }
+                      className={ `rounded-xl px-3.5 py-2.5 transition-colors ${ mobileHover[link.highlight ?? 'brand'] } ${ link.active ? 'bg-brand-50 text-brand-700' : '' } ${ link.badge ? 'flex items-center justify-between' : '' }` }>
                   { link.badge ? <span>{ link.mobileTitle }</span> : link.mobileTitle }
                   { link.badge && (
                     <span
@@ -104,7 +113,7 @@ export default function Header({ locale, content }: { locale: Locale, content: S
             <LanguageSwitch locale={ locale } label={ content.languageLabel } className="flex w-fit"/>
           </div>
           <div className="border-t border-slate-100 pt-6">
-            <Link href={ `${ home }#contact` } onClick={ () => setDrawerOpen(false) }
+            <Link href={ contactHref } onClick={ () => setDrawerOpen(false) }
                   className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-4 py-3 text-center text-sm font-medium text-white shadow-md">
               <span>{ content.mobileCta }</span>
               <Icon name="chat" className="text-[16px]"/>

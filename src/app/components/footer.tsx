@@ -8,6 +8,7 @@ import { socials, wayVentureUrl } from "../content/shared";
 import { openCookieSettings } from "../consent";
 import Icon from "./shared/materialIcon";
 import LanguageSwitch from "./shared/languageSwitch";
+import { pagePath } from "@/app/i18n/routes";
 
 export default function Footer({ locale, content }: { locale: Locale, content: SiteContent['footer'] }) {
   return (
@@ -37,11 +38,11 @@ export default function Footer({ locale, content }: { locale: Locale, content: S
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 font-mono text-xs text-slate-500">
-            <Link className="transition-colors hover:text-slate-900" href={ `/${ locale }/imprint` }>
+            <Link className="transition-colors hover:text-slate-900" href={ pagePath(locale, 'imprint') }>
               { content.imprint }
             </Link>
             <span>•</span>
-            <Link className="transition-colors hover:text-slate-900" href={ `/${ locale }/privacy-policy` }>
+            <Link className="transition-colors hover:text-slate-900" href={ pagePath(locale, 'privacy') }>
               { content.privacy }
             </Link>
             <span>•</span>

@@ -3,9 +3,10 @@ import { SiteContent } from "../interfaces";
 import { Locale } from "../i18n/config";
 import SectionHeading from "./shared/sectionHeading";
 import Icon from "./shared/materialIcon";
+import { pagePath } from "@/app/i18n/routes";
 
 export default function Offers({ locale, content }: { locale: Locale, content: SiteContent['offers'] }) {
-  const contactHref = `/${ locale }#contact`;
+  const contactHref = pagePath(locale, 'home', 'contact');
 
   return (
     <section className="border-b border-slate-200/80 bg-slate-50 py-20" id="services">

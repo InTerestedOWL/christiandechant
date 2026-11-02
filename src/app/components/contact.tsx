@@ -7,6 +7,7 @@ import { Locale } from "../i18n/config";
 import Icon from "./shared/materialIcon";
 import { Eyebrow } from "./shared/sectionHeading";
 import { accentIconBox } from "./shared/accent";
+import { pagePath } from "@/app/i18n/routes";
 
 const inputClass = 'rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500 focus:outline-none';
 const labelClass = 'font-mono text-xs font-semibold text-slate-700';
@@ -170,7 +171,7 @@ export default function Contact({ locale, content }: { locale: Locale, content: 
                        className="mt-1 rounded border-slate-300 text-brand-600 focus:ring-brand-500"/>
                 <label className="text-xs leading-normal text-slate-500" htmlFor="dsgvo">
                   { form.consent[0] }
-                  <Link href={ `/${ locale }/privacy-policy` } className="underline hover:text-brand-600">
+                  <Link href={ pagePath(locale, 'privacy') } className="underline hover:text-brand-600">
                     { form.consent[1] }
                   </Link>
                   { form.consent[2] }

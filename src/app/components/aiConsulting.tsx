@@ -4,6 +4,7 @@ import { Locale } from "../i18n/config";
 import SectionHeading from "./shared/sectionHeading";
 import Icon from "./shared/materialIcon";
 import { accentBadge, accentButton, accentText } from "./shared/accent";
+import { pagePath } from "@/app/i18n/routes";
 
 export default function AiConsulting({ locale, content }: { locale: Locale, content: SiteContent['aiConsulting'] }) {
   return (
@@ -38,7 +39,7 @@ export default function AiConsulting({ locale, content }: { locale: Locale, cont
                   )) }
                 </div>
               </div>
-              <Link href={ `/${ locale }#contact` }
+              <Link href={ pagePath(locale, 'home', 'contact') }
                     className={ `w-full rounded-xl py-3 text-center text-xs font-semibold text-white transition-colors ${ accentButton[track.accent] }` }>
                 { track.cta }
               </Link>

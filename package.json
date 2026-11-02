@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "icons": "node scripts/subset-icons.mjs"
+    "icons": "node scripts/subset-icons.mjs",
+    "test": "vitest run"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.11",
@@ -27,6 +28,7 @@
     "eslint-config-next": "^16.1.6",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.2.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.0"
   }
 }

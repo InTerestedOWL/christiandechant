@@ -20,7 +20,7 @@ export const supportPageContent: Pick<SiteContent, 'supportPage'> = {
       icon: 'support_agent',
       title: 'Nach dem Go-live geht es weiter —',
       titleHighlight: 'sicher, aktuell, betreut.',
-      intro: 'Software ist nie ganz fertig: Sicherheitslücken, Updates und neue Anforderungen kommen bestimmt. Mit einem Support-Paket bleibt Ihre Anwendung stabil, sicher und auf dem neuesten Stand – betreut von einer festen Ansprechperson.',
+      intro: 'Software ist nie ganz fertig: Sicherheitslücken, Updates und neue Anforderungen kommen bestimmt. Mit einem Support-Paket bleibt deine Anwendung stabil, sicher und auf dem neuesten Stand – betreut von einer festen Ansprechperson.',
       primaryCta: 'Support anfragen',
       secondaryCta: 'Pakete ansehen',
       facts: [
@@ -34,7 +34,7 @@ export const supportPageContent: Pick<SiteContent, 'supportPage'> = {
       eyebrow: 'Support-Pakete',
       icon: 'inventory_2',
       title: 'Drei Pakete für jede Größe',
-      text: 'Welches Paket passt, hängt von Nutzerzahl, Umfang und Kritikalität Ihrer Anwendung ab. Die konkreten Konditionen erhalten Sie individuell im Angebot.',
+      text: 'Welches Paket passt, hängt von Nutzerzahl, Umfang und Kritikalität deiner Anwendung ab. Die konkreten Konditionen erhältst du individuell im Angebot.',
       profileLabel: 'Passt, wenn',
       servicesLabel: 'Leistungen',
       responseLabel: 'Reaktionszeit',
@@ -75,9 +75,9 @@ export const supportPageContent: Pick<SiteContent, 'supportPage'> = {
       eyebrow: 'Leistungen',
       icon: 'build',
       title: 'Was Support bei mir bedeutet',
-      text: 'Kein Ticket-System mit Warteschleife, sondern laufende Pflege durch jemanden, der Ihre Anwendung kennt.',
+      text: 'Kein Ticket-System mit Warteschleife, sondern laufende Pflege durch jemanden, der deine Anwendung kennt.',
       items: [
-        { icon: 'monitor_heart', title: 'Monitoring', text: 'Verfügbarkeit und Fehler im Blick, damit Probleme auffallen, bevor Ihre Nutzer sie bemerken.' },
+        { icon: 'monitor_heart', title: 'Monitoring', text: 'Verfügbarkeit und Fehler im Blick, damit Probleme auffallen, bevor deine Nutzer sie bemerken.' },
         { icon: 'security', title: 'Security- & Paket-Updates', text: 'Sicherheitslücken schließen und Abhängigkeiten aktuell halten – geplant statt im Notfall.' },
         { icon: 'fact_check', title: 'Funktionstests', text: 'Nach jedem Update prüfe ich, dass alles wie gewohnt funktioniert.' },
         { icon: 'construction', title: 'Anpassungen & Weiterentwicklung', text: 'Kleinere Änderungen und neue Funktionen aus dem monatlichen Stundenkontingent.' },
@@ -86,14 +86,14 @@ export const supportPageContent: Pick<SiteContent, 'supportPage'> = {
     process: {
       eyebrow: 'Ablauf',
       icon: 'route',
-      title: 'So startet Ihr Support',
+      title: 'So startet dein Support',
       text: 'Von der ersten Anfrage bis zur laufenden Betreuung – klar geregelt.',
       steps: [
-        { icon: 'chat', title: 'Anfrage', text: 'Sie erzählen mir, welche Anwendung betreut werden soll und was Ihnen wichtig ist.' },
+        { icon: 'chat', title: 'Anfrage', text: 'Du erzählst mir, welche Anwendung betreut werden soll und was dir wichtig ist.' },
         { icon: 'search', title: 'Bestandsaufnahme', text: 'Ich prüfe Anwendung, Infrastruktur und Abhängigkeiten und empfehle das passende Paket.' },
-        { icon: 'assignment', title: 'Vereinbarung', text: 'Leistungen, Stundenkontingent und Reaktionszeiten halten wir in Ihrem Angebot fest.' },
+        { icon: 'assignment', title: 'Vereinbarung', text: 'Leistungen, Stundenkontingent und Reaktionszeiten halten wir in deinem Angebot fest.' },
         { icon: 'monitor_heart', title: 'Laufende Betreuung', text: 'Monitoring, Updates und Funktionstests – regelmäßig und verlässlich.' },
-        { icon: 'forum', title: 'Direkter Draht', text: 'Anliegen melden Sie direkt bei mir. Ich reagiere innerhalb der vereinbarten Zeit.' },
+        { icon: 'forum', title: 'Direkter Draht', text: 'Anliegen meldest du direkt bei mir. Ich reagiere innerhalb der vereinbarten Zeit.' },
       ],
     },
     faq: {
@@ -104,29 +104,29 @@ export const supportPageContent: Pick<SiteContent, 'supportPage'> = {
       items: [
         {
           question: 'Was kostet ein Support-Paket?',
-          answer: 'Die Kosten richten sich nach Umfang und Kritikalität Ihrer Anwendung. Nach einer kurzen Bestandsaufnahme erhalten Sie ein individuelles Angebot.',
+          answer: 'Die Kosten richten sich nach Umfang und Kritikalität deiner Anwendung. Nach einer kurzen Bestandsaufnahme erhältst du ein individuelles Angebot.',
         },
         {
-          question: 'Wie schnell reagieren Sie?',
-          answer: 'Jedes Paket hat eine fest vereinbarte Reaktionszeit, im Premium-Paket ist sie garantiert. Die konkreten Zeiten stehen in Ihrem Angebot.',
+          question: 'Wie schnell reagierst du?',
+          answer: 'Jedes Paket hat eine fest vereinbarte Reaktionszeit, im Premium-Paket ist sie garantiert. Die konkreten Zeiten stehen in deinem Angebot.',
         },
         {
           question: 'Was passiert, wenn das Stundenkontingent nicht reicht?',
           answer: 'Zusätzlicher Aufwand wird nach Absprache transparent abgerechnet – ohne Überraschungen auf der Rechnung.',
         },
         {
-          question: 'Betreuen Sie auch Anwendungen, die Sie nicht selbst entwickelt haben?',
+          question: 'Betreust du auch Anwendungen, die du nicht selbst entwickelt hast?',
           answer: 'Ja. Vor dem Start prüfe ich Code, Infrastruktur und Abhängigkeiten in einer Bestandsaufnahme und empfehle das passende Paket.',
         },
         {
           question: 'Kann ich das Paket später wechseln?',
-          answer: 'Ja. Wenn Ihr Projekt wächst oder sich die Anforderungen ändern, passen wir das Paket gemeinsam an.',
+          answer: 'Ja. Wenn dein Projekt wächst oder sich die Anforderungen ändern, passen wir das Paket gemeinsam an.',
         },
       ],
     },
     cta: {
-      title: 'Ihre Software in guten Händen',
-      text: 'Erzählen Sie mir, was betreut werden soll. Ich melde mich innerhalb von 24 Stunden persönlich mit einer Empfehlung.',
+      title: 'Deine Software in guten Händen',
+      text: 'Erzähl mir, was betreut werden soll. Ich melde mich innerhalb von 24 Stunden persönlich mit einer Empfehlung.',
       cta: 'Support anfragen',
     },
     service: {

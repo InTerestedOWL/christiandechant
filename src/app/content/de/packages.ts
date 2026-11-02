@@ -18,9 +18,9 @@ export const packagesPageContent: Pick<SiteContent, 'packagesPage'> = {
     hero: {
       eyebrow: 'Webpakete',
       icon: 'inventory_2',
-      title: 'Ihre Website, individuell gebaut —',
+      title: 'Deine Website, individuell gebaut —',
       titleHighlight: 'in einem klaren Rahmen.',
-      intro: 'Vier Pakete geben Orientierung – vom schnellen One-Pager bis zum Enterprise-System. Den genauen Umfang schneiden wir auf Ihr Vorhaben zu: Sie erhalten ein individuelles Angebot mit klaren Meilensteinen statt unübersichtlicher Stundensätze.',
+      intro: 'Vier Pakete geben Orientierung – vom schnellen One-Pager bis zum Enterprise-System. Den genauen Umfang schneiden wir auf dein Vorhaben zu: Du erhältst ein individuelles Angebot mit klaren Meilensteinen statt unübersichtlicher Stundensätze.',
       primaryCta: 'Paket anfragen',
       secondaryCta: 'Pakete vergleichen',
       facts: [
@@ -34,7 +34,7 @@ export const packagesPageContent: Pick<SiteContent, 'packagesPage'> = {
       eyebrow: 'Pakete',
       icon: 'inventory_2',
       title: 'Vier Pakete, ein Anspruch',
-      text: 'Jedes Paket ist ein Startpunkt, kein Korsett. Welches zu Ihnen passt, klären wir gemeinsam im Erstgespräch.',
+      text: 'Jedes Paket ist ein Startpunkt, kein Korsett. Welches zu dir passt, klären wir gemeinsam im Erstgespräch.',
     },
     comparison: {
       eyebrow: 'Vergleich',
@@ -69,54 +69,54 @@ export const packagesPageContent: Pick<SiteContent, 'packagesPage'> = {
       text: 'Unabhängig vom Paket gelten dieselben Standards – denn Qualität ist kein Extra.',
       items: [
         { icon: 'verified_user', title: 'Datenschutz & EU-Hosting', text: 'DSGVO-konform mit Auftragsverarbeitungsvertrag (AVV) und Hosting in der EU.' },
-        { icon: 'accessibility_new', title: 'Barrierefreiheit', text: 'Umsetzung nach WCAG 2.1 AA – damit alle Menschen Ihre Website nutzen können und Sie für das Barrierefreiheitsstärkungsgesetz (BFSG) gerüstet sind.' },
+        { icon: 'accessibility_new', title: 'Barrierefreiheit', text: 'Umsetzung nach WCAG 2.1 AA – damit alle Menschen deine Website nutzen können und du für das Barrierefreiheitsstärkungsgesetz (BFSG) gerüstet bist.' },
         { icon: 'speed', title: 'Performance & Mobile-first', text: 'Schnelle Ladezeiten und eine Bedienung, die auf dem Smartphone genauso gut funktioniert wie am Desktop.' },
-        { icon: 'key', title: 'Quellcode & Zugänge gehören Ihnen', text: 'Vollständige Übergabe nach dem Go-live – ohne Abhängigkeit von mir.' },
+        { icon: 'key', title: 'Quellcode & Zugänge gehören dir', text: 'Vollständige Übergabe nach dem Go-live – ohne Abhängigkeit von mir.' },
       ],
     },
     process: {
       eyebrow: 'Ablauf',
       icon: 'route',
-      title: 'So entsteht Ihre Website',
+      title: 'So entsteht deine Website',
       text: 'Von der ersten Idee bis zur Website im Netz – in fünf klaren Schritten.',
       steps: [
-        { icon: 'chat', title: 'Erstgespräch', text: 'Wir klären Ziele, Zielgruppe, Inhalte und welches Paket zu Ihnen passt – unverbindlich.' },
+        { icon: 'chat', title: 'Erstgespräch', text: 'Wir klären Ziele, Zielgruppe, Inhalte und welches Paket zu dir passt – unverbindlich.' },
         { icon: 'assignment', title: 'Konzept & Angebot', text: 'Seitenstruktur, Funktionsumfang und Meilensteine – festgehalten in einem individuellen Angebot.' },
-        { icon: 'palette', title: 'Design & Umsetzung', text: 'Individuelles Design und saubere Umsetzung, mit regelmäßigen Zwischenständen für Ihr Feedback.' },
-        { icon: 'rocket_launch', title: 'Go-live', text: 'Tests auf allen Geräten, Barrierefreiheits- und Performance-Check – dann geht Ihre Website online.' },
+        { icon: 'palette', title: 'Design & Umsetzung', text: 'Individuelles Design und saubere Umsetzung, mit regelmäßigen Zwischenständen für dein Feedback.' },
+        { icon: 'rocket_launch', title: 'Go-live', text: 'Tests auf allen Geräten, Barrierefreiheits- und Performance-Check – dann geht deine Website online.' },
         { icon: 'support_agent', title: 'Pflege & Support', text: 'Auf Wunsch übernehme ich Updates, Monitoring und Weiterentwicklung über ein Support-Paket.' },
       ],
     },
     custom: {
       title: 'Mehr als eine Website?',
-      text: 'Individuelle Software, Web-Apps, Schnittstellen oder ein MVP: Für Vorhaben jenseits der Pakete arbeite ich als freiberuflicher Entwickler direkt in Ihrem Projekt.',
+      text: 'Individuelle Software, Web-Apps, Schnittstellen oder ein MVP: Für Vorhaben jenseits der Pakete arbeite ich als freiberuflicher Entwickler direkt in deinem Projekt.',
       cta: 'Zum Freelancing',
     },
     faq: {
       eyebrow: 'Häufige Fragen',
       icon: 'help',
       title: 'Fragen zu den Webpaketen',
-      text: 'Das Wichtigste zu Kosten, Ablauf und Pflege – und falls Ihre Frage fehlt, schreiben Sie mir einfach.',
+      text: 'Das Wichtigste zu Kosten, Ablauf und Pflege – und falls deine Frage fehlt, schreib mir einfach.',
       items: [
         {
           question: 'Was kostet eine Website?',
-          answer: 'Jede Website wird individuell kalkuliert, denn Umfang, Inhalte und Funktionen sind bei jedem Vorhaben anders. Nach dem Erstgespräch erhalten Sie ein transparentes Angebot mit klaren Meilensteinen.',
+          answer: 'Jede Website wird individuell kalkuliert, denn Umfang, Inhalte und Funktionen sind bei jedem Vorhaben anders. Nach dem Erstgespräch erhältst du ein transparentes Angebot mit klaren Meilensteinen.',
         },
         {
           question: 'Wie lange dauert die Umsetzung?',
-          answer: 'Das hängt vom Paket und vom Umfang ab. Den konkreten Zeitplan mit Meilensteinen erhalten Sie zusammen mit dem Angebot.',
+          answer: 'Das hängt vom Paket und vom Umfang ab. Den konkreten Zeitplan mit Meilensteinen erhältst du zusammen mit dem Angebot.',
         },
         {
           question: 'Kann ich Inhalte selbst pflegen?',
-          answer: 'Ja, ab dem Paket „Interactive CMS Page“: Texte und Bilder ändern Sie über ein schlankes Headless CMS, ganz ohne Programmierkenntnisse.',
+          answer: 'Ja, ab dem Paket „Interactive CMS Page“: Texte und Bilder änderst du über ein schlankes Headless CMS, ganz ohne Programmierkenntnisse.',
         },
         {
           question: 'Ist meine Website barrierefrei?',
-          answer: 'Ja. Jede Website wird nach WCAG 2.1 AA umgesetzt und geprüft – so erreichen Sie alle Nutzer und sind für das Barrierefreiheitsstärkungsgesetz (BFSG) gerüstet.',
+          answer: 'Ja. Jede Website wird nach WCAG 2.1 AA umgesetzt und geprüft – so erreichst du alle Nutzer und bist für das Barrierefreiheitsstärkungsgesetz (BFSG) gerüstet.',
         },
         {
           question: 'Kann ich später auf ein größeres Paket wechseln?',
-          answer: 'Ja. Die Pakete bauen aufeinander auf, sodass Ihre Website mit Ihrem Unternehmen mitwachsen kann.',
+          answer: 'Ja. Die Pakete bauen aufeinander auf, sodass deine Website mit deinem Unternehmen mitwachsen kann.',
         },
         {
           question: 'Wer kümmert sich nach dem Go-live um Updates?',
@@ -125,8 +125,8 @@ export const packagesPageContent: Pick<SiteContent, 'packagesPage'> = {
       ],
     },
     cta: {
-      title: 'Welches Paket passt zu Ihnen?',
-      text: 'Schreiben Sie mir kurz, was Sie vorhaben. Ich melde mich innerhalb von 24 Stunden persönlich mit einer ersten Einschätzung.',
+      title: 'Welches Paket passt zu dir?',
+      text: 'Schreib mir kurz, was du vorhast. Ich melde mich innerhalb von 24 Stunden persönlich mit einer ersten Einschätzung.',
       cta: 'Paket anfragen',
     },
     service: {

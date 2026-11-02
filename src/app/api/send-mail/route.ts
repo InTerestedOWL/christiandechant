@@ -19,15 +19,15 @@ const transporter = nodemailer.createTransport({
 
 const recipientCopy = {
   de: {
-    subject: 'christiandechant.de: Ihre Anfrage ist eingegangen',
-    title: 'Ihre Anfrage ist eingegangen',
-    intro: 'Vielen Dank für Ihre Nachricht! Ich habe Ihre Anfrage erhalten und melde mich so schnell wie möglich bei Ihnen. Viele Grüße, Christian',
-    yourMessage: 'Ihre Nachricht:',
+    subject: 'christiandechant.de: Deine Anfrage ist eingegangen',
+    title: 'Deine Anfrage ist eingegangen',
+    intro: 'Vielen Dank für deine Nachricht! Ich habe deine Anfrage erhalten und melde mich so schnell wie möglich bei dir. Viele Grüße, Christian',
+    yourMessage: 'Deine Nachricht:',
     message: 'Nachricht:',
     imprint: 'Impressum',
     privacy: 'Datenschutz',
     rights: 'Alle Rechte vorbehalten.',
-    automated: 'Dies ist eine automatisch erzeugte E-Mail. Bei dringenden Anliegen kontaktieren Sie mich bitte direkt.',
+    automated: 'Dies ist eine automatisch erzeugte E-Mail. Bei dringenden Anliegen kontaktiere mich bitte direkt.',
   },
   en: {
     subject: 'christiandechant.de: Contact Form Submission Received!',

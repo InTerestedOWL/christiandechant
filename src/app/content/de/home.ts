@@ -5,8 +5,8 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
   hero: {
     status: 'Freelance · Begrenzte Kapazität für ausgewählte Projekte',
     headline: 'Von der Idee zum produktiven Produkt —',
-    headlineHighlight: 'so individuell wie Sie.',
-    intro: 'Ich bin **Christian Dechant**, freiberuflicher Senior Full-Stack-Entwickler und KI-Berater (M.Sc. Angewandte Informatik). Ich begleite Sie persönlich von der ersten Idee bis zur Software im produktiven Einsatz – und darüber hinaus. Neben meiner festen Senior-Position bei *Strauss GmbH & Co. KG* nehme ich bewusst nur wenige Projekte parallel an: Sie arbeiten direkt mit mir, nicht mit einer Agentur.',
+    headlineHighlight: 'so individuell wie du.',
+    intro: 'Ich bin **Christian Dechant**, freiberuflicher Senior Full-Stack-Entwickler und KI-Berater (M.Sc. Angewandte Informatik). Ich begleite dich persönlich von der ersten Idee bis zur Software im produktiven Einsatz – und darüber hinaus. Neben meiner festen Senior-Position bei *Strauss GmbH & Co. KG* nehme ich bewusst nur wenige Projekte parallel an: Du arbeitest direkt mit mir, nicht mit einer Agentur.',
     primaryCta: 'Projekt anfragen',
     secondaryCta: 'Warum mit mir?',
     imageAlt: 'Aufgeräumter Entwickler-Arbeitsplatz mit drei Monitoren: Code, Architekturdiagramm und Terminal',
@@ -29,21 +29,21 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
     eyebrow: 'Warum mit mir arbeiten',
     icon: 'workspace_premium',
     title: 'Fünf Gründe, die den Unterschied machen',
-    text: 'Keine Agentur, kein Baukasten, keine Übergabe an Junior-Entwickler: Sie bekommen Senior-Engineering, das zu Ihrem Vorhaben passt – von der ersten Skizze bis zum stabilen Betrieb.',
+    text: 'Keine Agentur, kein Baukasten, keine Übergabe an Junior-Entwickler: Du bekommst Senior-Engineering, das zu deinem Vorhaben passt – von der ersten Skizze bis zum stabilen Betrieb.',
     reasons: [
       {
         icon: 'fingerprint',
         accent: 'brand',
         title: 'Individuell statt Baukasten',
-        text: 'Jede Lösung entsteht für Ihre Ziele, Prozesse und Nutzer – nicht aus einem Template. Die Technologie richtet sich nach Ihrem Vorhaben, nicht umgekehrt.',
-        points: [ 'Konzept auf Ihre Anforderungen zugeschnitten', 'Technologiewahl nach Zweck, nicht nach Gewohnheit', 'Angebot individuell kalkuliert' ],
+        text: 'Jede Lösung entsteht für deine Ziele, Prozesse und Nutzer – nicht aus einem Template. Die Technologie richtet sich nach deinem Vorhaben, nicht umgekehrt.',
+        points: [ 'Konzept auf deine Anforderungen zugeschnitten', 'Technologiewahl nach Zweck, nicht nach Gewohnheit', 'Angebot individuell kalkuliert' ],
       },
       {
         icon: 'diamond',
         accent: 'indigo',
         title: 'Exklusiv & persönlich',
-        text: 'Ich arbeite bewusst nur an wenigen Projekten gleichzeitig. Sie sprechen immer direkt mit dem Senior-Entwickler, der Ihren Code schreibt.',
-        points: [ 'Feste Ansprechperson, keine Subunternehmer', 'Wenige Projekte parallel, volle Aufmerksamkeit', 'Der Quellcode gehört Ihnen' ],
+        text: 'Ich arbeite bewusst nur an wenigen Projekten gleichzeitig. Du sprichst immer direkt mit dem Senior-Entwickler, der deinen Code schreibt.',
+        points: [ 'Feste Ansprechperson, keine Subunternehmer', 'Wenige Projekte parallel, volle Aufmerksamkeit', 'Der Quellcode gehört dir' ],
       },
       {
         icon: 'verified_user',
@@ -56,7 +56,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         icon: 'support_agent',
         accent: 'amber',
         title: 'Support, der bleibt',
-        text: 'Mit dem Go-live endet die Verantwortung nicht. Support-Pakete sichern Betrieb, Sicherheit und Weiterentwicklung Ihrer Software dauerhaft ab.',
+        text: 'Mit dem Go-live endet die Verantwortung nicht. Support-Pakete sichern Betrieb, Sicherheit und Weiterentwicklung deiner Software dauerhaft ab.',
         points: [ 'Monitoring, Security- & Paket-Updates', 'Regelmäßige Funktionstests', 'Definierte Reaktionszeiten, garantiert im Premium-Paket' ],
       },
       {
@@ -219,7 +219,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
     detailsCta: 'Alle Pakete im Vergleich',
     custom: {
       title: 'Individuelle Softwarearchitektur oder MVP-Entwicklung gesucht?',
-      text: 'Benötigen Sie skalierbare C# .NET Microservices, mobile Hybrid-Apps oder eine fundierte Zero-Trust Cloud-Infrastruktur? Lassen Sie uns die Anforderungen besprechen.',
+      text: 'Benötigst du skalierbare C# .NET Microservices, mobile Hybrid-Apps oder eine fundierte Zero-Trust Cloud-Infrastruktur? Lass uns die Anforderungen besprechen.',
       cta: 'Architektur-Gespräch buchen',
     },
   },
@@ -247,7 +247,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         icon: 'terminal',
         accent: 'emerald',
         title: 'Mastering AI Agents: 1:1 Coaching',
-        text: 'Lernen Sie, wie Sie Claude Code, Terminal-Agenten und MCP-Server einsetzen, um 5-mal schneller zu liefern, während Sie 100% der architektonischen Kontrolle behalten.',
+        text: 'Lerne, wie du Claude Code, Terminal-Agenten und MCP-Server einsetzt, um 5-mal schneller zu liefern, während du 100% der architektonischen Kontrolle behalten.',
         items: [
           { icon: 'code', title: 'Claude Code & CLI Agenten', text: 'Kontextfenster strukturieren, Sub-Tasking und Branch-Hygiene.' },
           { icon: 'hub', title: 'Eigene MCP-Server programmieren', text: 'Eigene Datenbanken & APIs direkt an LLM-Agenten anbinden.' },
@@ -335,31 +335,31 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
     eyebrow: 'Häufige Fragen',
     icon: 'help',
     title: 'Fragen & Antworten',
-    text: 'Das Wichtigste in Kürze – und falls Ihre Frage fehlt, schreiben Sie mir einfach.',
+    text: 'Das Wichtigste in Kürze – und falls deine Frage fehlt, schreib mir einfach.',
     items: [
       {
         question: 'Wer ist Christian Dechant?',
         answer: 'Christian Dechant ist freiberuflicher Senior Full-Stack-Entwickler und KI-Berater aus Hofbieber bei Fulda (Hessen). Er hat einen M.Sc. in Angewandter Informatik der Hochschule Fulda, über 9 Jahre Erfahrung in der Softwareentwicklung, entwickelt bei der Strauss GmbH & Co. KG Microservices mit C# .NET und ist Gründer der Reise-App WayVenture.',
       },
       {
-        question: 'Welche Leistungen bieten Sie an?',
+        question: 'Welche Leistungen bietest du an?',
         answer: 'Websites vom One-Pager bis zum Enterprise-System, individuelle Web- und Softwareentwicklung, KI-Beratung für die Einführung von KI-Agenten in Entwicklungsteams, 1:1-Coaching für Entwickler sowie Gründerberatung von MVP-Scoping bis Interim CTO.',
       },
       {
-        question: 'Mit welchen Technologien arbeiten Sie?',
+        question: 'Mit welchen Technologien arbeitest du?',
         answer: 'Im Frontend mit Next.js, React, Nuxt, Vue.js und Angular, im Backend mit C# .NET, PHP (Laravel, Symfony), Node.js, Python und Java. Dazu PostgreSQL, MySQL und MongoDB, Docker, Kubernetes, AWS und Azure sowie KI-Werkzeuge wie Claude Code und MCP.',
       },
       {
-        question: 'Warum mit Ihnen arbeiten statt mit einer Agentur?',
-        answer: 'Sie arbeiten direkt mit dem Senior-Entwickler, der Ihren Code schreibt – ohne Subunternehmer und ohne Übergaben. Christian Dechant nimmt bewusst nur wenige Projekte parallel an, entwickelt jede Lösung individuell, plant DSGVO-Konformität (inkl. AV-Vertrag), Hosting in der EU und Barrierefreiheit nach WCAG 2.1 AA von Anfang an ein und begleitet Projekte von der Idee bis zum produktiven Betrieb, auf Wunsch mit Support-Paketen nach dem Go-live.',
+        question: 'Warum mit dir arbeiten statt mit einer Agentur?',
+        answer: 'Du arbeitest direkt mit dem Senior-Entwickler, der deinen Code schreibt – ohne Subunternehmer und ohne Übergaben. Christian Dechant nimmt bewusst nur wenige Projekte parallel an, entwickelt jede Lösung individuell, plant DSGVO-Konformität (inkl. AV-Vertrag), Hosting in der EU und Barrierefreiheit nach WCAG 2.1 AA von Anfang an ein und begleitet Projekte von der Idee bis zum produktiven Betrieb, auf Wunsch mit Support-Paketen nach dem Go-live.',
       },
       {
-        question: 'Arbeiten Sie auch remote oder nur in Fulda?',
+        question: 'Arbeitest du auch remote oder nur in Fulda?',
         answer: 'Remote-first für Kunden in Deutschland, Österreich, der Schweiz und international, auf Deutsch und Englisch. Termine vor Ort in Fulda und Umgebung sind nach Absprache möglich.',
       },
       {
         question: 'Was kostet ein Projekt?',
-        answer: 'Jedes Projekt wird individuell kalkuliert. Nach einem kurzen Erstgespräch zu Zielen und Umfang erhalten Sie ein transparentes Angebot mit klaren Meilensteinen statt unübersichtlicher Stundensätze.',
+        answer: 'Jedes Projekt wird individuell kalkuliert. Nach einem kurzen Erstgespräch zu Zielen und Umfang erhältst du ein transparentes Angebot mit klaren Meilensteinen statt unübersichtlicher Stundensätze.',
       },
       {
         question: 'Wie schnell erhalte ich eine Rückmeldung?',
@@ -382,15 +382,15 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
       },
     ],
     eyebrow: 'Direkter Kontakt',
-    title: 'Lassen Sie uns Ihr Projekt besprechen',
-    text: 'Ob Senior Freelance-Kapazität für Ihr Web- & Cloud-Projekt, maßgeschneiderte KI-Workflows oder technisches Sparring: Ich melde mich innerhalb von 24 Stunden persönlich zurück.',
+    title: 'Lass uns dein Projekt besprechen',
+    text: 'Ob Senior Freelance-Kapazität für dein Web- & Cloud-Projekt, maßgeschneiderte KI-Workflows oder technisches Sparring: Ich melde mich innerhalb von 24 Stunden persönlich zurück.',
     items: [
       { label: 'E-MAIL', text: contactEmail, href: `mailto:${ contactEmail }`, icon: 'send', accent: 'brand' },
       { label: 'STANDORT', text: 'Hofbieber / Hessen (Remote-First)', icon: 'location_on', accent: 'brand' },
       { label: 'ANTWORTGARANTIE', text: '< 24h Reaktionszeit', icon: 'schedule', accent: 'emerald' },
     ],
     form: {
-      name: 'Ihr Name *',
+      name: 'Dein Name *',
       namePlaceholder: 'z.B. Anna Schmidt',
       email: 'E-Mail Adresse *',
       emailPlaceholder: 'anna@unternehmen.de',
@@ -405,7 +405,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         { value: 'wayventure', label: 'WayVenture Kooperation' },
       ],
       message: 'Kurzbeschreibung & Ziele *',
-      messagePlaceholder: 'Worum geht es in Ihrem Projekt? Welcher Zeitrahmen ist angedacht?',
+      messagePlaceholder: 'Worum geht es in deinem Projekt? Welcher Zeitrahmen ist angedacht?',
       packageIntro: 'Interesse an:',
       consent: [
         'Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden (',
@@ -414,9 +414,9 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
       ],
       submit: 'Anfrage absenden',
       sending: 'Wird gesendet …',
-      success: 'Vielen Dank! Ihre Nachricht wurde übermittelt. Christian Dechant meldet sich zeitnah bei Ihnen.',
-      rateLimited: 'Zu viele Anfragen in kurzer Zeit. Bitte versuchen Sie es in ein paar Minuten erneut oder schreiben Sie direkt eine E-Mail.',
-      error: 'Leider ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie direkt eine E-Mail.',
+      success: 'Vielen Dank! Deine Nachricht wurde übermittelt. Christian Dechant meldet sich zeitnah bei dir.',
+      rateLimited: 'Zu viele Anfragen in kurzer Zeit. Bitte versuch es in ein paar Minuten erneut oder schreib direkt eine E-Mail.',
+      error: 'Leider ist etwas schiefgelaufen. Bitte versuch es erneut oder schreib direkt eine E-Mail.',
     },
   },
 };

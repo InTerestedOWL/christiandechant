@@ -4,6 +4,7 @@ import { getContent } from "@/app/content";
 import { isLocale } from "@/app/i18n/config";
 import { pageMetadata } from "@/app/i18n/metadata";
 import { pagePath } from "@/app/i18n/routes";
+import { contactPath } from "@/app/contactPrefill";
 import { breadcrumbJsonLd, faqJsonLd, serviceJsonLd } from "@/app/seo/pageJsonLd";
 import PageHero from "@/app/components/shared/pageHero";
 import SectionHeading from "@/app/components/shared/sectionHeading";
@@ -40,7 +41,7 @@ export default async function PackagesPage({ params }: Props) {
   }
   const content = getContent(locale);
   const page = content.packagesPage;
-  const contactHref = pagePath(locale, 'home', 'contact');
+  const contactHref = contactPath(locale, { topic: 'package' });
   const trail = [
     { name: content.a11y.home, path: pagePath(locale, 'home') },
     { name: page.breadcrumb, path: pagePath(locale, 'packages') },
@@ -75,7 +76,7 @@ export default async function PackagesPage({ params }: Props) {
       <section id="packages" aria-labelledby="packages-title" className="border-b border-slate-200/80 bg-slate-50 py-20">
         <div className={ container }>
           <SectionHeading content={ page.packages } id="packages-title"/>
-          <PackageGrid content={ content.offers } contactHref={ contactHref } showIdealFor/>
+          <PackageGrid locale={ locale } content={ content.offers } showIdealFor/>
         </div>
       </section>
 

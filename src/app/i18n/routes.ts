@@ -5,6 +5,7 @@ export const routes = {
   home: '',
   freelancing: '/freelancing',
   packages: '/packages',
+  support: '/support',
   wayventure: '/wayventure',
   imprint: '/imprint',
   privacy: '/privacy-policy',

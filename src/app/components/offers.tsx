@@ -6,16 +6,17 @@ import SectionHeading from "./shared/sectionHeading";
 import CalloutBox from "./shared/calloutBox";
 import Icon from "./shared/materialIcon";
 import PackageGrid from "./packageGrid";
+import { contactPath } from "../contactPrefill";
 
 export default function Offers({ locale, content }: { locale: Locale, content: SiteContent['offers'] }) {
-  const contactHref = pagePath(locale, 'home', 'contact');
+  const contactHref = contactPath(locale, { topic: 'freelance' });
 
   return (
     <section aria-labelledby="services-title" className="border-b border-slate-200/80 bg-slate-50 py-20" id="services">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading content={ content } id="services-title"/>
 
-        <PackageGrid content={ content } contactHref={ contactHref }/>
+        <PackageGrid locale={ locale } content={ content }/>
 
         <div className="mt-6 mb-10 flex justify-center">
           <Link href={ pagePath(locale, 'packages') }

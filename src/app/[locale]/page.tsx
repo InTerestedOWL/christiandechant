@@ -37,7 +37,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <Experience content={ content.experience }/>
       <VoluntaryWork content={ content.volunteering }/>
       <Faq content={ content.faq }/>
-      <Contact locale={ locale } content={ content.contact }/>
+      <Contact locale={ locale } content={ content.contact } packagesByTopic={ {
+        package: content.offers.packages.map((pkg) => ({ value: pkg.id, label: pkg.title })),
+        support: content.supportPage.packages.items.map((pkg) => ({ value: pkg.id, label: pkg.title })),
+      } }/>
     </main>
   );
 }

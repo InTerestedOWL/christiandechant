@@ -5,6 +5,7 @@ import { jagdTauschUrl } from "@/app/content/shared";
 import { isLocale } from "@/app/i18n/config";
 import { pageMetadata } from "@/app/i18n/metadata";
 import { pagePath } from "@/app/i18n/routes";
+import { contactPath } from "@/app/contactPrefill";
 import { breadcrumbJsonLd, faqJsonLd, serviceJsonLd } from "@/app/seo/pageJsonLd";
 import PageHero from "@/app/components/shared/pageHero";
 import SectionHeading from "@/app/components/shared/sectionHeading";
@@ -41,7 +42,7 @@ export default async function FreelancingPage({ params }: Props) {
   }
   const content = getContent(locale);
   const page = content.freelancingPage;
-  const contactHref = pagePath(locale, 'home', 'contact');
+  const contactHref = contactPath(locale, { topic: 'freelance' });
   const trail = [
     { name: content.a11y.home, path: pagePath(locale, 'home') },
     { name: page.breadcrumb, path: pagePath(locale, 'freelancing') },

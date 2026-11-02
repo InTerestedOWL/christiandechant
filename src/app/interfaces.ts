@@ -16,6 +16,13 @@ export interface INavLink {
   badge?: string,
 }
 
+/** A navigation entry that opens a submenu instead of linking somewhere itself. */
+export interface INavGroup {
+  title: string,
+  mobileTitle: string,
+  children: INavLink[],
+}
+
 export interface IStat {
   value: string,
   label: string,
@@ -88,6 +95,18 @@ export interface ICaseStudy {
   linkLabel: string,
 }
 
+export interface ISupportPackage {
+  /** Stable id used in contact links (?topic=support&package=<id>). */
+  id: string,
+  tier: string,
+  title: string,
+  idealFor: string,
+  profile: string[],
+  services: string[],
+  response: string,
+  featured?: boolean,
+}
+
 export interface ICtaBanner {
   title: string,
   text: string,
@@ -95,6 +114,8 @@ export interface ICtaBanner {
 }
 
 export interface IOfferPackage {
+  /** Stable id used in contact links (?topic=package&package=<id>). */
+  id: string,
   tier: string,
   title: string,
   text: string,
@@ -225,7 +246,7 @@ export interface SiteContent {
   header: {
     tagline: string,
     badge: string,
-    nav: INavLink[],
+    nav: (INavLink | INavGroup)[],
     cta: string,
     mobileCta: string,
     drawerTitle: string,
@@ -327,6 +348,8 @@ export interface SiteContent {
       scopes: IOption[],
       message: string,
       messagePlaceholder: string,
+      /** Prefix of the message prefilled from a package link, e.g. "Interested in:". */
+      packageIntro: string,
       /** Rendered around a link to the privacy policy: before + link + after. */
       consent: [ string, string, string ],
       submit: string,
@@ -416,6 +439,26 @@ export interface SiteContent {
     included: ISectionHeading & { items: IIconItem[] },
     process: ISectionHeading & { steps: IProcessStep[] },
     custom: ICtaBanner,
+    faq: ISectionHeading & { items: IWayVentureFaq[] },
+    cta: ICtaBanner,
+    service: { name: string, serviceType: string[], catalogName: string },
+  },
+  supportPage: {
+    metaTitle: string,
+    metaDescription: string,
+    keywords: string[],
+    breadcrumb: string,
+    hero: IPageHero,
+    packages: ISectionHeading & {
+      items: ISupportPackage[],
+      profileLabel: string,
+      servicesLabel: string,
+      responseLabel: string,
+      requestCta: string,
+      featuredBadge: string,
+    },
+    services: ISectionHeading & { items: IIconItem[] },
+    process: ISectionHeading & { steps: IProcessStep[] },
     faq: ISectionHeading & { items: IWayVentureFaq[] },
     cta: ICtaBanner,
     service: { name: string, serviceType: string[], catalogName: string },

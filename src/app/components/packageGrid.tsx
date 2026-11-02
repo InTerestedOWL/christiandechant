@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { SiteContent } from "../interfaces";
+import { Locale } from "../i18n/config";
+import { contactPath } from "../contactPrefill";
 import Icon from "./shared/materialIcon";
 
 /** The web package cards, shared by the homepage teaser and the packages page. */
-export default function PackageGrid({ content, contactHref, showIdealFor = false }: {
+export default function PackageGrid({ locale, content, showIdealFor = false }: {
+  locale: Locale,
   content: SiteContent['offers'],
-  contactHref: string,
   showIdealFor?: boolean,
 }) {
   return (
@@ -40,7 +42,7 @@ export default function PackageGrid({ content, contactHref, showIdealFor = false
               )) }
             </ul>
           </div>
-          <Link href={ contactHref }
+          <Link href={ contactPath(locale, { topic: 'package', package: pkg.id }) }
                 className={ `w-full rounded-xl py-2.5 text-center text-xs font-semibold transition-colors ${ pkg.featured
                   ? 'bg-brand-600 text-white hover:bg-brand-700'
                   : 'bg-slate-100 text-slate-800 hover:bg-slate-200' }` }>

@@ -1,0 +1,138 @@
+import { SiteContent } from "../../interfaces";
+
+export const supportPageContent: Pick<SiteContent, 'supportPage'> = {
+  supportPage: {
+    metaTitle: 'Support & Maintenance for Websites and Software | Christian Dechant',
+    metaDescription: 'Support packages for websites, web apps and software: monitoring, security updates, dependency updates, functional testing and further development – with defined response times and one fixed contact.',
+    keywords: [
+      'website maintenance',
+      'website support',
+      'software maintenance contract',
+      'web app support',
+      'website security updates',
+      'website maintenance package',
+      'Next.js maintenance',
+      'software support SLA',
+    ],
+    breadcrumb: 'Support',
+    hero: {
+      eyebrow: 'Support',
+      icon: 'support_agent',
+      title: 'Go-live is just the beginning —',
+      titleHighlight: 'secure, up to date, looked after.',
+      intro: 'Software is never quite finished: security issues, updates and new requirements are bound to come. With a support package, your application stays stable, secure and up to date – looked after by one fixed contact.',
+      primaryCta: 'Request support',
+      secondaryCta: 'See packages',
+      facts: [
+        { icon: 'monitor_heart', label: 'Monitoring & updates' },
+        { icon: 'schedule', label: 'Defined response times' },
+        { icon: 'person', label: 'One fixed contact' },
+        { icon: 'verified_user', label: 'GDPR-compliant with DPA' },
+      ],
+    },
+    packages: {
+      eyebrow: 'Support packages',
+      icon: 'inventory_2',
+      title: 'Three packages for every size',
+      text: 'The right package depends on the number of users, the scope and how critical your application is. You receive the exact terms individually in your quote.',
+      profileLabel: 'Fits when',
+      servicesLabel: 'Services',
+      responseLabel: 'Response time',
+      requestCta: 'Request package',
+      featuredBadge: 'Popular',
+      items: [
+        {
+          id: 'basic',
+          tier: 'Basic',
+          title: 'Basic package',
+          idealFor: 'For entry-level projects',
+          profile: [ 'Small number of users', '1–2 core components', 'Downtime not critical', 'Infrequent changes' ],
+          services: [ 'Monitoring', 'Security updates', 'Dependency updates', 'Functional testing', 'Monthly hour allowance' ],
+          response: 'Defined',
+        },
+        {
+          id: 'standard',
+          tier: 'Standard',
+          title: 'Standard package',
+          idealFor: 'For medium-sized projects',
+          profile: [ 'Moderate number of users', '2–4 core components', 'Medium criticality', 'Regular changes' ],
+          services: [ 'Everything in Basic', 'Extended hour allowance', 'Room for regular adjustments' ],
+          response: 'Defined',
+          featured: true,
+        },
+        {
+          id: 'premium',
+          tier: 'Premium',
+          title: 'Premium package',
+          idealFor: 'For large & business-critical projects',
+          profile: [ 'Large number of users', '4+ core components', 'Business-critical (SLA-relevant)', 'Frequent changes' ],
+          services: [ 'Everything in Standard', 'Largest hour allowance', 'Care for business-critical systems' ],
+          response: 'Guaranteed',
+        },
+      ],
+    },
+    services: {
+      eyebrow: 'Services',
+      icon: 'build',
+      title: 'What support means with me',
+      text: 'No ticket system with a waiting queue, but ongoing care by someone who knows your application.',
+      items: [
+        { icon: 'monitor_heart', title: 'Monitoring', text: 'Availability and errors in view, so problems are spotted before your users notice them.' },
+        { icon: 'security', title: 'Security & dependency updates', text: 'Closing security gaps and keeping dependencies current – planned, not in an emergency.' },
+        { icon: 'fact_check', title: 'Functional testing', text: 'After every update I check that everything works as usual.' },
+        { icon: 'construction', title: 'Adjustments & further development', text: 'Smaller changes and new features from the monthly hour allowance.' },
+      ],
+    },
+    process: {
+      eyebrow: 'Process',
+      icon: 'route',
+      title: 'How your support starts',
+      text: 'From the first request to ongoing care – clearly arranged.',
+      steps: [
+        { icon: 'chat', title: 'Request', text: 'You tell me which application needs looking after and what matters to you.' },
+        { icon: 'search', title: 'Assessment', text: 'I review the application, infrastructure and dependencies and recommend the right package.' },
+        { icon: 'assignment', title: 'Agreement', text: 'Services, hour allowance and response times are set out in your quote.' },
+        { icon: 'monitor_heart', title: 'Ongoing care', text: 'Monitoring, updates and functional testing – regular and reliable.' },
+        { icon: 'forum', title: 'Direct line', text: 'You report issues directly to me. I respond within the agreed time.' },
+      ],
+    },
+    faq: {
+      eyebrow: 'FAQ',
+      icon: 'help',
+      title: 'Questions about support',
+      text: 'The essentials on cost, response times and process.',
+      items: [
+        {
+          question: 'How much does a support package cost?',
+          answer: 'The cost depends on the scope and criticality of your application. After a short assessment, you receive an individual quote.',
+        },
+        {
+          question: 'How quickly do you respond?',
+          answer: 'Every package has a fixed, agreed response time; in the Premium package it is guaranteed. The exact times are set out in your quote.',
+        },
+        {
+          question: 'What if the hour allowance is not enough?',
+          answer: 'Additional effort is billed transparently and by agreement – no surprises on the invoice.',
+        },
+        {
+          question: 'Do you also support applications you didn’t build?',
+          answer: 'Yes. Before we start, I review code, infrastructure and dependencies in an assessment and recommend the right package.',
+        },
+        {
+          question: 'Can I switch packages later?',
+          answer: 'Yes. When your project grows or requirements change, we adjust the package together.',
+        },
+      ],
+    },
+    cta: {
+      title: 'Your software in good hands',
+      text: 'Tell me what needs looking after. I’ll get back to you personally within 24 hours with a recommendation.',
+      cta: 'Request support',
+    },
+    service: {
+      name: 'Support & maintenance for websites and software',
+      serviceType: [ 'Website maintenance', 'Software maintenance', 'Security updates', 'Monitoring' ],
+      catalogName: 'Support packages',
+    },
+  },
+};

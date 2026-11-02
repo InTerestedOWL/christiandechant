@@ -1,13 +1,15 @@
 'use client';
 
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { IMessage, SiteContent } from "../interfaces";
+import { useSearchParams } from "next/navigation";
+import React, { Suspense, useEffect, useState } from "react";
+import { IMessage, IOption, SiteContent } from "../interfaces";
 import { Locale } from "../i18n/config";
 import Icon from "./shared/materialIcon";
 import { Eyebrow } from "./shared/sectionHeading";
 import { accentIconBox } from "./shared/accent";
 import { pagePath } from "@/app/i18n/routes";
+import { resolveContactPrefill } from "@/app/contactPrefill";
 
 const inputClass = 'rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm focus:border-brand-500 focus:ring-2 focus:ring-brand-500 focus:outline-none';
 const labelClass = 'font-mono text-xs font-semibold text-slate-700';
@@ -16,7 +18,38 @@ function initials(name: string) {
   return name.split(' ').slice(0, 2).map((part) => part[0]).join('').toUpperCase();
 }
 
-export default function Contact({ locale, content }: { locale: Locale, content: SiteContent['contact'] }) {
+type Prefill = { scope: string, message: string };
+
+/**
+ * Reads ?topic=&package= once per URL and hands the whitelisted values to the form.
+ * Lives in its own Suspense boundary so the rest of the page stays prerendered.
+ */
+function PrefillReader({ scopes, packagesByTopic, packageIntro, onPrefill }: {
+  scopes: IOption[],
+  packagesByTopic: Partial<Record<string, IOption[]>>,
+  packageIntro: string,
+  onPrefill: (prefill: Prefill) => void,
+}) {
+  const search = useSearchParams().toString();
+
+  useEffect(() => {
+    const prefill = resolveContactPrefill(search, scopes, packagesByTopic, packageIntro);
+    if ( prefill ) {
+      onPrefill(prefill);
+    }
+    // Only a new query string should re-apply the prefill, not a re-render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ search ]);
+
+  return null;
+}
+
+export default function Contact({ locale, content, packagesByTopic = {} }: {
+  locale: Locale,
+  content: SiteContent['contact'],
+  /** Packages per topic that a contact link may preselect (see contactPath). */
+  packagesByTopic?: Partial<Record<string, IOption[]>>,
+}) {
   const { form } = content;
   const [ name, setName ] = useState('');
   const [ email, setEmail ] = useState('');
@@ -71,6 +104,15 @@ export default function Contact({ locale, content }: { locale: Locale, content: 
 
   return (
     <section className="border-t border-slate-200/80 bg-slate-50 py-20" id="contact">
+      <Suspense fallback={ null }>
+        <PrefillReader scopes={ form.scopes } packagesByTopic={ packagesByTopic } packageIntro={ form.packageIntro }
+                       onPrefill={ (prefill) => {
+                         setScope(prefill.scope);
+                         if ( prefill.message ) {
+                           setMessage(prefill.message);
+                         }
+                       } }/>
+      </Suspense>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
           className={ `mx-auto mb-16 grid grid-cols-1 gap-6 ${ content.testimonials.length > 1 ? 'max-w-5xl md:grid-cols-2' : 'max-w-3xl' }` }>

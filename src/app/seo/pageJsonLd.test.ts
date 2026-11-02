@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { breadcrumbJsonLd, faqJsonLd, serviceJsonLd } from "./pageJsonLd";
+import { breadcrumbJsonLd, faqJsonLd, serviceJsonLd, webPageJsonLd } from "./pageJsonLd";
 
 describe("breadcrumbJsonLd", () => {
   it("lists the trail with positions and absolute URLs", () => {
@@ -80,5 +80,26 @@ describe("serviceJsonLd with offers", () => {
     });
 
     expect(service).not.toHaveProperty("hasOfferCatalog");
+  });
+});
+
+describe("webPageJsonLd", () => {
+  it("describes a typed page about the person, as part of the website", () => {
+    expect(webPageJsonLd({
+      type: "AboutPage",
+      name: "About",
+      description: "Who I am.",
+      path: "/en/about",
+      locale: "en",
+    })).toEqual({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      name: "About",
+      description: "Who I am.",
+      url: "https://christiandechant.de/en/about",
+      inLanguage: "en",
+      isPartOf: { "@id": "https://christiandechant.de/#website" },
+      about: { "@id": "https://christiandechant.de/#person" },
+    });
   });
 });

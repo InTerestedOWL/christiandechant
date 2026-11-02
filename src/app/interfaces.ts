@@ -98,6 +98,7 @@ export interface IOfferPackage {
   tier: string,
   title: string,
   text: string,
+  idealFor: string,
   features: string[],
   featured?: boolean,
 }
@@ -284,6 +285,8 @@ export interface SiteContent {
     requestCta: string,
     featuredCta: string,
     featuredBadge: string,
+    idealForLabel: string,
+    detailsCta: string,
     custom: {
       title: string,
       text: string,
@@ -394,6 +397,28 @@ export interface SiteContent {
     home: string,
     /** Screen-reader hint appended to links that open in a new tab. */
     newTab: string,
+  },
+  packagesPage: {
+    metaTitle: string,
+    metaDescription: string,
+    keywords: string[],
+    breadcrumb: string,
+    hero: IPageHero,
+    packages: ISectionHeading,
+    comparison: ISectionHeading & {
+      caption: string,
+      featureLabel: string,
+      included: string,
+      notIncluded: string,
+      /** One value per package, in the order of `offers.packages`: true/false or a short text. */
+      rows: { label: string, values: (boolean | string)[] }[],
+    },
+    included: ISectionHeading & { items: IIconItem[] },
+    process: ISectionHeading & { steps: IProcessStep[] },
+    custom: ICtaBanner,
+    faq: ISectionHeading & { items: IWayVentureFaq[] },
+    cta: ICtaBanner,
+    service: { name: string, serviceType: string[], catalogName: string },
   },
   freelancingPage: {
     metaTitle: string,

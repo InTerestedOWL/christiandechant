@@ -52,3 +52,33 @@ describe("serviceJsonLd", () => {
     });
   });
 });
+
+describe("serviceJsonLd with offers", () => {
+  it("lists the offers as a catalog without prices", () => {
+    const service = serviceJsonLd({
+      name: "Web packages",
+      description: "Websites",
+      path: "/en/packages",
+      serviceType: [ "Web development" ],
+      areaServed: [ "Germany" ],
+      locale: "en",
+      offers: { name: "Web packages", items: [ { name: "Starter", description: "One-pager" } ] },
+    });
+
+    expect(service.hasOfferCatalog).toEqual({
+      "@type": "OfferCatalog",
+      name: "Web packages",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Starter", description: "One-pager" } },
+      ],
+    });
+  });
+
+  it("omits the catalog when there are no offers", () => {
+    const service = serviceJsonLd({
+      name: "x", description: "y", path: "/de", serviceType: [], areaServed: [], locale: "de",
+    });
+
+    expect(service).not.toHaveProperty("hasOfferCatalog");
+  });
+});

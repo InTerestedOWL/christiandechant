@@ -9,7 +9,7 @@ export const commonContent: Pick<SiteContent, 'header' | 'cookieBanner' | 'foote
       { href: '#why', title: 'Warum ich', mobileTitle: 'Warum mit mir arbeiten' },
       { href: '#about', title: 'Über mich', mobileTitle: 'Über mich' },
       { href: '#wayventure', title: 'WayVenture', mobileTitle: 'WayVenture (App)', highlight: 'amber', badge: 'Live' },
-      { href: '#services', title: 'Angebote', mobileTitle: 'Angebote & Webpakete' },
+      { href: '/packages', title: 'Webpakete', mobileTitle: 'Webpakete & Vergleich' },
       { href: '#ai-consulting', title: 'AI Consulting', mobileTitle: 'AI Consulting & Coaching' },
       { href: '#experience', title: 'Erfahrung', mobileTitle: 'Erfahrung & Werdegang' },
     ],

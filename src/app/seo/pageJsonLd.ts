@@ -30,14 +30,15 @@ export function faqJsonLd(items: { question: string, answer: string }[]) {
   };
 }
 
-/** A service page, linked to the business node of the homepage graph. */
-export function serviceJsonLd({ name, description, path, serviceType, areaServed, locale }: {
+/** A service page, linked to the business node of the homepage graph. Offers are listed without prices. */
+export function serviceJsonLd({ name, description, path, serviceType, areaServed, locale, offers }: {
   name: string,
   description: string,
   path: string,
   serviceType: string[],
   areaServed: string[],
   locale: Locale,
+  offers?: { name: string, items: { name: string, description: string }[] },
 }) {
   return {
     "@context": context,
@@ -50,5 +51,15 @@ export function serviceJsonLd({ name, description, path, serviceType, areaServed
     availableLanguage: [ ...locales ],
     inLanguage: locale,
     provider: { "@id": businessId },
+    ...(offers && {
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: offers.name,
+        itemListElement: offers.items.map((item) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: item.name, description: item.description },
+        })),
+      },
+    }),
   };
 }

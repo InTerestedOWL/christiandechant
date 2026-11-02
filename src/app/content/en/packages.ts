@@ -1,0 +1,138 @@
+import { SiteContent } from "../../interfaces";
+
+export const packagesPageContent: Pick<SiteContent, 'packagesPage'> = {
+  packagesPage: {
+    metaTitle: 'Web Packages: Professional Website Development | Christian Dechant',
+    metaDescription: 'Get your website built: four web packages from one-pager to enterprise system – individual, GDPR-compliant, accessible according to WCAG 2.1 AA and with support after go-live.',
+    keywords: [
+      'website development',
+      'web design Germany',
+      'business website',
+      'web development packages',
+      'CMS website',
+      'accessible website',
+      'GDPR-compliant website',
+      'headless CMS website',
+    ],
+    breadcrumb: 'Web packages',
+    hero: {
+      eyebrow: 'Web packages',
+      icon: 'inventory_2',
+      title: 'Your website, built individually —',
+      titleHighlight: 'within a clear framework.',
+      intro: 'Four packages give you orientation – from a fast one-pager to an enterprise system. We tailor the exact scope to your project: you receive an individual quote with clear milestones instead of opaque hourly rates.',
+      primaryCta: 'Request a package',
+      secondaryCta: 'Compare packages',
+      facts: [
+        { icon: 'verified_user', label: 'GDPR-compliant & hosted in the EU' },
+        { icon: 'accessibility_new', label: 'Accessible according to WCAG 2.1 AA' },
+        { icon: 'devices', label: 'Mobile-first & fast' },
+        { icon: 'support_agent', label: 'Support after go-live' },
+      ],
+    },
+    packages: {
+      eyebrow: 'Packages',
+      icon: 'inventory_2',
+      title: 'Four packages, one standard',
+      text: 'Every package is a starting point, not a straitjacket. We find the right one together in the intro call.',
+    },
+    comparison: {
+      eyebrow: 'Comparison',
+      icon: 'compare_arrows',
+      title: 'The packages compared',
+      text: 'What each package includes – at a glance.',
+      caption: 'Feature comparison of the web packages',
+      featureLabel: 'Feature',
+      included: 'Included',
+      notIncluded: 'Not included',
+      rows: [
+        { label: 'Mobile-first & fast load times', values: [ true, true, true, true ] },
+        { label: 'GDPR-compliant, hosted in the EU', values: [ true, true, true, true ] },
+        { label: 'Accessibility according to WCAG 2.1 AA', values: [ true, true, true, true ] },
+        { label: 'Contact form', values: [ true, true, true, true ] },
+        { label: 'Domain, SSL & mail setup', values: [ false, true, true, true ] },
+        { label: 'Edit content yourself (headless CMS)', values: [ false, true, true, true ] },
+        { label: 'Interactive filters & animations', values: [ false, true, true, true ] },
+        { label: 'Individual subpages', values: [ false, false, 'Up to 5', 'As needed' ] },
+        { label: 'Individual UI/UX concept', values: [ false, false, true, true ] },
+        { label: 'SEO: schema markup & metadata', values: [ false, false, true, true ] },
+        { label: 'Editorial workflow & roles', values: [ false, false, true, true ] },
+        { label: 'Complex roles & login (OAuth)', values: [ false, false, false, true ] },
+        { label: 'API & third-party integration', values: [ false, false, false, true ] },
+        { label: 'Support after go-live', values: [ 'Optional', 'Optional', 'Optional', 'With SLA' ] },
+      ],
+    },
+    included: {
+      eyebrow: 'In every package',
+      icon: 'task_alt',
+      title: 'Always included',
+      text: 'The same standards apply to every package – because quality is not an extra.',
+      items: [
+        { icon: 'verified_user', title: 'Data protection & EU hosting', text: 'GDPR-compliant with a data processing agreement (DPA) and hosting in the EU.' },
+        { icon: 'accessibility_new', title: 'Accessibility', text: 'Built according to WCAG 2.1 AA – so everyone can use your website and you are prepared for accessibility regulations such as the European Accessibility Act.' },
+        { icon: 'speed', title: 'Performance & mobile-first', text: 'Fast load times and a user experience that works as well on a smartphone as on a desktop.' },
+        { icon: 'key', title: 'You own the code & access', text: 'A complete hand-over after go-live – no dependency on me.' },
+      ],
+    },
+    process: {
+      eyebrow: 'Process',
+      icon: 'route',
+      title: 'How your website comes to life',
+      text: 'From the first idea to your website going live – in five clear steps.',
+      steps: [
+        { icon: 'chat', title: 'Intro call', text: 'We clarify goals, audience, content and which package fits you – without obligation.' },
+        { icon: 'assignment', title: 'Concept & quote', text: 'Page structure, features and milestones – captured in an individual quote.' },
+        { icon: 'palette', title: 'Design & build', text: 'Individual design and clean implementation, with regular previews for your feedback.' },
+        { icon: 'rocket_launch', title: 'Go-live', text: 'Testing on all devices, accessibility and performance checks – then your website goes online.' },
+        { icon: 'support_agent', title: 'Care & support', text: 'If you like, I take care of updates, monitoring and further development through a support package.' },
+      ],
+    },
+    custom: {
+      title: 'More than a website?',
+      text: 'Custom software, web apps, integrations or an MVP: for projects beyond the packages, I work as a freelance developer directly on your project.',
+      cta: 'About freelancing',
+    },
+    faq: {
+      eyebrow: 'FAQ',
+      icon: 'help',
+      title: 'Questions about the web packages',
+      text: 'The essentials on cost, process and maintenance – and if your question is missing, just write to me.',
+      items: [
+        {
+          question: 'How much does a website cost?',
+          answer: 'Every website is calculated individually, because scope, content and features differ from project to project. After the intro call, you receive a transparent quote with clear milestones.',
+        },
+        {
+          question: 'How long does it take?',
+          answer: 'That depends on the package and the scope. You receive the concrete timeline with milestones together with the quote.',
+        },
+        {
+          question: 'Can I edit the content myself?',
+          answer: 'Yes, from the “Interactive CMS Page” package onwards: you change text and images in a lean headless CMS, without any coding.',
+        },
+        {
+          question: 'Will my website be accessible?',
+          answer: 'Yes. Every website is built and checked according to WCAG 2.1 AA – so you reach all users and are prepared for accessibility regulations.',
+        },
+        {
+          question: 'Can I upgrade to a larger package later?',
+          answer: 'Yes. The packages build on each other, so your website can grow with your business.',
+        },
+        {
+          question: 'Who takes care of updates after go-live?',
+          answer: 'I can: with a support package, I take care of monitoring, security and dependency updates, functional testing and further development.',
+        },
+      ],
+    },
+    cta: {
+      title: 'Which package fits you?',
+      text: 'Tell me briefly what you have in mind. I’ll get back to you personally within 24 hours with a first assessment.',
+      cta: 'Request a package',
+    },
+    service: {
+      name: 'Web development & web design',
+      serviceType: [ 'Web development', 'Web design', 'Content management systems', 'Accessible websites' ],
+      catalogName: 'Web packages',
+    },
+  },
+};

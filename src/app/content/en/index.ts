@@ -5,6 +5,7 @@ import { homeContent } from "./home";
 import { wayventurePageContent } from "./wayventurePage";
 import { legalContent } from "./legal";
 import { freelancingPageContent } from "./freelancing";
+import { packagesPageContent } from "./packages";
 
 export const en: SiteContent = {
   ...metaContent,
@@ -13,4 +14,5 @@ export const en: SiteContent = {
   ...wayventurePageContent,
   ...legalContent,
   ...freelancingPageContent,
+  ...packagesPageContent,
 };

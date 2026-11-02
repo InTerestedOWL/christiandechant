@@ -49,7 +49,7 @@ e-mail, socials) live in `content/shared.ts`. When changing site text, update **
 
 Shared pieces live under `src/app/components/shared/` (`materialIcon`, `sectionHeading`, `accent` class maps, `richText`
 for `**bold**`/`*italic*` in content strings, `languageSwitch`, plus the sub-page kit: `pageHero` (breadcrumbs + the page's
-only h1), `breadcrumbs`, `featureCard`, `processTimeline`, `techStack`). Sub pages close with `components/ctaBanner.tsx`;
+only h1), `breadcrumbs`, `featureCard`, `iconItemGrid`, `calloutBox`, `processTimeline`, `techStack`). Sub pages close with `components/ctaBanner.tsx`;
 shared JSON-LD builders (`breadcrumbJsonLd`, `faqJsonLd`, `serviceJsonLd`) live in `seo/pageJsonLd.ts`. Legal pages
 render through `components/legalPage.tsx`. `[locale]/freelancing/page.tsx` is the reference layout for new sub pages.
 
@@ -69,6 +69,9 @@ text needs `amber-700`+ backgrounds). `ClientLayout` provides the skip link to `
 
 - `[locale]/freelancing` — freelancing page (engagement models, working model, process, JagdTausch case study, FAQ)
   with `Service` + `BreadcrumbList` + `FAQPage` JSON-LD.
+- `[locale]/packages` — web packages: cards (`components/packageGrid.tsx`, shared with the homepage `offers` section,
+  which stays the single source of the package data), comparison table, FAQ; `Service` JSON-LD with an `OfferCatalog`
+  (never prices).
 - `[locale]/wayventure` — marketing page for WayVenture with JSON-LD (`SoftwareApplication` + `FAQPage`).
 - `[locale]/imprint`, `[locale]/privacy-policy` — legal pages. Keep them in sync with any new third-party service or
   data processing.

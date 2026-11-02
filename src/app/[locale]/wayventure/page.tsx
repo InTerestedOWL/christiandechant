@@ -8,6 +8,7 @@ import { isLocale, locales } from "@/app/i18n/config";
 import { pageMetadata } from "@/app/i18n/metadata";
 import Icon from "@/app/components/shared/materialIcon";
 import { pagePath } from "@/app/i18n/routes";
+import { faqJsonLd } from "@/app/seo/pageJsonLd";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -69,18 +70,6 @@ export default async function WayVenturePage({ params }: Props) {
     featureList: page.features.map((feature) => feature.title),
   };
 
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: page.faq.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    } )),
-  };
 
   return (
     <>
@@ -90,7 +79,7 @@ export default async function WayVenturePage({ params }: Props) {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={ { __html: JSON.stringify(faqJsonLd) } }
+        dangerouslySetInnerHTML={ { __html: JSON.stringify(faqJsonLd(page.faq)) } }
       />
 
       <main className="bg-white">

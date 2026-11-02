@@ -1,6 +1,6 @@
 import { Locale, locales } from "../i18n/config";
 import { siteUrl } from "../content/shared";
-import { businessId } from "./structuredData";
+import { businessId, personId, websiteId } from "./structuredData";
 
 const context = "https://schema.org";
 
@@ -15,6 +15,26 @@ export function breadcrumbJsonLd(trail: { name: string, path: string }[]) {
       name,
       item: `${ siteUrl }${ path }`,
     })),
+  };
+}
+
+/** A typed page (e.g. AboutPage, ContactPage) about the person, linked to the website node of the homepage graph. */
+export function webPageJsonLd({ type, name, description, path, locale }: {
+  type: 'AboutPage' | 'ContactPage',
+  name: string,
+  description: string,
+  path: string,
+  locale: Locale,
+}) {
+  return {
+    "@context": context,
+    "@type": type,
+    name,
+    description,
+    url: `${ siteUrl }${ path }`,
+    inLanguage: locale,
+    isPartOf: { "@id": websiteId },
+    about: { "@id": personId },
   };
 }
 

@@ -8,6 +8,8 @@ export const routes = {
   support: '/support',
   aiDevelopment: '/ai-development',
   approach: '/approach',
+  about: '/about',
+  contact: '/contact',
   wayventure: '/wayventure',
   imprint: '/imprint',
   privacy: '/privacy-policy',

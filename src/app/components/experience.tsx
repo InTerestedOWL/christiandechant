@@ -38,7 +38,7 @@ function TimelineItem({ item }: { item: IExperience }) {
   );
 }
 
-function HighlightBox({ box }: { box: IHighlightBox }) {
+function HighlightBox({ box, newTabHint }: { box: IHighlightBox, newTabHint: string }) {
   const body = (
     <>
       <div
@@ -61,23 +61,24 @@ function HighlightBox({ box }: { box: IHighlightBox }) {
     <a href={ box.href } target="_blank" rel="noreferrer"
        className={ `${ className } transition-shadow hover:shadow-md` }>
       { body }
+      <span className="sr-only">{ newTabHint }</span>
     </a>
   ) : (
     <div className={ className }>{ body }</div>
   );
 }
 
-export default function Experience({ content }: { content: SiteContent['experience'] }) {
+export default function Experience({ content, newTabHint }: { content: SiteContent['experience'], newTabHint: string }) {
   return (
-    <section className="border-b border-slate-200/80 bg-slate-50 py-20" id="experience">
+    <section aria-labelledby="experience-title" className="border-b border-slate-200/80 bg-slate-50 py-20" id="experience">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading content={ content }/>
+        <SectionHeading content={ content } id="experience-title"/>
 
         <div className="relative flex max-w-4xl flex-col gap-8 border-l-2 border-brand-200 pl-6 sm:pl-8">
           { content.items.map((item) => <TimelineItem key={ item.title } item={ item }/>) }
         </div>
 
-        { content.highlights.map((box) => <HighlightBox key={ box.title } box={ box }/>) }
+        { content.highlights.map((box) => <HighlightBox key={ box.title } box={ box } newTabHint={ newTabHint }/>) }
       </div>
     </section>
   );

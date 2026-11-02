@@ -23,5 +23,6 @@ export default async function PrivacyPolicy({ params }: Props) {
     notFound();
   }
 
-  return <LegalPage content={ getContent(locale).privacy }/>;
+  const content = getContent(locale);
+  return <LegalPage content={ content.privacy } newTabHint={ content.a11y.newTab }/>;
 }

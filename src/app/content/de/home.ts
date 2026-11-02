@@ -77,6 +77,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
     title: 'Handwerk & Kernkompetenzen',
     text: 'Kein leeres Berater-Geschwätz, sondern erprobte Ingenieursdisziplin. Nachhaltiger Code, zero-overhead Architekturen und produktionssichere Integrationen.',
     badge: 'DISZIPLINEN // 04 SÄULEN',
+    detailsCta: 'Mehr über mich & meinen Werdegang',
     stackTitle: 'Tech-Stack im Überblick',
     stackGroups: {
       frontend: 'Frontend & Mobile',

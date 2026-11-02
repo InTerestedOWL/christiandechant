@@ -23,5 +23,6 @@ export default async function Imprint({ params }: Props) {
     notFound();
   }
 
-  return <LegalPage content={ getContent(locale).imprint }/>;
+  const content = getContent(locale);
+  return <LegalPage content={ content.imprint } newTabHint={ content.a11y.newTab }/>;
 }

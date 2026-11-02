@@ -3,18 +3,18 @@ import { ILegalPage, ILegalSection } from "../interfaces";
 import { Eyebrow } from "./shared/sectionHeading";
 
 /** Turns plain https:// URLs inside legal text into links. */
-function Linkified({ text }: { text: string }) {
+function Linkified({ text, newTabHint }: { text: string, newTabHint: string }) {
   return (
     <>
       { text.split(/(https:\/\/\S+[^\s.,;)])/g).map((part, index) => part.startsWith('https://')
         ? <a key={ index } href={ part } target="_blank" rel="noreferrer"
-             className="text-brand-600 underline hover:text-brand-700">{ part }</a>
+             className="text-brand-600 underline hover:text-brand-700">{ part }<span className="sr-only"> { newTabHint }</span></a>
         : part) }
     </>
   );
 }
 
-function Section({ section, level }: { section: ILegalSection, level: 2 | 3 }) {
+function Section({ section, level, newTabHint }: { section: ILegalSection, level: 2 | 3, newTabHint: string }) {
   const Heading = level === 2 ? 'h2' : 'h3';
 
   return (
@@ -26,7 +26,7 @@ function Section({ section, level }: { section: ILegalSection, level: 2 | 3 }) {
       </Heading>
       { section.paragraphs?.map((paragraph) => (
         <p key={ paragraph } className="text-sm leading-relaxed whitespace-pre-line text-slate-600">
-          <Linkified text={ paragraph }/>
+          <Linkified text={ paragraph } newTabHint={ newTabHint }/>
         </p>
       )) }
       { section.list && (
@@ -40,13 +40,13 @@ function Section({ section, level }: { section: ILegalSection, level: 2 | 3 }) {
         </ul>
       ) }
       { section.subsections?.map((subsection) => (
-        <Section key={ subsection.heading } section={ subsection } level={ 3 }/>
+        <Section key={ subsection.heading } section={ subsection } level={ 3 } newTabHint={ newTabHint }/>
       )) }
     </div>
   );
 }
 
-export default function LegalPage({ content }: { content: ILegalPage }) {
+export default function LegalPage({ content, newTabHint }: { content: ILegalPage, newTabHint: string }) {
   return (
     <main className="relative overflow-hidden bg-linear-to-b from-brand-50/40 via-white to-white py-16 lg:py-24">
       <div className="bg-grid-pattern pointer-events-none absolute inset-x-0 top-0 h-96 opacity-60"></div>
@@ -58,7 +58,7 @@ export default function LegalPage({ content }: { content: ILegalPage }) {
           <span className="font-mono text-xs text-slate-500">{ content.updated }</span>
         </div>
         <div className="flex flex-col gap-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
-          { content.sections.map((section) => <Section key={ section.heading } section={ section } level={ 2 }/>) }
+          { content.sections.map((section) => <Section key={ section.heading } section={ section } level={ 2 } newTabHint={ newTabHint }/>) }
         </div>
       </div>
     </main>

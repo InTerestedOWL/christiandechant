@@ -36,12 +36,16 @@ Every page is registered in `routes` (`i18n/routes.ts`); slugs are English in bo
 Links to the contact form go through `contactPath(locale, { topic, package? })` (`src/app/contactPrefill.ts`), e.g.
 `/de?topic=support&package=premium#contact`. The form only accepts whitelisted values (`topic` = a scope value from
 `contact.form.scopes`, `package` = an id from `packagesByTopic` passed by the homepage) and never personal data.
-Every merge to `main` deploys, so only link pages that exist.
+Every merge to `main` deploys, so only link pages that exist. The footer lists all pages (`footer.pages`).
 
-### Content-driven single page
+`src/app/content/content.test.ts` checks that `de` and `en` have the same structure (keys, array lengths, no empty
+strings); keep it green when adding content.
 
-`src/app/[locale]/page.tsx` composes the homepage from section components in `src/app/components/` (Hero, Competencies,
-WayVentureSpotlight, Motto, Offers, AiConsulting, Experience, VoluntaryWork, Contact). The design follows
+### Content-driven pages
+
+`src/app/[locale]/page.tsx` composes the homepage from section components in `src/app/components/` (Hero, WhyMe,
+Competencies, WayVentureSpotlight, Motto, Offers, AiConsulting, Faq, Contact). Career (`Experience`) and volunteering
+(`VoluntaryWork`) live on `/about`; homepage sections that have their own page end with a link to it. The design follows
 `mock/new mock.html` 1:1.
 
 **`src/app/content/de/` and `en/`** are the single source of truth for all copy, split into one file per area (`meta`,
@@ -83,6 +87,10 @@ text needs `amber-700`+ backgrounds). `ClientLayout` provides the skip link to `
 - `[locale]/ai-development` — AI services (features in products, agents & MCP, audit & governance, coaching),
   principles, process, WayVenture as AI reference, FAQ; `Service` JSON-LD with an `OfferCatalog`. The homepage
   `aiConsulting` tracks stay as a teaser and link here.
+- `[locale]/about` — hero, story, career (`Experience`), values, WayVenture callout, volunteering; `AboutPage` +
+  `BreadcrumbList` JSON-LD (`webPageJsonLd`).
+- `[locale]/contact` — hero, the contact form (`Contact`, with prefill) and the steps after a request; `ContactPage` +
+  `BreadcrumbList` JSON-LD. Every "contact" link points here (`pagePath(locale, 'contact')` or `contactPath`).
 - `[locale]/approach` — how projects run: five phases (numbered `FeatureCard`s in an `ol`), "Deliver fast / complete"
   (English titles carry `lang` via `IReason.lang`), definition of done, compliance, FAQ; `BreadcrumbList` + `FAQPage`
   JSON-LD. The homepage `motto` section links here.

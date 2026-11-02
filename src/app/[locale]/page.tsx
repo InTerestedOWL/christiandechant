@@ -6,8 +6,6 @@ import WayVentureSpotlight from "@/app/components/wayventureSpotlight";
 import Motto from "@/app/components/motto";
 import Offers from "@/app/components/offers";
 import AiConsulting from "@/app/components/aiConsulting";
-import Experience from "@/app/components/experience";
-import VoluntaryWork from "@/app/components/voluntaryWork";
 import Faq from "@/app/components/faq";
 import Contact from "@/app/components/contact";
 import { getContent } from "@/app/content";
@@ -29,18 +27,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       />
       <Hero locale={ locale } content={ content.hero }/>
       <WhyMe locale={ locale } content={ content.whyMe }/>
-      <Competencies content={ content.competencies }/>
-      <WayVentureSpotlight locale={ locale } content={ content.wayventure }/>
+      <Competencies locale={ locale } content={ content.competencies }/>
+      <WayVentureSpotlight locale={ locale } content={ content.wayventure } newTabHint={ content.a11y.newTab }/>
       <Motto locale={ locale } content={ content.motto }/>
       <Offers locale={ locale } content={ content.offers }/>
       <AiConsulting locale={ locale } content={ content.aiConsulting }/>
-      <Experience content={ content.experience }/>
-      <VoluntaryWork content={ content.volunteering }/>
       <Faq content={ content.faq }/>
-      <Contact locale={ locale } content={ content.contact } packagesByTopic={ {
-        package: content.offers.packages.map((pkg) => ({ value: pkg.id, label: pkg.title })),
-        support: content.supportPage.packages.items.map((pkg) => ({ value: pkg.id, label: pkg.title })),
-      } }/>
+      <Contact locale={ locale } content={ content.contact }/>
     </main>
   );
 }

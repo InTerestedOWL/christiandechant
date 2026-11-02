@@ -108,7 +108,7 @@ export default function Header({ locale, content }: { locale: Locale, content: S
   const { status: isDrawerOpen, setStatus: setDrawerOpen } = useStatus();
   const pathname = usePathname();
   const home = pagePath(locale, 'home');
-  const contactHref = pagePath(locale, 'home', 'contact');
+  const contactHref = pagePath(locale, 'contact');
   const resolve = (link: INavLink): ResolvedLink => {
     const href = `${ home }${ link.href }`;
     return { ...link, href, active: isActivePath(pathname, href) };

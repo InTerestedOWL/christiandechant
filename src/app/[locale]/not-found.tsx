@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { getContent } from "@/app/content";
 import { defaultLocale, isLocale } from "@/app/i18n/config";
 import Icon from "@/app/components/shared/materialIcon";
+import { pagePath } from "@/app/i18n/routes";
 
 export default function NotFound() {
   const segment = usePathname().split('/')[1];
@@ -21,7 +22,7 @@ export default function NotFound() {
         </span>
         <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{ notFound.title }</h1>
         <p className="text-base text-slate-600">{ notFound.text }</p>
-        <Link href={ `/${ locale }` }
+        <Link href={ pagePath(locale, 'home') }
               className="mt-2 inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-brand-700">
           <span>{ notFound.cta }</span>
           <Icon name="arrow_forward" className="text-[18px]"/>

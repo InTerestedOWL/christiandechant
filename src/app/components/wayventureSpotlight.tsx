@@ -5,6 +5,7 @@ import { Locale } from "../i18n/config";
 import { wayVentureUrl } from "../content/shared";
 import Icon from "./shared/materialIcon";
 import RichText from "./shared/richText";
+import { pagePath } from "@/app/i18n/routes";
 
 export default function WayVentureSpotlight({ locale, content }: {
   locale: Locale,
@@ -50,7 +51,7 @@ export default function WayVentureSpotlight({ locale, content }: {
                   <span>{ content.primaryCta }</span>
                   <Icon name="open_in_new" className="text-[18px]"/>
                 </a>
-                <Link href={ `/${ locale }#contact` }
+                <Link href={ pagePath(locale, 'home', 'contact') }
                       className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition-all hover:bg-slate-50">
                   <span>{ content.secondaryCta }</span>
                   <Icon name="article" className="text-[18px]"/>

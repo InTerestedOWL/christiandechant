@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: meta.title,
     description: meta.description,
     keywords: meta.keywords,
-    alternates: alternates(locale, ''),
+    alternates: alternates(locale, 'home'),
     icons: {
       icon: [
         { url: "/favicon.ico" },

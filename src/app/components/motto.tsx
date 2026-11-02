@@ -3,6 +3,7 @@ import { Accent, SiteContent } from "../interfaces";
 import { Locale } from "../i18n/config";
 import Icon from "./shared/materialIcon";
 import { accentText } from "./shared/accent";
+import { pagePath } from "@/app/i18n/routes";
 
 // The motto cards use slightly different badge/link shades than the shared accent maps.
 const pillarBadge: Partial<Record<Accent, string>> = {
@@ -60,7 +61,7 @@ export default function Motto({ locale, content }: { locale: Locale, content: Si
               </div>
               { pillar.cta && (
                 <div className="mt-2 border-t border-slate-100 pt-4">
-                  <Link href={ `/${ locale }#contact` }
+                  <Link href={ pagePath(locale, 'home', 'contact') }
                         className={ `inline-flex items-center gap-1.5 text-xs font-semibold transition-colors ${ pillarLink[pillar.accent] }` }>
                     <span>{ pillar.cta }</span>
                     <Icon name="arrow_forward" className="text-sm"/>

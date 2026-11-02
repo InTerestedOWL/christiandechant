@@ -29,9 +29,9 @@ export const commonContent: Pick<SiteContent, 'header' | 'cookieBanner' | 'foote
   },
   cookieBanner: {
     eyebrow: 'Cookies & Datenschutz',
-    title: 'Ihre Privatsphäre zählt',
+    title: 'Deine Privatsphäre zählt',
     text: [
-      'Diese Website nutzt nur technisch notwendige Speicherung, z.B. um Ihre Auswahl hier zu merken. Optionale Dienste werden nur mit Ihrer Einwilligung geladen, die Sie jederzeit im Seitenfuß widerrufen können. Mehr in der ',
+      'Diese Website nutzt nur technisch notwendige Speicherung, z.B. um deine Auswahl hier zu merken. Optionale Dienste werden nur mit deiner Einwilligung geladen, die du jederzeit im Seitenfuß widerrufen kannst. Mehr in der ',
       'Datenschutzerklärung',
       '.',
     ],
@@ -43,11 +43,11 @@ export const commonContent: Pick<SiteContent, 'header' | 'cookieBanner' | 'foote
     categories: {
       necessary: {
         title: 'Notwendig',
-        text: 'Speichert Ihre Cookie-Auswahl lokal in Ihrem Browser. Ohne diese Speicherung funktioniert der Banner nicht.',
+        text: 'Speichert deine Cookie-Auswahl lokal in deinem Browser. Ohne diese Speicherung funktioniert der Banner nicht.',
       },
       statistics: {
         title: 'Statistik & externe Medien',
-        text: 'Derzeit sind keine solchen Dienste eingebunden. Neue Dienste werden erst nach Ihrer Zustimmung geladen.',
+        text: 'Derzeit sind keine solchen Dienste eingebunden. Neue Dienste werden erst nach deiner Zustimmung geladen.',
       },
     },
   },

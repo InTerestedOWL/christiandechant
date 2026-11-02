@@ -27,7 +27,9 @@ Leitsatz überall: **„Deliver fast, but deliver complete.“** (ersetzt „Pub
 | Design | Neue Seiten direkt im bestehenden Design, kein separater Mock. Bei Bedarf neuer Entwurf via Stitch. |
 | Reaktionszeiten | **Keine fixen Zahlen** auf der Website: „definierte Reaktionszeiten, garantiert im Premium-Paket“. Zahlen nur im Angebot. |
 | Compliance | Zusagbar: AV-Vertrag (AVV), Hosting in der EU, Barrierefreiheit nach WCAG 2.1 AA (BFSG), DSGVO, KI-Governance. |
-| Referenzen | JagdTausch als Fallbeispiel. MCT als weitere Referenz (Details folgen). |
+| Referenzen | JagdTausch als Fallbeispiel. MCT vorerst ausgeklammert (Rückfrage beim Kunden offen). |
+| Ansprache | Deutsch durchgehend „du“. Ausnahme: Rechtstexte (Impressum, Datenschutz) bleiben formell. |
+| Erstgespräch | Darf „unverbindlich“ genannt werden. |
 
 ### Support-Pakete (Inhalt ohne Preise)
 
@@ -77,4 +79,4 @@ Texte werden pro Phase in DE + EN entworfen und im PR reviewt.
 
 ## Offene Punkte
 
-- [ ] MCT: Wer/was ist das, was wurde umgesetzt, gibt es ein Zitat und darf der Name genannt werden?
+- [ ] MCT (zurückgestellt, Christian fragt nach): Wer/was ist das, was wurde umgesetzt, gibt es ein Zitat und darf der Name genannt werden?

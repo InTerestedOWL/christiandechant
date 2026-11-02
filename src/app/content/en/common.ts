@@ -5,12 +5,12 @@ export const commonContent: Pick<SiteContent, 'header' | 'cookieBanner' | 'foote
     tagline: 'Full-Stack & Applied AI',
     badge: 'Senior Dev',
     nav: [
+      { href: '#why', title: 'Why me', mobileTitle: 'Why work with me' },
       { href: '#about', title: 'About', mobileTitle: 'About me' },
       { href: '#wayventure', title: 'WayVenture', mobileTitle: 'WayVenture (App)', highlight: 'amber', badge: 'Live' },
       { href: '#services', title: 'Offers', mobileTitle: 'Offers & Web Packages' },
       { href: '#ai-consulting', title: 'AI Consulting', mobileTitle: 'AI Consulting & Coaching' },
       { href: '#experience', title: 'Experience', mobileTitle: 'Experience & Career' },
-      { href: '#feuerwehr', title: 'Volunteering', mobileTitle: 'Volunteer Fire Department', highlight: 'rose' },
       { href: '#contact', title: 'Contact', mobileTitle: 'Contact' },
     ],
     cta: 'Start a project',

@@ -46,6 +46,14 @@ export interface IPillar {
   cta?: string,
 }
 
+export interface IReason {
+  icon: string,
+  accent: Accent,
+  title: string,
+  text: string,
+  points: string[],
+}
+
 export interface IOfferPackage {
   tier: string,
   title: string,
@@ -201,6 +209,11 @@ export interface SiteContent {
     },
     teaserTitle: string,
     teaserText: string,
+  },
+  whyMe: ISectionHeading & {
+    reasons: IReason[],
+    mantra: string,
+    cta: string,
   },
   competencies: ISectionHeading & {
     badge: string,

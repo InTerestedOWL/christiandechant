@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Hero from "@/app/components/hero";
+import WhyMe from "@/app/components/whyMe";
 import Competencies from "@/app/components/competencies";
 import WayVentureSpotlight from "@/app/components/wayventureSpotlight";
 import Motto from "@/app/components/motto";
@@ -27,6 +28,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         dangerouslySetInnerHTML={ { __html: JSON.stringify(homepageJsonLd(locale, content)) } }
       />
       <Hero locale={ locale } content={ content.hero }/>
+      <WhyMe locale={ locale } content={ content.whyMe }/>
       <Competencies content={ content.competencies }/>
       <WayVentureSpotlight locale={ locale } content={ content.wayventure }/>
       <Motto locale={ locale } content={ content.motto }/>

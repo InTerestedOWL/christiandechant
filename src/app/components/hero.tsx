@@ -54,11 +54,10 @@ export default function Hero({ locale, content }: { locale: Locale, content: Her
                 <span>{ content.primaryCta }</span>
                 <Icon name="send" className="text-[18px]"/>
               </Link>
-              <Link href={ pagePath(locale, 'home', 'wayventure') }
-                    className="inline-flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-slate-800 transition-all hover:border-amber-300 hover:bg-amber-50">
-                <span className="h-2.5 w-2.5 rounded-full bg-amber-500"></span>
+              <Link href={ pagePath(locale, 'home', 'why') }
+                    className="inline-flex items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-5 py-3.5 text-sm font-semibold text-slate-800 transition-all hover:border-brand-300 hover:bg-brand-50">
                 <span>{ content.secondaryCta }</span>
-                <Icon name="arrow_forward" className="text-[18px] text-amber-600"/>
+                <Icon name="arrow_downward" className="text-[18px] text-brand-600"/>
               </Link>
             </div>
 

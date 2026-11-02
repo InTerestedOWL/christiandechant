@@ -64,7 +64,7 @@ Jeder Merge auf `main` wird automatisch deployed, daher muss jede Phase für sic
 Gemeinsame Bausteine (`PageHero`, `CtaBanner`, `WhyMe`, `ProcessTimeline`, Leistungen-Dropdown) entstehen in der Phase, die sie zuerst braucht, damit kein ungenutzter Code entsteht.
 
 - [x] **0 Fundament:** Vitest, Routen-Registry + aktive Navigation (TDD), Content pro Bereich aufteilen, gemeinsamer Metadaten-Helper für Unterseiten (TDD)
-- [ ] **1 Positionierung & Startseite:** Freelancing-Hero, „Warum ich“, neues Motto, Startseite verschlanken (Anker-IDs bleiben)
+- [x] **1 Positionierung & Startseite:** Freelancing-Hero, „Warum ich“ (#why), neues Motto, FAQ „Warum statt Agentur?“, Ehrenamt aus Hauptnavigation. Startseite wird schrittweise verschlankt, sobald die jeweilige Seite live ist (Anker-IDs bleiben)
 - [ ] **2 `/freelancing`** (erste Unterseite: `PageHero`, `CtaBanner`, Breadcrumbs + Breadcrumb-JSON-LD per TDD)
 - [ ] **3 `/packages`** (OfferCatalog-Markup)
 - [ ] **4 `/support`** + Support-Paketanfrage im Kontaktformular (Topic/Package-Vorbelegung, TDD)

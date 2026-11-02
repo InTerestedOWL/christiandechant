@@ -7,6 +7,7 @@ const pages: { route: Route, changeFrequency: MetadataRoute.Sitemap[number]['cha
   { route: 'home', changeFrequency: 'weekly', priority: 1 },
   { route: 'freelancing', changeFrequency: 'monthly', priority: 0.9 },
   { route: 'packages', changeFrequency: 'monthly', priority: 0.9 },
+  { route: 'support', changeFrequency: 'monthly', priority: 0.8 },
   { route: 'wayventure', changeFrequency: 'weekly', priority: 0.9 },
   { route: 'imprint', changeFrequency: 'yearly', priority: 0.3 },
   { route: 'privacy', changeFrequency: 'yearly', priority: 0.3 },

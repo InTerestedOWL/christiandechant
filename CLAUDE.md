@@ -30,7 +30,12 @@ alternates and `pageMetadata()` for sub pages). `[locale]/layout.tsx` is the roo
 — there is no `src/app/layout.tsx`.
 
 Every page is registered in `routes` (`i18n/routes.ts`); slugs are English in both locales. Build internal links with
-`pagePath(locale, route, anchor?)` instead of string templates. The header marks the current page via `isActivePath`.
+`pagePath(locale, route, anchor?)` instead of string templates. The header marks the current page via `isActivePath`;
+`header.nav` entries are links or groups (`INavGroup`), rendered as an accessible disclosure dropdown on desktop.
+
+Links to the contact form go through `contactPath(locale, { topic, package? })` (`src/app/contactPrefill.ts`), e.g.
+`/de?topic=support&package=premium#contact`. The form only accepts whitelisted values (`topic` = a scope value from
+`contact.form.scopes`, `package` = an id from `packagesByTopic` passed by the homepage) and never personal data.
 Every merge to `main` deploys, so only link pages that exist.
 
 ### Content-driven single page
@@ -72,6 +77,9 @@ text needs `amber-700`+ backgrounds). `ClientLayout` provides the skip link to `
 - `[locale]/packages` — web packages: cards (`components/packageGrid.tsx`, shared with the homepage `offers` section,
   which stays the single source of the package data), comparison table, FAQ; `Service` JSON-LD with an `OfferCatalog`
   (never prices).
+- `[locale]/support` — support packages (Basic/Standard/Premium, `components/supportPackageGrid.tsx`) with profile,
+  services and response time — never prices, hours or fixed response times; services, process, FAQ; `Service` JSON-LD
+  with an `OfferCatalog`.
 - `[locale]/wayventure` — marketing page for WayVenture with JSON-LD (`SoftwareApplication` + `FAQPage`).
 - `[locale]/imprint`, `[locale]/privacy-policy` — legal pages. Keep them in sync with any new third-party service or
   data processing.

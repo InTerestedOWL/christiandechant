@@ -179,6 +179,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
     text: 'For founders, SMEs and service providers: no opaque agency hourly rates, but clear milestones and measurable results.',
     packages: [
       {
+        id: 'starter',
         tier: 'Starter',
         title: 'Static One-Pager',
         text: 'Perfect for campaigns, freelancer portfolios or product tests with a razor-sharp focus.',
@@ -186,6 +187,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         features: [ 'Extremely fast load times (<1s)', '100% GDPR compliant without cookies', 'Mobile-first ergonomics', 'Lead / contact form' ],
       },
       {
+        id: 'cms',
         tier: 'Dynamic',
         title: 'Interactive CMS Page',
         text: 'For growing businesses that want to maintain content, references and news themselves.',
@@ -194,6 +196,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         featured: true,
       },
       {
+        id: 'business',
         tier: 'Growth',
         title: 'Business Website',
         text: 'A comprehensive digital presence with multiple service pages and a search engine strategy.',
@@ -201,6 +204,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         features: [ 'Up to 5 individual subpages', 'SEO schema markup & metadata', 'Individual UI/UX concept', 'Editorial workflow & roles' ],
       },
       {
+        id: 'enterprise',
         tier: 'Full-Scale',
         title: 'Enterprise System',
         text: 'Custom portals, customer areas or system integrations with the highest level of security.',
@@ -395,12 +399,14 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         { value: 'freelance', label: 'Freelance Web / Full-Stack (Next.js, C# .NET)' },
         { value: 'ai', label: 'AI Consulting / Agentic Workflows / MCP' },
         { value: 'package', label: 'Website package (One-Pager, CMS, Business)' },
+        { value: 'support', label: 'Support package (Basic, Standard, Premium)' },
         { value: 'coaching', label: '1:1 developer coaching' },
         { value: 'founder', label: 'Founder consulting / team setup' },
         { value: 'wayventure', label: 'WayVenture cooperation' },
       ],
       message: 'Short description & goals *',
       messagePlaceholder: 'What is your project about? What timeframe do you have in mind?',
+      packageIntro: 'Interested in:',
       consent: [
         'I agree that my details will be processed to contact me and answer my request (',
         'Privacy Policy',

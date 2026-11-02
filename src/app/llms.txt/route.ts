@@ -56,6 +56,7 @@ ${ en.faq.items.map((item) => `### ${ item.question }\n\n${ item.answer }`).join
 - [Homepage (English)](${ siteUrl }/en): services, experience, contact
 - [Startseite (Deutsch)](${ siteUrl }/de): Leistungen, Werdegang, Kontakt
 - [Web packages](${ siteUrl }/en/packages): four website packages, feature comparison, standards included in every package, process, FAQ
+- [Support & maintenance](${ siteUrl }/en/support): support packages (Basic, Standard, Premium) for websites and software: monitoring, security and dependency updates, functional testing, defined response times
 - [Freelancing](${ siteUrl }/en/freelancing): engagement models, working model, process, JagdTausch case study
 - [WayVenture](${ siteUrl }/en/wayventure): founder project, a travel planner app (${ wayVentureUrl })
 - [Master’s thesis (PDF, German)](${ siteUrl }/Masterthesis.pdf): Effectiveness of Zero Trust architectures in Kubernetes clusters

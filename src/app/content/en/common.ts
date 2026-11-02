@@ -6,11 +6,18 @@ export const commonContent: Pick<SiteContent, 'header' | 'cookieBanner' | 'foote
     badge: 'Senior Dev',
     nav: [
       { href: '/freelancing', title: 'Freelancing', mobileTitle: 'Freelancing & engagement models' },
+      {
+        title: 'Services',
+        mobileTitle: 'Services',
+        children: [
+          { href: '/packages', title: 'Web packages', mobileTitle: 'Web packages & comparison' },
+          { href: '/support', title: 'Support & maintenance', mobileTitle: 'Support & maintenance' },
+          { href: '#ai-consulting', title: 'AI consulting & coaching', mobileTitle: 'AI consulting & coaching' },
+        ],
+      },
       { href: '#why', title: 'Why me', mobileTitle: 'Why work with me' },
       { href: '#about', title: 'About', mobileTitle: 'About me' },
       { href: '#wayventure', title: 'WayVenture', mobileTitle: 'WayVenture (App)', highlight: 'amber', badge: 'Live' },
-      { href: '/packages', title: 'Web packages', mobileTitle: 'Web packages & comparison' },
-      { href: '#ai-consulting', title: 'AI Consulting', mobileTitle: 'AI Consulting & Coaching' },
       { href: '#experience', title: 'Experience', mobileTitle: 'Experience & Career' },
     ],
     cta: 'Start a project',

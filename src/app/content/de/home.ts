@@ -179,6 +179,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
     text: 'Für Gründer, Mittelstand und Dienstleister: Keine unübersichtlichen Agentur-Stundensätze, sondern klare Meilensteine und messbare Ergebnisse.',
     packages: [
       {
+        id: 'starter',
         tier: 'Starter',
         title: 'Static One-Pager',
         text: 'Perfekt für Kampagnen, Freelancer-Portfolios oder Produkttests mit messerscharfem Fokus.',
@@ -186,6 +187,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         features: [ 'Extrem schnelle Ladezeiten (<1s)', '100% DSGVO-konform ohne Cookies', 'Mobile-First Ergonomie', 'Lead- / Kontaktformular' ],
       },
       {
+        id: 'cms',
         tier: 'Dynamisch',
         title: 'Interactive CMS Page',
         text: 'Für wachsende Betriebe, die Inhalte, Referenzen und News selbstständig pflegen möchten.',
@@ -194,6 +196,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         featured: true,
       },
       {
+        id: 'business',
         tier: 'Wachstum',
         title: 'Business Website',
         text: 'Umfassender digitaler Auftritt mit mehreren Leistungsseiten und Suchmaschinen-Strategie.',
@@ -201,6 +204,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         features: [ 'Bis zu 5 individuelle Unterseiten', 'SEO Schema Markup & Metadaten', 'Individuelles UI/UX Konzept', 'Redaktions-Workflow & Rollen' ],
       },
       {
+        id: 'enterprise',
         tier: 'Full-Scale',
         title: 'Enterprise System',
         text: 'Individuelle Portale, Kundenbereiche oder Schnittstellenanbindungen mit höchster Sicherheit.',
@@ -395,12 +399,14 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         { value: 'freelance', label: 'Freelance Web / Full-Stack (Next.js, C# .NET)' },
         { value: 'ai', label: 'AI Consulting / Agentic Workflows / MCP' },
         { value: 'package', label: 'Webseiten-Paket (One-Pager, CMS, Business)' },
+        { value: 'support', label: 'Support-Paket (Basis, Standard, Premium)' },
         { value: 'coaching', label: '1:1 Entwickler-Coaching' },
         { value: 'founder', label: 'Gründer-Beratung / Team-Setup' },
         { value: 'wayventure', label: 'WayVenture Kooperation' },
       ],
       message: 'Kurzbeschreibung & Ziele *',
       messagePlaceholder: 'Worum geht es in Ihrem Projekt? Welcher Zeitrahmen ist angedacht?',
+      packageIntro: 'Interesse an:',
       consent: [
         'Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und Beantwortung meiner Anfrage verarbeitet werden (',
         'Datenschutzerklärung',

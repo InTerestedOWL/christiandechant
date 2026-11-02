@@ -125,6 +125,8 @@ export interface IOfferPackage {
 }
 
 export interface IConsultingTrack {
+  /** Contact form topic the track's call to action preselects. */
+  topic: string,
   badge: string,
   icon: string,
   accent: Accent,
@@ -316,6 +318,7 @@ export interface SiteContent {
   },
   aiConsulting: ISectionHeading & {
     tracks: IConsultingTrack[],
+    detailsCta: string,
   },
   experience: ISectionHeading & {
     items: IExperience[],
@@ -459,6 +462,20 @@ export interface SiteContent {
     },
     services: ISectionHeading & { items: IIconItem[] },
     process: ISectionHeading & { steps: IProcessStep[] },
+    faq: ISectionHeading & { items: IWayVentureFaq[] },
+    cta: ICtaBanner,
+    service: { name: string, serviceType: string[], catalogName: string },
+  },
+  aiDevelopmentPage: {
+    metaTitle: string,
+    metaDescription: string,
+    keywords: string[],
+    breadcrumb: string,
+    hero: IPageHero,
+    services: ISectionHeading & { items: IReason[] },
+    principles: ISectionHeading & { items: IIconItem[] },
+    process: ISectionHeading & { steps: IProcessStep[] },
+    reference: ICtaBanner,
     faq: ISectionHeading & { items: IWayVentureFaq[] },
     cta: ICtaBanner,
     service: { name: string, serviceType: string[], catalogName: string },

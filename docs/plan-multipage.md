@@ -70,7 +70,7 @@ Gemeinsame Bausteine (`PageHero`, `CtaBanner`, `WhyMe`, `ProcessTimeline`, Leist
 - [x] **2 `/freelancing`** (erste Unterseite: `PageHero`, `CtaBanner`, Breadcrumbs, Service-/Breadcrumb-/FAQ-JSON-LD per TDD; JagdTausch-Referenz; seitenweite Barrierefreiheit: Skip-Link, Fokus, reduzierte Bewegung, Kontraste → Lighthouse a11y 100 auf allen Seiten)
 - [x] **3 `/packages`** (Paketkarten mit „Ideal für“, barrierefreie Vergleichstabelle, Standards in jedem Paket, Ablauf, FAQ, OfferCatalog-Markup per TDD; Startseite verlinkt den Vergleich)
 - [x] **4 `/support`** + Support-Paketanfrage im Kontaktformular (Topic/Package-Vorbelegung per TDD, Paket-CTAs füllen das Formular vor; Navigation mit barrierefreiem „Leistungen“-Dropdown)
-- [ ] **5 `/ai-development`**
+- [x] **5 `/ai-development`** (4 Leistungen, Grundsätze, Ablauf, WayVenture als KI-Referenz, FAQ, OfferCatalog; Startseite verlinkt die Seite, Track-CTAs füllen das Formular mit KI/Coaching vor)
 - [ ] **6 `/approach`**
 - [ ] **7 `/about` + `/contact`**
 - [ ] **8 Querschnitt & QA:** interne Verlinkung, `llms.txt`, Lighthouse, a11y, Mobile, beide Sprachen, Rechtstexte prüfen, `npm run build`

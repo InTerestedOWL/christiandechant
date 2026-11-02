@@ -230,6 +230,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
     text: 'Most AI workshops stop at superficial ChatGPT prompts. I show teams how autonomous agents and deterministic interfaces produce real code, without losing control.',
     tracks: [
       {
+        topic: 'ai',
         badge: 'FOR BUSINESSES & TEAMS',
         icon: 'apartment',
         accent: 'brand',
@@ -243,6 +244,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         cta: 'Book a strategy call',
       },
       {
+        topic: 'coaching',
         badge: 'DEVELOPER TO DEVELOPER',
         icon: 'terminal',
         accent: 'emerald',
@@ -256,6 +258,7 @@ export const homeContent: Pick<SiteContent, 'hero' | 'whyMe' | 'competencies' | 
         cta: 'Request 1:1 coaching',
       },
     ],
+    detailsCta: 'More on AI development',
   },
   experience: {
     eyebrow: 'Experience & stations',

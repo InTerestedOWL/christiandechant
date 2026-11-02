@@ -12,7 +12,7 @@ export const commonContent: Pick<SiteContent, 'header' | 'cookieBanner' | 'foote
         children: [
           { href: '/packages', title: 'Webpakete', mobileTitle: 'Webpakete & Vergleich' },
           { href: '/support', title: 'Support & Wartung', mobileTitle: 'Support & Wartung' },
-          { href: '#ai-consulting', title: 'AI Consulting & Coaching', mobileTitle: 'AI Consulting & Coaching' },
+          { href: '/ai-development', title: 'AI Development', mobileTitle: 'AI Development & Coaching' },
         ],
       },
       { href: '#why', title: 'Warum ich', mobileTitle: 'Warum mit mir arbeiten' },

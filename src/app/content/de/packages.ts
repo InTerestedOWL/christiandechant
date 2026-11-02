@@ -1,0 +1,138 @@
+import { SiteContent } from "../../interfaces";
+
+export const packagesPageContent: Pick<SiteContent, 'packagesPage'> = {
+  packagesPage: {
+    metaTitle: 'Webpakete: Website erstellen lassen | Christian Dechant',
+    metaDescription: 'Website erstellen lassen in Fulda & remote: vier Webpakete vom One-Pager bis zum Enterprise-System – individuell, DSGVO-konform, barrierefrei nach WCAG 2.1 AA und mit Support nach dem Go-live.',
+    keywords: [
+      'Website erstellen lassen',
+      'Webdesign Fulda',
+      'Homepage erstellen lassen',
+      'Webentwicklung Pakete',
+      'CMS Website',
+      'barrierefreie Website',
+      'DSGVO-konforme Website',
+      'Unternehmenswebsite',
+    ],
+    breadcrumb: 'Webpakete',
+    hero: {
+      eyebrow: 'Webpakete',
+      icon: 'inventory_2',
+      title: 'Ihre Website, individuell gebaut —',
+      titleHighlight: 'in einem klaren Rahmen.',
+      intro: 'Vier Pakete geben Orientierung – vom schnellen One-Pager bis zum Enterprise-System. Den genauen Umfang schneiden wir auf Ihr Vorhaben zu: Sie erhalten ein individuelles Angebot mit klaren Meilensteinen statt unübersichtlicher Stundensätze.',
+      primaryCta: 'Paket anfragen',
+      secondaryCta: 'Pakete vergleichen',
+      facts: [
+        { icon: 'verified_user', label: 'DSGVO-konform & Hosting in der EU' },
+        { icon: 'accessibility_new', label: 'Barrierefrei nach WCAG 2.1 AA' },
+        { icon: 'devices', label: 'Mobile-first & schnell' },
+        { icon: 'support_agent', label: 'Support nach dem Go-live' },
+      ],
+    },
+    packages: {
+      eyebrow: 'Pakete',
+      icon: 'inventory_2',
+      title: 'Vier Pakete, ein Anspruch',
+      text: 'Jedes Paket ist ein Startpunkt, kein Korsett. Welches zu Ihnen passt, klären wir gemeinsam im Erstgespräch.',
+    },
+    comparison: {
+      eyebrow: 'Vergleich',
+      icon: 'compare_arrows',
+      title: 'Die Pakete im Vergleich',
+      text: 'Was in welchem Paket enthalten ist – auf einen Blick.',
+      caption: 'Leistungsvergleich der Webpakete',
+      featureLabel: 'Leistung',
+      included: 'Enthalten',
+      notIncluded: 'Nicht enthalten',
+      rows: [
+        { label: 'Mobile-first & schnelle Ladezeiten', values: [ true, true, true, true ] },
+        { label: 'DSGVO-konform, Hosting in der EU', values: [ true, true, true, true ] },
+        { label: 'Barrierefreiheit nach WCAG 2.1 AA', values: [ true, true, true, true ] },
+        { label: 'Kontaktformular', values: [ true, true, true, true ] },
+        { label: 'Domain-, SSL- & Mail-Einrichtung', values: [ false, true, true, true ] },
+        { label: 'Inhalte selbst pflegen (Headless CMS)', values: [ false, true, true, true ] },
+        { label: 'Interaktive Filter & Animationen', values: [ false, true, true, true ] },
+        { label: 'Individuelle Unterseiten', values: [ false, false, 'Bis zu 5', 'Nach Bedarf' ] },
+        { label: 'Individuelles UI/UX-Konzept', values: [ false, false, true, true ] },
+        { label: 'SEO: Schema Markup & Metadaten', values: [ false, false, true, true ] },
+        { label: 'Redaktions-Workflow & Rollen', values: [ false, false, true, true ] },
+        { label: 'Komplexe Rollen & Login (OAuth)', values: [ false, false, false, true ] },
+        { label: 'API- & Drittsystem-Anbindung', values: [ false, false, false, true ] },
+        { label: 'Support nach dem Go-live', values: [ 'Optional', 'Optional', 'Optional', 'Mit SLA' ] },
+      ],
+    },
+    included: {
+      eyebrow: 'In jedem Paket',
+      icon: 'task_alt',
+      title: 'Was immer dazugehört',
+      text: 'Unabhängig vom Paket gelten dieselben Standards – denn Qualität ist kein Extra.',
+      items: [
+        { icon: 'verified_user', title: 'Datenschutz & EU-Hosting', text: 'DSGVO-konform mit Auftragsverarbeitungsvertrag (AVV) und Hosting in der EU.' },
+        { icon: 'accessibility_new', title: 'Barrierefreiheit', text: 'Umsetzung nach WCAG 2.1 AA – damit alle Menschen Ihre Website nutzen können und Sie für das Barrierefreiheitsstärkungsgesetz (BFSG) gerüstet sind.' },
+        { icon: 'speed', title: 'Performance & Mobile-first', text: 'Schnelle Ladezeiten und eine Bedienung, die auf dem Smartphone genauso gut funktioniert wie am Desktop.' },
+        { icon: 'key', title: 'Quellcode & Zugänge gehören Ihnen', text: 'Vollständige Übergabe nach dem Go-live – ohne Abhängigkeit von mir.' },
+      ],
+    },
+    process: {
+      eyebrow: 'Ablauf',
+      icon: 'route',
+      title: 'So entsteht Ihre Website',
+      text: 'Von der ersten Idee bis zur Website im Netz – in fünf klaren Schritten.',
+      steps: [
+        { icon: 'chat', title: 'Erstgespräch', text: 'Wir klären Ziele, Zielgruppe, Inhalte und welches Paket zu Ihnen passt – unverbindlich.' },
+        { icon: 'assignment', title: 'Konzept & Angebot', text: 'Seitenstruktur, Funktionsumfang und Meilensteine – festgehalten in einem individuellen Angebot.' },
+        { icon: 'palette', title: 'Design & Umsetzung', text: 'Individuelles Design und saubere Umsetzung, mit regelmäßigen Zwischenständen für Ihr Feedback.' },
+        { icon: 'rocket_launch', title: 'Go-live', text: 'Tests auf allen Geräten, Barrierefreiheits- und Performance-Check – dann geht Ihre Website online.' },
+        { icon: 'support_agent', title: 'Pflege & Support', text: 'Auf Wunsch übernehme ich Updates, Monitoring und Weiterentwicklung über ein Support-Paket.' },
+      ],
+    },
+    custom: {
+      title: 'Mehr als eine Website?',
+      text: 'Individuelle Software, Web-Apps, Schnittstellen oder ein MVP: Für Vorhaben jenseits der Pakete arbeite ich als freiberuflicher Entwickler direkt in Ihrem Projekt.',
+      cta: 'Zum Freelancing',
+    },
+    faq: {
+      eyebrow: 'Häufige Fragen',
+      icon: 'help',
+      title: 'Fragen zu den Webpaketen',
+      text: 'Das Wichtigste zu Kosten, Ablauf und Pflege – und falls Ihre Frage fehlt, schreiben Sie mir einfach.',
+      items: [
+        {
+          question: 'Was kostet eine Website?',
+          answer: 'Jede Website wird individuell kalkuliert, denn Umfang, Inhalte und Funktionen sind bei jedem Vorhaben anders. Nach dem Erstgespräch erhalten Sie ein transparentes Angebot mit klaren Meilensteinen.',
+        },
+        {
+          question: 'Wie lange dauert die Umsetzung?',
+          answer: 'Das hängt vom Paket und vom Umfang ab. Den konkreten Zeitplan mit Meilensteinen erhalten Sie zusammen mit dem Angebot.',
+        },
+        {
+          question: 'Kann ich Inhalte selbst pflegen?',
+          answer: 'Ja, ab dem Paket „Interactive CMS Page“: Texte und Bilder ändern Sie über ein schlankes Headless CMS, ganz ohne Programmierkenntnisse.',
+        },
+        {
+          question: 'Ist meine Website barrierefrei?',
+          answer: 'Ja. Jede Website wird nach WCAG 2.1 AA umgesetzt und geprüft – so erreichen Sie alle Nutzer und sind für das Barrierefreiheitsstärkungsgesetz (BFSG) gerüstet.',
+        },
+        {
+          question: 'Kann ich später auf ein größeres Paket wechseln?',
+          answer: 'Ja. Die Pakete bauen aufeinander auf, sodass Ihre Website mit Ihrem Unternehmen mitwachsen kann.',
+        },
+        {
+          question: 'Wer kümmert sich nach dem Go-live um Updates?',
+          answer: 'Auf Wunsch ich: Mit einem Support-Paket übernehme ich Monitoring, Security- und Paket-Updates, Funktionstests und Weiterentwicklung.',
+        },
+      ],
+    },
+    cta: {
+      title: 'Welches Paket passt zu Ihnen?',
+      text: 'Schreiben Sie mir kurz, was Sie vorhaben. Ich melde mich innerhalb von 24 Stunden persönlich mit einer ersten Einschätzung.',
+      cta: 'Paket anfragen',
+    },
+    service: {
+      name: 'Webentwicklung & Webdesign',
+      serviceType: [ 'Webentwicklung', 'Webdesign', 'Content-Management-Systeme', 'Barrierefreie Websites' ],
+      catalogName: 'Webpakete',
+    },
+  },
+};

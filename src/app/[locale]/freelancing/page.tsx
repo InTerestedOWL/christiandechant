@@ -11,8 +11,7 @@ import SectionHeading from "@/app/components/shared/sectionHeading";
 import FeatureCard from "@/app/components/shared/featureCard";
 import ProcessTimeline from "@/app/components/shared/processTimeline";
 import TechStack from "@/app/components/shared/techStack";
-import Icon from "@/app/components/shared/materialIcon";
-import { accentIconBox } from "@/app/components/shared/accent";
+import IconItemGrid from "@/app/components/shared/iconItemGrid";
 import CaseStudy from "@/app/components/caseStudy";
 import Faq from "@/app/components/faq";
 import CtaBanner from "@/app/components/ctaBanner";
@@ -86,17 +85,7 @@ export default async function FreelancingPage({ params }: Props) {
       <section id="working-model" aria-labelledby="working-model-title" className="border-b border-slate-200/80 bg-white py-20">
         <div className={ container }>
           <SectionHeading content={ page.workingModel } id="working-model-title"/>
-          <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            { page.workingModel.items.map((item) => (
-              <li key={ item.title } className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <div className={ `flex h-11 w-11 items-center justify-center rounded-xl border ${ accentIconBox.brand }` }>
-                  <Icon name={ item.icon } className="text-2xl"/>
-                </div>
-                <h3 className="text-base font-bold text-slate-900">{ item.title }</h3>
-                <p className="text-sm leading-relaxed text-slate-600">{ item.text }</p>
-              </li>
-            )) }
-          </ul>
+          <IconItemGrid items={ page.workingModel.items }/>
         </div>
       </section>
 

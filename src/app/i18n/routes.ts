@@ -4,6 +4,7 @@ import { Locale } from "./config";
 export const routes = {
   home: '',
   freelancing: '/freelancing',
+  packages: '/packages',
   wayventure: '/wayventure',
   imprint: '/imprint',
   privacy: '/privacy-policy',

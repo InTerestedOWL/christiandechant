@@ -3,7 +3,7 @@ import { Locale, locales } from "../i18n/config";
 import { contactEmail, profileUrls, siteUrl, techStack } from "../content/shared";
 
 const personId = `${ siteUrl }/#person`;
-const businessId = `${ siteUrl }/#business`;
+export const businessId = `${ siteUrl }/#business`;
 const websiteId = `${ siteUrl }/#website`;
 
 const address = {

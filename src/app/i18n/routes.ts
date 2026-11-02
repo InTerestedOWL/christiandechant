@@ -7,6 +7,7 @@ export const routes = {
   packages: '/packages',
   support: '/support',
   aiDevelopment: '/ai-development',
+  approach: '/approach',
   wayventure: '/wayventure',
   imprint: '/imprint',
   privacy: '/privacy-policy',

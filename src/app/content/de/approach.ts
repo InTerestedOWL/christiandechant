@@ -1,0 +1,165 @@
+import { SiteContent } from "../../interfaces";
+
+export const approachPageContent: Pick<SiteContent, 'approachPage'> = {
+  approachPage: {
+    metaTitle: 'Arbeitsweise: Von der Idee zum produktiven Produkt | Christian Dechant',
+    metaDescription: 'So entsteht deine Software: Scoping, Prototyp, MVP, Go-live und Betrieb aus einer Hand. Schnell geliefert und vollständig gebaut – mit Tests, Barrierefreiheit nach WCAG 2.1 AA, DSGVO und Hosting in der EU.',
+    keywords: [
+      'Softwareentwicklung Ablauf',
+      'MVP Entwicklung',
+      'Prototyp Entwicklung',
+      'Von der Idee zur App',
+      'Softwareentwicklung DSGVO',
+      'barrierefreie Softwareentwicklung',
+      'testgetriebene Entwicklung',
+      'Freelance Entwickler Arbeitsweise',
+    ],
+    breadcrumb: 'Arbeitsweise',
+    hero: {
+      eyebrow: 'Arbeitsweise',
+      icon: 'route',
+      title: 'Von der Idee zum produktiven Produkt —',
+      titleHighlight: 'schnell geliefert, vollständig gebaut.',
+      intro: 'Du musst nicht wissen, wie Software entsteht – nur, was sie leisten soll. Ich begleite dich durch alle Phasen, von der ersten Idee bis zum stabilen Betrieb. Schnell genug, um früh von echten Nutzern zu lernen, und gründlich genug, dass jedes Release trägt.',
+      primaryCta: 'Erstgespräch vereinbaren',
+      secondaryCta: 'Phasen ansehen',
+      facts: [
+        { icon: 'person', label: 'Ein Ansprechpartner für den ganzen Weg' },
+        { icon: 'rocket_launch', label: 'Frühe, lauffähige Releases' },
+        { icon: 'fact_check', label: 'Tests ab Version 1' },
+        { icon: 'verified_user', label: 'DSGVO, EU-Hosting & WCAG 2.1 AA' },
+      ],
+    },
+    phases: {
+      eyebrow: 'Von der Idee zum Produkt',
+      icon: 'route',
+      title: 'Fünf Phasen, ein Ansprechpartner',
+      text: 'Jede Phase endet mit einem greifbaren Ergebnis, auf dem die nächste aufbaut. Du kannst in jeder Phase einsteigen.',
+      items: [
+        {
+          icon: 'lightbulb',
+          accent: 'brand',
+          title: 'Scoping',
+          text: 'Wir schärfen die Idee: Wer nutzt das Produkt, welches Problem löst es, und was gehört wirklich in die erste Version?',
+          points: [ 'Ziele, Nutzer & Anforderungen', 'Priorisierter Funktionsumfang', 'Technologie-Empfehlung & Angebot' ],
+        },
+        {
+          icon: 'palette',
+          accent: 'indigo',
+          title: 'Prototyp',
+          text: 'Ein klickbarer Entwurf oder technischer Durchstich macht die Idee greifbar – bevor viel Budget fließt.',
+          points: [ 'Klickbarer Prototyp oder Proof of Concept', 'Frühes Feedback echter Nutzer', 'Technische Risiken geklärt' ],
+        },
+        {
+          icon: 'construction',
+          accent: 'amber',
+          title: 'MVP',
+          text: 'Die erste nutzbare Version mit dem Kern deines Produkts – minimal im Umfang, aber vollständig in der Qualität.',
+          points: [ 'Kernfunktionen produktionsreif', 'Auth, Fehlerbehandlung & Tests', 'Regelmäßige Zwischenstände' ],
+        },
+        {
+          icon: 'rocket_launch',
+          accent: 'emerald',
+          title: 'Go-live',
+          text: 'Dein Produkt geht live: geprüft auf allen Geräten, abgesichert und dokumentiert.',
+          points: [ 'Barrierefreiheits-, Performance- & Security-Check', 'Hosting in der EU', 'Übergabe von Quellcode & Zugängen' ],
+        },
+        {
+          icon: 'support_agent',
+          accent: 'rose',
+          title: 'Betrieb & Weiterentwicklung',
+          text: 'Nach dem Go-live geht es weiter: Monitoring, Updates und neue Funktionen auf Basis echter Nutzung.',
+          points: [ 'Support-Pakete nach Bedarf', 'Weiterentwicklung anhand von Feedback', 'Feste Ansprechperson' ],
+        },
+      ],
+    },
+    motto: {
+      eyebrow: 'Mein Leitsatz',
+      icon: 'bolt',
+      title: 'Schnell liefern – und trotzdem vollständig',
+      text: 'Geschwindigkeit ist wertlos, wenn das MVP beim ersten echten Kundenkontakt zerbricht. Deshalb gilt in jedem Projekt beides zugleich.',
+      items: [
+        {
+          lang: 'en',
+          icon: 'rocket_launch',
+          accent: 'brand',
+          title: 'Deliver fast',
+          text: 'Nicht monatelang im luftleeren Raum entwickeln: Annahmen früh mit echten Nutzern prüfen und Entscheidungen auf Feedback stützen.',
+          points: [ 'Frühe, lauffähige Releases', 'Feedback-Schleifen ab dem ersten Tag', 'Klare Priorisierung statt endloser Feature-Liste' ],
+        },
+        {
+          lang: 'en',
+          icon: 'verified',
+          accent: 'amber',
+          title: 'Deliver complete',
+          text: 'Minimal heißt nie fehlerhaft. Jedes Release ist sicher, getestet und angenehm zu bedienen – auch in Sonderfällen.',
+          points: [ 'Durchdachte Sonderfälle & Fehlerzustände', 'Automatisierte Tests als Sicherheitsnetz', 'Stimmige Bedienung auf Mobil & Desktop' ],
+        },
+      ],
+    },
+    done: {
+      eyebrow: 'Qualität',
+      icon: 'task_alt',
+      title: 'Was „fertig“ bei mir bedeutet',
+      text: 'Diese Punkte gehören zu jedem Release – nicht erst zur Version 2.',
+      items: [
+        { icon: 'fact_check', title: 'Automatisierte Tests', text: 'Geschäftslogik entsteht testgetrieben, und die Tests laufen bei jeder Änderung automatisch.' },
+        { icon: 'security', title: 'Sicherheit', text: 'Saubere Authentifizierung, aktuelle Abhängigkeiten und sichere Standardeinstellungen.' },
+        { icon: 'accessibility_new', title: 'Barrierefreiheit', text: 'Umsetzung nach WCAG 2.1 AA, damit alle Menschen dein Produkt nutzen können.' },
+        { icon: 'speed', title: 'Performance', text: 'Schnelle Ladezeiten und ein sparsamer Umgang mit Ressourcen auf allen Geräten.' },
+        { icon: 'article', title: 'Dokumentation', text: 'Nachvollziehbare Dokumentation, damit dein Produkt nicht von einer einzelnen Person abhängt.' },
+        { icon: 'key', title: 'Vollständige Übergabe', text: 'Quellcode und Zugänge gehören dir – ohne Abhängigkeit von mir.' },
+      ],
+    },
+    compliance: {
+      eyebrow: 'Compliance',
+      icon: 'verified_user',
+      title: 'Compliance von Anfang an',
+      text: 'Datenschutz, Barrierefreiheit und der verantwortungsvolle Einsatz von KI werden von Beginn an eingeplant – nicht nachträglich nachgerüstet.',
+      items: [
+        { icon: 'gavel', title: 'DSGVO & AV-Vertrag', text: 'Datenschutzkonforme Umsetzung, mit Auftragsverarbeitungsvertrag (AVV), wo personenbezogene Daten verarbeitet werden.' },
+        { icon: 'dns', title: 'Hosting in der EU', text: 'Server und Dienste in der EU – für rechtliche Klarheit beim Umgang mit Daten.' },
+        { icon: 'accessibility_new', title: 'Barrierefreiheit (BFSG)', text: 'Umsetzung nach WCAG 2.1 AA, damit du für das Barrierefreiheitsstärkungsgesetz gerüstet bist.' },
+        { icon: 'policy', title: 'KI-Governance', text: 'Klare Leitlinien, welche Daten an welche KI-Modelle gehen – bei Bedarf mit lokal betriebenen Modellen.' },
+      ],
+    },
+    collaboration: {
+      title: 'Wie die Zusammenarbeit konkret aussieht',
+      text: 'Einsatzmodelle, den Ablauf im Projekt und eine Referenz aus der Praxis findest du auf der Freelancing-Seite.',
+      cta: 'Zum Freelancing',
+    },
+    faq: {
+      eyebrow: 'Häufige Fragen',
+      icon: 'help',
+      title: 'Fragen zur Arbeitsweise',
+      text: 'Das Wichtigste zu Ablauf, Qualität und Einstieg – und falls deine Frage fehlt, schreib mir einfach.',
+      items: [
+        {
+          question: 'Ich habe nur eine Idee – ist das zu früh?',
+          answer: 'Nein, genau dafür gibt es das Scoping. Gemeinsam schärfen wir Ziel, Nutzer und den ersten Funktionsumfang, bevor eine Zeile Code entsteht.',
+        },
+        {
+          question: 'Wie früh sehe ich Ergebnisse?',
+          answer: 'Früh: Schon der Prototyp macht die Idee greifbar. Danach gibt es regelmäßig lauffähige Zwischenstände statt einer großen Überraschung am Ende.',
+        },
+        {
+          question: 'Ist ein MVP nicht automatisch unfertig?',
+          answer: 'Ein MVP ist klein im Umfang, aber nicht in der Qualität. Authentifizierung, Fehlerbehandlung, Tests und Barrierefreiheit gehören ab der ersten Version dazu.',
+        },
+        {
+          question: 'Muss ich alle Phasen buchen?',
+          answer: 'Nein. Du kannst in jeder Phase einsteigen, zum Beispiel mit einem bestehenden Prototyp oder einer laufenden Anwendung, die weiterentwickelt werden soll.',
+        },
+        {
+          question: 'Was passiert nach dem Go-live?',
+          answer: 'Auf Wunsch betreue ich dein Produkt weiter – mit Support-Paketen für Monitoring, Updates und Weiterentwicklung.',
+        },
+      ],
+    },
+    cta: {
+      title: 'Bereit für den ersten Schritt?',
+      text: 'Erzähl mir von deiner Idee. Ich melde mich innerhalb von 24 Stunden persönlich zurück.',
+      cta: 'Erstgespräch vereinbaren',
+    },
+  },
+};

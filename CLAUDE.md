@@ -83,6 +83,9 @@ text needs `amber-700`+ backgrounds). `ClientLayout` provides the skip link to `
 - `[locale]/ai-development` — AI services (features in products, agents & MCP, audit & governance, coaching),
   principles, process, WayVenture as AI reference, FAQ; `Service` JSON-LD with an `OfferCatalog`. The homepage
   `aiConsulting` tracks stay as a teaser and link here.
+- `[locale]/approach` — how projects run: five phases (numbered `FeatureCard`s in an `ol`), "Deliver fast / complete"
+  (English titles carry `lang` via `IReason.lang`), definition of done, compliance, FAQ; `BreadcrumbList` + `FAQPage`
+  JSON-LD. The homepage `motto` section links here.
 - `[locale]/wayventure` — marketing page for WayVenture with JSON-LD (`SoftwareApplication` + `FAQPage`).
 - `[locale]/imprint`, `[locale]/privacy-policy` — legal pages. Keep them in sync with any new third-party service or
   data processing.

@@ -51,9 +51,13 @@ export interface IPillar {
   text: string,
   points?: string[],
   cta?: string,
+  /** Contact form topic the call to action preselects. */
+  topic?: string,
 }
 
 export interface IReason {
+  /** Language of the title when it differs from the page, e.g. 'en' for "Deliver fast" on a German page. */
+  lang?: string,
   icon: string,
   accent: Accent,
   title: string,
@@ -302,6 +306,7 @@ export interface SiteContent {
     quote: string,
     text: string,
     pillars: IPillar[],
+    detailsCta: string,
   },
   offers: ISectionHeading & {
     packages: IOfferPackage[],
@@ -465,6 +470,20 @@ export interface SiteContent {
     faq: ISectionHeading & { items: IWayVentureFaq[] },
     cta: ICtaBanner,
     service: { name: string, serviceType: string[], catalogName: string },
+  },
+  approachPage: {
+    metaTitle: string,
+    metaDescription: string,
+    keywords: string[],
+    breadcrumb: string,
+    hero: IPageHero,
+    phases: ISectionHeading & { items: IReason[] },
+    motto: ISectionHeading & { items: IReason[] },
+    done: ISectionHeading & { items: IIconItem[] },
+    compliance: ISectionHeading & { items: IIconItem[] },
+    collaboration: ICtaBanner,
+    faq: ISectionHeading & { items: IWayVentureFaq[] },
+    cta: ICtaBanner,
   },
   aiDevelopmentPage: {
     metaTitle: string,

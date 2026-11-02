@@ -4,6 +4,7 @@ import { Locale } from "../i18n/config";
 import Icon from "./shared/materialIcon";
 import { accentText } from "./shared/accent";
 import { pagePath } from "@/app/i18n/routes";
+import { contactPath } from "@/app/contactPrefill";
 
 // The motto cards use slightly different badge/link shades than the shared accent maps.
 const pillarBadge: Partial<Record<Accent, string>> = {
@@ -61,7 +62,7 @@ export default function Motto({ locale, content }: { locale: Locale, content: Si
               </div>
               { pillar.cta && (
                 <div className="mt-2 border-t border-slate-100 pt-4">
-                  <Link href={ pagePath(locale, 'home', 'contact') }
+                  <Link href={ contactPath(locale, pillar.topic ? { topic: pillar.topic } : undefined) }
                         className={ `inline-flex items-center gap-1.5 text-xs font-semibold transition-colors ${ pillarLink[pillar.accent] }` }>
                     <span>{ pillar.cta }</span>
                     <Icon name="arrow_forward" className="text-sm"/>
@@ -70,6 +71,14 @@ export default function Motto({ locale, content }: { locale: Locale, content: Si
               ) }
             </div>
           )) }
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Link href={ pagePath(locale, 'approach') }
+                className="inline-flex items-center gap-2 rounded-xl border border-white/40 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-white/20">
+            <span>{ content.detailsCta }</span>
+            <Icon name="arrow_forward" className="text-[18px]"/>
+          </Link>
         </div>
       </div>
     </section>

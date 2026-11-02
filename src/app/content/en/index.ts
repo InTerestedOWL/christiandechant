@@ -8,6 +8,7 @@ import { freelancingPageContent } from "./freelancing";
 import { packagesPageContent } from "./packages";
 import { supportPageContent } from "./support";
 import { aiDevelopmentPageContent } from "./aiDevelopment";
+import { approachPageContent } from "./approach";
 
 export const en: SiteContent = {
   ...metaContent,
@@ -19,4 +20,5 @@ export const en: SiteContent = {
   ...packagesPageContent,
   ...supportPageContent,
   ...aiDevelopmentPageContent,
+  ...approachPageContent,
 };

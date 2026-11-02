@@ -63,9 +63,9 @@ Jede Phase = eigener Branch + PR. Jede Seite wird **komplett** ausgeliefert: Met
 Jeder Merge auf `main` wird automatisch deployed, daher muss jede Phase für sich auslieferbar sein: Navigation verlinkt nur existierende Seiten, Startseiten-Abschnitte verschwinden erst, wenn ihre Seite live ist.
 Gemeinsame Bausteine (`PageHero`, `CtaBanner`, `WhyMe`, `ProcessTimeline`, Leistungen-Dropdown) entstehen in der Phase, die sie zuerst braucht, damit kein ungenutzter Code entsteht.
 
-- [~] **0 Fundament:** Vitest, Routen-Registry + aktive Navigation (TDD), Content pro Bereich aufteilen, gemeinsamer Metadaten-Helper für Unterseiten, Breadcrumb-JSON-LD (TDD)
+- [x] **0 Fundament:** Vitest, Routen-Registry + aktive Navigation (TDD), Content pro Bereich aufteilen, gemeinsamer Metadaten-Helper für Unterseiten (TDD)
 - [ ] **1 Positionierung & Startseite:** Freelancing-Hero, „Warum ich“, neues Motto, Startseite verschlanken (Anker-IDs bleiben)
-- [ ] **2 `/freelancing`**
+- [ ] **2 `/freelancing`** (erste Unterseite: `PageHero`, `CtaBanner`, Breadcrumbs + Breadcrumb-JSON-LD per TDD)
 - [ ] **3 `/packages`** (OfferCatalog-Markup)
 - [ ] **4 `/support`** + Support-Paketanfrage im Kontaktformular (Topic/Package-Vorbelegung, TDD)
 - [ ] **5 `/ai-development`**

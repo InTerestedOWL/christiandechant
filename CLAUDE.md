@@ -13,9 +13,11 @@ npm run dev      # start dev server with Turbopack
 npm run build    # production build
 npm run start    # run the production build
 npm run lint     # next lint (currently broken: eslintrc config incompatible with ESLint 10)
+npm test         # Vitest (unit tests for pure logic, `src/**/*.test.ts`)
 ```
 
-There is no test suite configured in this repo.
+Business logic (routing, metadata, JSON-LD builders, form logic) is developed test-first with Vitest; tests sit next to
+the file they cover. UI components are not unit-tested.
 
 ## Architecture
 
@@ -23,8 +25,13 @@ There is no test suite configured in this repo.
 
 All pages live under `src/app/[locale]/` (`/de`, `/en`); `src/proxy.ts` redirects any path without a locale prefix (e.g.
 `/`, `/imprint`) to the best match from `Accept-Language` (default `de`). Locale helpers are in `src/app/i18n/` (
-`config.ts` for negotiation/path switching, `metadata.ts` for canonical + hreflang alternates). `[locale]/layout.tsx` is
-the root layout (sets `<html lang>`, metadata) — there is no `src/app/layout.tsx`.
+`config.ts` for negotiation/path switching, `routes.ts` for the route registry, `metadata.ts` for canonical + hreflang
+alternates and `pageMetadata()` for sub pages). `[locale]/layout.tsx` is the root layout (sets `<html lang>`, metadata)
+— there is no `src/app/layout.tsx`.
+
+Every page is registered in `routes` (`i18n/routes.ts`); slugs are English in both locales. Build internal links with
+`pagePath(locale, route, anchor?)` instead of string templates. The header marks the current page via `isActivePath`.
+Every merge to `main` deploys, so only link pages that exist.
 
 ### Content-driven single page
 
@@ -32,10 +39,13 @@ the root layout (sets `<html lang>`, metadata) — there is no `src/app/layout.t
 WayVentureSpotlight, Motto, Offers, AiConsulting, Experience, VoluntaryWork, Contact). The design follows
 `mock/new mock.html` 1:1.
 
-**`src/app/content/de.ts` and `en.ts`** are the single source of truth for all copy (homepage, WayVenture page, imprint,
-privacy policy, 404), both typed as `SiteContent` from `src/app/interfaces.ts`; `getContent(locale)` in
-`content/index.ts` picks one. Language-independent values (URLs, e-mail, socials) live in `content/shared.ts`. When
-changing site text, update **both** locale files. Add new fields to `SiteContent` first.
+**`src/app/content/de/` and `en/`** are the single source of truth for all copy, split into one file per area (`meta`,
+`common` for header/footer/cookie banner/404, `home`, `wayventurePage`, `legal`). Never name one of these files
+`layout`, `page`, `route` etc. — Next treats those as route files under `src/app/`. Each file is typed as a
+`Pick<SiteContent, …>` and `index.ts` merges them into a `SiteContent` (`src/app/interfaces.ts`). `getContent(locale)` in
+`content/index.ts` picks the locale. New pages get their own file in both folders. Language-independent values (URLs,
+e-mail, socials) live in `content/shared.ts`. When changing site text, update **both** locales. Add new fields to
+`SiteContent` first.
 
 Shared pieces live under `src/app/components/shared/` (`materialIcon`, `sectionHeading`, `accent` class maps, `richText`
 for `**bold**`/`*italic*` in content strings, `languageSwitch`). Legal pages render through `components/legalPage.tsx`.
@@ -48,7 +58,7 @@ for `**bold**`/`*italic*` in content strings, `languageSwitch`). Legal pages ren
 - `[locale]/wayventure` — marketing page for WayVenture with JSON-LD (`SoftwareApplication` + `FAQPage`).
 - `[locale]/imprint`, `[locale]/privacy-policy` — legal pages. Keep them in sync with any new third-party service or
   data processing.
-- `src/app/sitemap.ts` — generates `sitemap.xml` for all locales; add new routes to its `pages` list.
+- `src/app/sitemap.ts` — generates `sitemap.xml` for all locales; add new routes to its `pages` list (by route key).
 
 ### SEO & GEO (AI discoverability)
 

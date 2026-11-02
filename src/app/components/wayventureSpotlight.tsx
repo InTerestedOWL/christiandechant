@@ -47,7 +47,7 @@ export default function WayVentureSpotlight({ locale, content }: {
 
               <div className="flex flex-wrap items-center gap-3.5 pt-3">
                 <a href={ wayVentureUrl } target="_blank" rel="noreferrer"
-                   className="inline-flex items-center gap-2 rounded-xl bg-amber-500 px-5 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-amber-600">
+                   className="inline-flex items-center gap-2 rounded-xl bg-amber-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-md transition-all hover:bg-amber-400">
                   <span>{ content.primaryCta }</span>
                   <Icon name="open_in_new" className="text-[18px]"/>
                 </a>

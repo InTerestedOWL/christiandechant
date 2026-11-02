@@ -8,12 +8,13 @@ import CookieBanner from "@/app/components/cookieBanner";
 import { SiteContent } from "../interfaces";
 import { Locale } from "../i18n/config";
 
-export default function ClientLayout({ children, locale, header, footer, cookieBanner }: Readonly<{
+export default function ClientLayout({ children, locale, header, footer, cookieBanner, a11y }: Readonly<{
   children: React.ReactNode,
   locale: Locale,
   header: SiteContent['header'],
   footer: SiteContent['footer'],
   cookieBanner: SiteContent['cookieBanner'],
+  a11y: SiteContent['a11y'],
 }>) {
   const { status } = useStatus();
 
@@ -23,8 +24,12 @@ export default function ClientLayout({ children, locale, header, footer, cookieB
         status ? "overflow-hidden" : ""
       }` }
     >
+    <a href="#main-content"
+       className="sr-only rounded-xl bg-brand-700 px-4 py-3 text-sm font-semibold text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60]">
+      { a11y.skipToContent }
+    </a>
     <Header locale={ locale } content={ header }/>
-    <div className="pt-20">{ children }</div>
+    <div id="main-content" tabIndex={ -1 } className="pt-20 outline-none">{ children }</div>
     <Footer locale={ locale } content={ footer }/>
     <CookieBanner locale={ locale } content={ cookieBanner }/>
     </body>

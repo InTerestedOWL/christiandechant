@@ -55,7 +55,7 @@ export default function LegalPage({ content }: { content: ILegalPage }) {
           <Eyebrow icon="gavel" text={ content.eyebrow }/>
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">{ content.title }</h1>
           { content.intro && <p className="text-base leading-relaxed text-slate-600">{ content.intro }</p> }
-          <span className="font-mono text-xs text-slate-400">{ content.updated }</span>
+          <span className="font-mono text-xs text-slate-500">{ content.updated }</span>
         </div>
         <div className="flex flex-col gap-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
           { content.sections.map((section) => <Section key={ section.heading } section={ section } level={ 2 }/>) }

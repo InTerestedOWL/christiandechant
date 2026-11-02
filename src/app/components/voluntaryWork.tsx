@@ -19,7 +19,7 @@ export default function VoluntaryWork({ content }: { content: SiteContent['volun
               <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-4">
                 { content.values.map((value) => (
                   <div key={ value.label } className="rounded-xl border border-slate-200/80 bg-white p-3">
-                    <span className="block font-mono text-[11px] uppercase text-slate-400">{ value.label }</span>
+                    <span className="block font-mono text-[11px] uppercase text-slate-500">{ value.label }</span>
                     <span className="text-sm font-bold text-slate-900">{ value.value }</span>
                   </div>
                 )) }
@@ -28,7 +28,7 @@ export default function VoluntaryWork({ content }: { content: SiteContent['volun
 
             <div
               className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-4">
-              <span className="font-mono text-xs font-semibold uppercase text-slate-400">{ content.quoteLabel }</span>
+              <span className="font-mono text-xs font-semibold uppercase text-slate-500">{ content.quoteLabel }</span>
               <p className="text-xs leading-relaxed text-slate-600 italic">„{ content.quote }“</p>
               <div className="flex items-center gap-3 border-t border-slate-100 pt-2">
                 <div

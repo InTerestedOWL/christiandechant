@@ -93,7 +93,7 @@ export default async function RootLayout({ children, params }: Props & { childre
           className={ `light scroll-smooth ${ geistSans.variable } ${ jetBrainsMono.variable } ${ materialSymbols.variable }` }>
     <StatusProvider>
       <ClientLayout locale={ locale as Locale } header={ content.header } footer={ content.footer }
-                   cookieBanner={ content.cookieBanner }>
+                   cookieBanner={ content.cookieBanner } a11y={ content.a11y }>
         { children }
       </ClientLayout>
     </StatusProvider>

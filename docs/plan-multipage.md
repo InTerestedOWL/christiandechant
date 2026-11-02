@@ -65,7 +65,7 @@ Gemeinsame Bausteine (`PageHero`, `CtaBanner`, `WhyMe`, `ProcessTimeline`, Leist
 
 - [x] **0 Fundament:** Vitest, Routen-Registry + aktive Navigation (TDD), Content pro Bereich aufteilen, gemeinsamer Metadaten-Helper für Unterseiten (TDD)
 - [x] **1 Positionierung & Startseite:** Freelancing-Hero, „Warum ich“ (#why), neues Motto, FAQ „Warum statt Agentur?“, Ehrenamt aus Hauptnavigation. Startseite wird schrittweise verschlankt, sobald die jeweilige Seite live ist (Anker-IDs bleiben)
-- [ ] **2 `/freelancing`** (erste Unterseite: `PageHero`, `CtaBanner`, Breadcrumbs + Breadcrumb-JSON-LD per TDD)
+- [x] **2 `/freelancing`** (erste Unterseite: `PageHero`, `CtaBanner`, Breadcrumbs, Service-/Breadcrumb-/FAQ-JSON-LD per TDD; JagdTausch-Referenz; seitenweite Barrierefreiheit: Skip-Link, Fokus, reduzierte Bewegung, Kontraste → Lighthouse a11y 100 auf allen Seiten)
 - [ ] **3 `/packages`** (OfferCatalog-Markup)
 - [ ] **4 `/support`** + Support-Paketanfrage im Kontaktformular (Topic/Package-Vorbelegung, TDD)
 - [ ] **5 `/ai-development`**

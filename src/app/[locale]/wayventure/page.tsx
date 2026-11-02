@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-const primaryButton = 'inline-flex w-full items-center justify-center gap-2 rounded-xl bg-amber-500 px-6 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-amber-600 sm:w-auto';
+const primaryButton = 'inline-flex w-full items-center justify-center gap-2 rounded-xl bg-amber-500 px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-md transition-all hover:bg-amber-400 sm:w-auto';
 const sectionTitle = 'text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl';
 
 export default async function WayVenturePage({ params }: Props) {
